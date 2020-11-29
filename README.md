@@ -10,9 +10,9 @@
 
 ### Association
 
-- has_many :income
-- has_many :fixed_cost
-- has_many :variable_cost
+- has_one  :income
+- has_one  :fixed_cost
+- has_one  :variable_cost
 - has_many :purchase_plans
 
 ## incomes テーブル
