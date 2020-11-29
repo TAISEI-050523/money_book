@@ -59,3 +59,6 @@ gem 'devise'
 
 # ActiveHashの導入
 gem 'active_hash'
+
+# chartkickによるグラフ表示機能の実装
+gem "chartkick"
