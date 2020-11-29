@@ -7,7 +7,7 @@ class FixedCostCategory < ActiveHash::Base
     { id: 5, name: '教育費' },
     { id: 6, name: '保険料' },
     { id: 7, name: 'ローン' },
-    { id: 8, name: 'その他' },
+    { id: 8, name: 'その他' }
   ]
   include ActiveHash::Associations
   has_many :fixed_costs
