@@ -1,7 +1,7 @@
 class CreateVariableCosts < ActiveRecord::Migration[6.0]
   def change
     create_table :variable_costs do |t|
-      t.integer :category_id, null: false
+      t.integer :variable_costs_category_id, null: false
       t.text :remarks
       t.integer :price, null: false
       t.date :date_entered, null: false
