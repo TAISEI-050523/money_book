@@ -56,3 +56,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # ユーザー管理機能の導入
 gem 'devise'
+
+# ActiveHashの導入
+gem 'active_hash'

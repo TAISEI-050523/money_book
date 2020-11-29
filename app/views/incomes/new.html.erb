@@ -1,0 +1,32 @@
+    <%= form_with(model: @income, local: true) do |form| %>
+    <ul>
+      <li>
+        <%= form.collection_select(:income_category_id, IncomeCategory.all, :id, :name, {}, {class:"income-cotegory-select"}) %>
+      </li>
+      <li>
+        <%= form.text_field :remarks, placeholder: "備考" %>
+      </li>
+      <li>
+        <%= form.text_field :price, placeholder: "金額" %>円
+      </li>
+      <li>
+        <%= form.date_field :date_entered, placeholder: "入金日" %>
+      </li>
+      <li>
+          <%= form.submit "CREATE" %>
+      <li>
+    </ul>
+    <% end %>
+
+
+
+
+  <ul>
+    <% @incomes.each do |income| %>
+    <li>
+      <%= income.income_category.name %> 
+      <%= income.price %> 
+      <%= income.date_entered %>
+    </li>
+    <% end %>
+  </ul>

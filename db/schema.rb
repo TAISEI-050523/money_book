@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2020_11_29_003930) do
 
   create_table "fixed_costs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "category_id", null: false
+    t.string "fixed_cost_category_id", null: false
     t.string "remarks"
     t.integer "price", null: false
     t.date "date_entered", null: false
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2020_11_29_003930) do
   end
 
   create_table "incomes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "category_id", null: false
+    t.integer "income_category_id", null: false
     t.text "remarks"
     t.integer "price", null: false
     t.date "date_entered", null: false
@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(version: 2020_11_29_003930) do
   end
 
   create_table "variable_costs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "category_id", null: false
+    t.integer "variable_costs_category_id", null: false
     t.text "remarks"
     t.integer "price", null: false
     t.date "date_entered", null: false
