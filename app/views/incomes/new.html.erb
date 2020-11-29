@@ -10,7 +10,7 @@
         <%= form.text_field :price, placeholder: "金額" %>円
       </li>
       <li>
-        <%= form.date_field :date_entered, placeholder: "入金日" %>
+        <%= form.date_field :income_date, placeholder: "入金日" %>
       </li>
       <li>
           <%= form.submit "CREATE" %>
@@ -26,7 +26,7 @@
     <li>
       <%= income.income_category.name %> 
       <%= income.price %> 
-      <%= income.date_entered %>
+      <%= income.income_date %>
     </li>
     <% end %>
   </ul>

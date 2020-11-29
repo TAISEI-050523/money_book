@@ -18,6 +18,6 @@ class FixedCostsController < ApplicationController
 
   private
   def fixed_cost_params
-    params.require(:fixed_cost).permit(:fixed_cost_category_id, :remarks, :price, :date_entered).merge(user_id: current_user.id)
+    params.require(:fixed_cost).permit(:fixed_cost_category_id, :remarks, :price, :expense_date).merge(user_id: current_user.id)
   end
 end

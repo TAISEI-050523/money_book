@@ -5,7 +5,7 @@ class VariableCost < ApplicationRecord
 
   with_options presence: true do
     validates :price, numericality: { only_integer: true }
-    validates :date_entered
+    validates :expense_date
   end
 
   #収入区分の選択が「--」の時は保存できないようにする

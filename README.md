@@ -22,7 +22,7 @@
 | income_category_id | integer    | null: false                    |
 | remarks            | text       |                                |
 | price              | integer    | null: false                    |
-| date_entered       | date       | null: false                    |
+| income_date        | date       | null: false                    |
 | user               | references | null: false, foreign_key: true |
 
 ### Association
@@ -36,7 +36,7 @@
 | fixed_cost_category_id | integer    | null: false                    |
 | remarks                | text       |                                |
 | price                  | integer    | null: false                    |
-| date_entered           | date       | null: false                    |
+| expense_date           | date       | null: false                    |
 | user                   | references | null: false, foreign_key: true |
 
 ### Association
@@ -50,7 +50,7 @@
 | variable_costs_category_id | integer    | null: false                    |
 | remarks                    | text       |                                |
 | price                      | integer    | null: false                    |
-| date_entered               | date       | null: false                    |
+| expense_date               | date       | null: false                    |
 | user                       | references | null: false, foreign_key: true |
 
 ### Association

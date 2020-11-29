@@ -10,7 +10,7 @@
         <%= form.text_field :price, placeholder: "金額" %>円
       </li>
       <li>
-        <%= form.date_field :date_entered, placeholder: "支出日" %>
+        <%= form.date_field :expense_date, placeholder: "支出日" %>
       </li>
       <li>
           <%= form.submit "CREATE" %>
@@ -26,7 +26,7 @@
     <li>
       <%= fixed_cost.fixed_cost_category.name %> 
       <%= fixed_cost.price %>円
-      <%= fixed_cost.date_entered %>
+      <%= fixed_cost.expense_date %>
       <%= fixed_cost.remarks %>
     </li>
     <% end %>

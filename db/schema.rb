@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2020_11_29_003930) do
     t.string "fixed_cost_category_id", null: false
     t.string "remarks"
     t.integer "price", null: false
-    t.date "date_entered", null: false
+    t.date "expense_date", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2020_11_29_003930) do
     t.integer "income_category_id", null: false
     t.text "remarks"
     t.integer "price", null: false
-    t.date "date_entered", null: false
+    t.date "income_date", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 2020_11_29_003930) do
     t.integer "variable_cost_category_id", null: false
     t.text "remarks"
     t.integer "price", null: false
-    t.date "date_entered", null: false
+    t.date "expense_date", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
