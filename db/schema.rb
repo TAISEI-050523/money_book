@@ -24,8 +24,8 @@ ActiveRecord::Schema.define(version: 2020_11_29_003930) do
   end
 
   create_table "incomes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "category_id", null: false
-    t.string "remarks"
+    t.integer "category_id", null: false
+    t.text "remarks"
     t.integer "price", null: false
     t.date "date_entered", null: false
     t.bigint "user_id", null: false
@@ -35,8 +35,8 @@ ActiveRecord::Schema.define(version: 2020_11_29_003930) do
   end
 
   create_table "purchase_plans", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "remarks"
+    t.integer "category_id", null: false
+    t.text "remarks"
     t.integer "price", null: false
     t.date "purchase_date", null: false
     t.bigint "user_id", null: false
@@ -59,8 +59,8 @@ ActiveRecord::Schema.define(version: 2020_11_29_003930) do
   end
 
   create_table "variable_costs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "category_id", null: false
-    t.string "remarks"
+    t.integer "category_id", null: false
+    t.text "remarks"
     t.integer "price", null: false
     t.date "date_entered", null: false
     t.bigint "user_id", null: false
