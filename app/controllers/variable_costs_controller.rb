@@ -17,6 +17,7 @@ class VariableCostsController < ApplicationController
   end
 
   private
+
   def variable_cost_params
     params.require(:variable_cost).permit(:variable_cost_category_id, :remarks, :price, :dexpense_date).merge(user_id: current_user.id)
   end
