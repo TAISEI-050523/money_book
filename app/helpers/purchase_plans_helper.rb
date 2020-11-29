@@ -1,0 +1,2 @@
+module PurchasePlansHelper
+end
