@@ -8,7 +8,7 @@ class IncomeCategory < ActiveHash::Base
     { id: 6, name: '配当所得' },
     { id: 7, name: '不動産所得' },
     { id: 8, name: 'アルバイト代' },
-    { id: 9, name: '不明な入金' },
+    { id: 9, name: 'ボーナス' },
     { id: 10, name: 'その他収入' }
   ]
   include ActiveHash::Associations

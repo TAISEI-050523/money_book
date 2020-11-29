@@ -8,12 +8,29 @@
 </div>
 <div class="top-contents">
   <div class="left-content">
-    <h2>過去１年のデータ</h2>
-    <div class="chart_box">chart挿入</div>
-    <div class="annual income">
+    <div class="chart_box">
+      <h2>過去１年のデータ</h2>
+      <div class="chart">
+          <%= line_chart [
+          {name: "収入", data: @income},
+          {name: "固定費", data: @fixed_cost},
+          {name: "変動費", data: @variable_cost} ],
+          id: "users-chart",
+          width: "500px", height: "400px", 
+          # min: 0, max: 500000,
+          xmin: 1, xmax: 20,
+          xtitle: "年, 月", ytitle: "金額（円）" ,
+          thousands: ","
+          %>
+      </div>
+      <div class="annual income">
+      </div>
+    </div>
   </div>
+
   <div class="right-content">
     <h2>今月の収支</h2>
+    <%= @this_month_balance %>
   </div>
 </div>
 <div class="botom-contents">
