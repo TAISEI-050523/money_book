@@ -1,24 +1,72 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
 
-Things you may want to cover:
+| Column   | Type   | Options     |
+| -------- | ------ | ----------- |
+| nickname | string | null: false |
+| email    | string | null: false |
+| password | string | null: false |
 
-* Ruby version
+### Association
 
-* System dependencies
+- has_one  :income
+- has_one  :fixed_cost
+- has_one  :variable_cost
+- has_many :purchase_plans
 
-* Configuration
+## incomes テーブル
 
-* Database creation
+| Column         | Type       | Options                        |
+| -------------- | ---------- | ------------------------------ |
+| category_id    | integer    | null: false                    |
+| remarks        | text       |                                |
+| price          | integer    | null: false                    |
+| date_entered   | date       | null: false                    |
+| user           | references | null: false, foreign_key: true |
 
-* Database initialization
+### Association
 
-* How to run the test suite
+- belongs_to :user
 
-* Services (job queues, cache servers, search engines, etc.)
+## fixed_costs テーブル
 
-* Deployment instructions
+| Column         | Type       | Options                        |
+| -------------- | ---------- | ------------------------------ |
+| category_id    | integer    | null: false                    |
+| remarks        | text       |                                |
+| price          | integer    | null: false                    |
+| date_entered   | date       | null: false                    |
+| user           | references | null: false, foreign_key: true |
 
-* ...
+### Association
+
+- belongs_to :user
+
+## variable_costs テーブル
+
+| Column         | Type       | Options                        |
+| -------------- | ---------- | ------------------------------ |
+| category_id    | integer    | null: false                    |
+| remarks        | text       |                                |
+| price          | integer    | null: false                    |
+| date_entered   | date       | null: false                    |
+| user           | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+
+## purchase_plans テーブル
+
+| Column         | Type       | Options                        |
+| -------------- | ---------- | ------------------------------ |
+| name           | string     | null: false                    |
+| remarks        | text       |                                |
+| price          | integer    | null: false                    |
+| purchase_date  | date       | null: false                    |
+| user           | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
