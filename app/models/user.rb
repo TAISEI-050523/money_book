@@ -4,8 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
          
-  has_one :income
-  has_one :fixed_cost
-  has_one :variable_cost
+  has_many :incomes
+  has_many :fixed_costs
+  has_many :variable_costs
   has_many :purchase_plans
 end
