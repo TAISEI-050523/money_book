@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2020_11_30_022353) do
 
   create_table "fixed_costs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "fixed_cost_category_id", null: false
-    t.string "remarks"
+    t.text "remarks"
     t.integer "price", null: false
     t.date "expense_date", null: false
     t.bigint "user_id", null: false
