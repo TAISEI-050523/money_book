@@ -2,7 +2,7 @@ class FixedCostsController < ApplicationController
   def new
     user = User.find(current_user.id)
     @fixed_cost = FixedCost.new
-    @fixed_costs = user.fixed_costs
+    @fixed_costs = user.fixed_costs.order("expense_date DESC")
   end
 
   def create
@@ -11,7 +11,7 @@ class FixedCostsController < ApplicationController
       redirect_to root_path
     else
       user = User.find(current_user.id)
-      @fixed_costs = user.fixed_costs
+      @fixed_costs = user.fixed_costs.order("expense_date DESC")
       render 'new'
     end
   end

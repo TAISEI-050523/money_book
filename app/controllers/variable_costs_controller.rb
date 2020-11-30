@@ -2,7 +2,7 @@ class VariableCostsController < ApplicationController
   def new
     user = User.find(current_user.id)
     @variable_cost = VariableCost.new
-    @variable_costs = user.variable_costs
+    @variable_costs = user.variable_costs.order("expense_date DESC")
   end
 
   def create
@@ -11,7 +11,7 @@ class VariableCostsController < ApplicationController
       redirect_to root_path
     else
       user = User.find(current_user.id)
-      @variable_costs = user.variable_costs
+      @variable_costs = user.variable_costs.order("expense_date DESC")
       render 'new'
     end
   end
@@ -19,6 +19,6 @@ class VariableCostsController < ApplicationController
   private
 
   def variable_cost_params
-    params.require(:variable_cost).permit(:variable_cost_category_id, :remarks, :price, :dexpense_date).merge(user_id: current_user.id)
+    params.require(:variable_cost).permit(:variable_cost_category_id, :remarks, :price, :expense_date).merge(user_id: current_user.id)
   end
 end
