@@ -37,16 +37,45 @@
   </div>
 
   <div class="right-content">
-    <h2>今月の収支</h2>
-    <%= @this_month_balance %>
-  </div>
+    <div class="top-right">
+      <h2>今月の収支</h2>
+      <%= @this_month_balance %>
+    </div>
+
+    <div class="bottom-right">
+      <div class="add_purchase_plan">
+      <%= link_to '欲しい物リスト追加', purchase_plans_path , class: :new_plan %>
+      </div>
+      <div class="purchase-plans_content">
+           <% @purchase_plans.each do |plan|%>
+            <div class="plan">
+              <ul>
+                <li>
+                  <h2><%= plan.name %></h2>
+                </li>
+                <li>
+                  <%= image_tag plan.image.variant(resize: '100x100'), class: 'plan-image' if plan.image.attached? %> 
+                    <% unless plan.image.attached? %>
+                      <%= image_tag 'noimage.png'%>
+                    <% end %>
+                </li>
+                <li>
+                  ¥<%= plan.price %>円
+                </li>
+                <li>
+                  <% if plan.purchase_date <= Date.today %>
+                    <b>期日になりました！購入しましょう！</b>
+                  <% else %>
+                    残り<%= (plan.purchase_date - Date.today).numerator %>日
+                  <% end %>
+                </li>
+              </ul>
+            </div>
+          <% end %>
+      </div>
+    </div>
+  </div>  
 </div>
-<div class="botom-contents">
-  <div class="add_purchase_plan">
-  <%= link_to '欲しい物リスト追加', "#" , class: :new_plan %>
-  </div>
-  <div class="purchase-plans_content">
-  </div>
-</div>
+
 
 <%= render "shared/footer" %>

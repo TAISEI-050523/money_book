@@ -62,3 +62,7 @@ gem 'active_hash'
 
 # chartkickによるグラフ表示機能の実装
 gem "chartkick"
+
+# MiniMagickとImageProcessingによる画像投稿機能の実装
+gem 'mini_magick'
+gem 'image_processing', '~> 1.2'

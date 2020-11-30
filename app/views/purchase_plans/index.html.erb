@@ -1,0 +1,54 @@
+<%= render "shared/header" %>
+
+    <%= form_with(model: @purchase_plan, local: true) do |form|%>
+    <ul>
+      <li>
+        <%= form.file_field :image %>
+      </li>
+      <li>
+        <%= form.text_field :name, placeholder: "商品名(例：自転車)" %>
+      </li>
+      <li>
+        <%= form.text_field :remarks, placeholder: "備考(例：Amazonでの相場価格¥30000)" %>
+      </li>
+      <li>
+        <%= form.text_field :price, placeholder: "値段(例：32000)" %>円
+      </li>
+      <li>
+        <%= form.date_field :purchase_date %>
+      </li>
+      <li>
+          <%= form.submit "入力" %>
+      <li>
+    </ul>
+     <% @purchase_plans.each do |plan|%>
+            <div class="plan">
+              <ul>
+                <li>
+                  <h2><%= plan.name %></h2>
+                </li>
+                <li>
+                  <%= image_tag plan.image.variant(resize: '200x200'), class: 'plan-image' if plan.image.attached? %> 
+                    <% unless plan.image.attached? %>
+                      <%= image_tag 'noimage.png'%>
+                    <% end %>
+                </li>
+                <li>
+                  ¥<%= plan.price %>円を
+                </li>
+                <li>
+                  <%= plan.purchase_date.strftime("%Y年%m月%d日")%>に買う！
+                </li>
+                <li>
+                  <% if plan.purchase_date <= Date.today %>
+                    <b>期日になりました！購入しましょう！</b>
+                  <% else %>
+                    残り<%= (plan.purchase_date - Date.today).numerator %>日
+                  <% end %>
+                </li>
+              </ul>
+              <%# <%= link_to '編集', edit_finance_plan_path(params[:finance_id], plan), class: :edit_plan %> %>
+              <%# <%= link_to '削除', finance_plan_path(params[:finance_id], plan), method: :delete, class: :destroy_plan %> %>
+            </div>
+          <% end %>
+    <% end %>

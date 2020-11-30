@@ -27,7 +27,7 @@
     <li>
       <%= fixed_cost.fixed_cost_category.name %> 
       <%= fixed_cost.price %>円
-      <%= fixed_cost.expense_date %>
+      <%= fixed_cost.expense_date.strftime("%Y年%m月%d日") %>
       <%= fixed_cost.remarks %>
     </li>
     <% end %>
