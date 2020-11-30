@@ -1,15 +1,23 @@
 <%= render "shared/header" %>
 <div class="input-contents">
-  <%= link_to '収入入力', new_income_path, class: "income_btn" %>
-
-  <%= link_to '固定費入力', new_fixed_cost_path, class: "fixed_btn" %>
-
-  <%= link_to '変動費入力', new_variable_cost_path, class: "valiable_btn" %>
+  <ul class="inputs-lists">
+  <li class="input-list">
+    <%= link_to '収入入力', new_income_path, class: "income_btn" %>
+  </li>
+  <li class="input-list">
+    <%= link_to '固定費入力', new_fixed_cost_path, class: "fixed_btn" %>
+  </li>
+  <li class="input-list">
+    <%= link_to '変動費入力', new_variable_cost_path, class: "valiable_btn" %>
+  </li>
+  </ul>
 </div>
 <div class="top-contents">
   <div class="left-content">
-    <div class="chart_box">
-      <h2>過去１年のデータ</h2>
+    <div class="chart-box">
+    　<div class="chart-title-box">
+        <h2 class="chart-title">収支変動(過去１年間)</h2>
+      </div>
       <div class="chart">
           <%= line_chart [
           {name: "収入", data: @income},
@@ -23,20 +31,24 @@
           thousands: ","
           %>
       </div>
-      <div class="annual income">
+      <div class="annual-income">
       </div>
     </div>
   </div>
 
   <div class="right-content">
-    <h2>今月の収支</h2>
-    <%= @this_month_balance %>
+    <div class="top-right">
+      <h2>今月の収支</h2>
+      <%= @this_month_balance %>
+    </div>
+    <div class="bottom-right">
+      <div class="add_purchase_plan">
+      </div>
+      <div class="purchase-plans_content">
+      </div>
+    </div>
   </div>
+  
 </div>
-<div class="botom-contents">
-  <div class="add_purchase_plan">
-  </div>
-  <div class="purchase-plans_content">
-  </div>
-</div>
+
 <%= render "shared/footer" %>
