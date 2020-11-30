@@ -1,15 +1,15 @@
 <%= render "shared/header" %>
 <div class="input-contents">
   <ul class="inputs-lists">
-  <li class="input-list">
-    <%= link_to '収入入力', new_income_path, class: "income_btn" %>
-  </li>
-  <li class="input-list">
-    <%= link_to '固定費入力', new_fixed_cost_path, class: "fixed_btn" %>
-  </li>
-  <li class="input-list">
-    <%= link_to '変動費入力', new_variable_cost_path, class: "valiable_btn" %>
-  </li>
+    <li class="input-list">
+      <%= link_to '収入入力', new_income_path, class: "income_btn" %>
+    </li>
+    <li class="input-list">
+      <%= link_to '固定費入力', new_fixed_cost_path, class: "fixed_btn" %>
+    </li>
+    <li class="input-list">
+      <%= link_to '変動費入力', new_variable_cost_path, class: "valiable_btn" %>
+    </li>
   </ul>
 </div>
 <div class="top-contents">
@@ -47,17 +47,17 @@
       <%= link_to '欲しい物リスト追加', purchase_plans_path , class: :new_plan %>
       </div>
       <div class="purchase-plans_content">
-           <% @purchase_plans.each do |plan|%>
-            <div class="plan">
+            <% @purchase_plans.each do |plan|%>
+            <div class="purcase_plan">
               <ul>
                 <li>
                   <h2><%= plan.name %></h2>
                 </li>
                 <li>
                   <%= image_tag plan.image.variant(resize: '100x100'), class: 'plan-image' if plan.image.attached? %> 
-                    <% unless plan.image.attached? %>
-                      <%= image_tag 'noimage.png'%>
-                    <% end %>
+                  <% unless plan.image.attached? %>
+                    <%= image_tag 'noimage.png'%>
+                  <% end %>
                 </li>
                 <li>
                   ¥<%= plan.price %>円
