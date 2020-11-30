@@ -37,18 +37,16 @@
   </div>
 
   <div class="right-content">
-    <div class="top-right">
-      <h2>今月の収支</h2>
-      <%= @this_month_balance %>
-    </div>
-    <div class="bottom-right">
-      <div class="add_purchase_plan">
-      </div>
-      <div class="purchase-plans_content">
-      </div>
-    </div>
+    <h2>今月の収支</h2>
+    <%= @this_month_balance %>
   </div>
-  
+</div>
+<div class="botom-contents">
+  <div class="add_purchase_plan">
+  <%= link_to '欲しい物リスト追加', "#" , class: :new_plan %>
+  </div>
+  <div class="purchase-plans_content">
+  </div>
 </div>
 
 <%= render "shared/footer" %>

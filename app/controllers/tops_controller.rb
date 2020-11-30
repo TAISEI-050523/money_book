@@ -13,5 +13,10 @@ class TopsController < ApplicationController
     @variable_month = user.variable_costs.where(expense_date: this_month).sum(:price)    # 今月の変動費
 
     @this_month_balance = @income_month - (@fixed_cost_month + @variable_month)
+
+
+
+    
+
   end
 end
