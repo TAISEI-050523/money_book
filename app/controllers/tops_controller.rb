@@ -16,7 +16,8 @@ class TopsController < ApplicationController
 
 
 
-    
+    user = User.find(current_user.id)
+    @purchase_plans = user.purchase_plans.order("purchase_date DESC")
 
   end
 end

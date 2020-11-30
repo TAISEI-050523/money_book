@@ -40,7 +40,8 @@
     <li>
       <%= income.income_category.name %> 
       <%= income.price %> 
-      <%= income.income_date %>
+      <%= income.income_date.strftime("%Y年%m月%d日") %>
+      <%= income.remarks %>
     </li>
     <% end %>
   </ul>
