@@ -50,7 +50,7 @@
     </div>
   </div>
   <div class="purchase_plans_data">
-    <ul>・欲しい物リストから一日に貯金すべき金額
+    <ul>・購入予定リストから一日に貯金すべき金額
       <li><%= @sum.to_s(:delimited) %>円</li>
     </ul>
   </div>
@@ -59,7 +59,7 @@
       <h2 class="purchase-title">購入予定リスト</h2>
     </div>
     <div class="add-purchase-plan">
-      <%= link_to '欲しい物リスト追加', purchase_plans_path , class: :new_plan %>
+      <%= link_to 'リスト追加', purchase_plans_path , class: :new_plan %>
     </div>
     <div class="purchase-plans-content">
           <% @purchase_plans.each do |plan|%>
