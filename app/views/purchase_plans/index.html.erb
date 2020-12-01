@@ -1,54 +1,69 @@
 <%= render "shared/header" %>
-
+<div class="input-purchase-plan">
+    <div class="purchase-plan-forms">
     <%= form_with(model: @purchase_plan, local: true) do |form|%>
-    <ul>
+    <ul class="purchase-plan-form">
       <li>
-        <%= form.file_field :image %>
+        <label class="form-image">
+        <span class="image-file">画 像</span>
+        <input type="file" class="hidden">
+        </label>
       </li>
       <li>
-        <%= form.text_field :name, placeholder: "商品名(例：自転車)" %>
+        <%= form.text_field :name, placeholder: "商品名(例：自転車)", class: "purchase-text" %>
       </li>
       <li>
-        <%= form.text_field :remarks, placeholder: "備考(例：Amazonでの相場価格¥30000)" %>
+        <%= form.text_field :remarks, placeholder: "備考(例：Amazonで¥30000)", class: "purchase-text" %>
       </li>
       <li>
-        <%= form.text_field :price, placeholder: "値段(例：32000)" %>円
+        <%= form.text_field :price, placeholder: "値段(例：32000)", class: "purchase-text" %>
       </li>
       <li>
-        <%= form.date_field :purchase_date %>
+        <%= form.date_field :purchase_date, class: "purchase-date" %>
       </li>
       <li>
-          <%= form.submit "入力" %>
+          <%= form.submit "保 存", class: "submit-btn" %>
       <li>
     </ul>
-     <% @purchase_plans.each do |plan|%>
-            <div class="plan">
-              <ul>
-                <li>
-                  <h2><%= plan.name %></h2>
-                </li>
-                <li>
-                  <%= image_tag plan.image.variant(resize: '200x200'), class: 'plan-image' if plan.image.attached? %> 
-                    <% unless plan.image.attached? %>
-                      <%= image_tag 'noimage.png'%>
-                    <% end %>
-                </li>
-                <li>
-                  ¥<%= plan.price.to_s(:delimited) %>円を
-                </li>
-                <li>
-                  <%= plan.purchase_date.strftime("%Y年%m月%d日")%>に買う！
-                </li>
-                <li>
-                  <% if plan.purchase_date <= Date.today %>
-                    <b>期日になりました！購入しましょう！</b>
-                  <% else %>
-                    残り<%= (plan.purchase_date - Date.today).numerator %>日
-                  <% end %>
-                </li>
-              </ul>
-              <%# <%= link_to '編集', edit_finance_plan_path(params[:finance_id], plan), class: :edit_plan %> %>
-              <%# <%= link_to '削除', finance_plan_path(params[:finance_id], plan), method: :delete, class: :destroy_plan %> %>
-            </div>
-          <% end %>
     <% end %>
+  </div>
+</div>
+<div class="bottom-purchase-conttens">
+    <div class="purchase-title-box">
+      <h2 class="purchase-title">購入予定リスト</h2>
+    </div>
+    <div class="purchase-plans-lists">
+        <% @purchase_plans.each do |plan|%>
+          <div class="purchases-items">
+              <h2 class="item-title"><%= plan.name %></h2>
+              <%= image_tag plan.image.variant(resize: '220x220'), class: 'plan-image' if plan.image.attached? %> 
+              <% unless plan.image.attached? %>
+                <%= image_tag 'noimage.png', class: 'no-image'%>
+              <% end %>
+              <div class="item-remarks">
+                備考：<%= plan.remarks %>
+              </div>
+              <div class="item-price">
+                値段：¥<%= plan.price.to_s(:delimited) %>円
+              </div>
+              <div class="item-date">
+                <div>
+                  購入日：<%= plan.purchase_date.strftime("%Y年%m月%d日")%>
+                </div>
+                <div>
+                  <% if plan.purchase_date <= Date.today %>
+                    <b>購入しよう！</b>
+                  <% else %>
+                    <b>残り<%= (plan.purchase_date - Date.today).numerator %>日</b>
+                  <% end %>
+                </div>
+              </div>
+              <%= link_to '削除', purchase_plan_path(plan.id), method: :delete, class: "delete-btn" %> 
+          </div>
+        <% end %>
+    </div>
+    </div>
+  </div>
+
+
+<%= render "shared/footer" %>

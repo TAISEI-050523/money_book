@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   resources :incomes, only: [:new, :create]
   resources :fixed_costs, only: [:new, :create]
   resources :variable_costs, only: [:new, :create]
-  resources :purchase_plans, only: [:index, :new, :create]
+  resources :purchase_plans, only: [:index, :new, :create, :destroy]
 end
