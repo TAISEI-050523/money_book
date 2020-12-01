@@ -16,7 +16,7 @@ class TopsController < ApplicationController
     @income_all = user.incomes.sum(:price)
     @fixed_cost_all = user.fixed_costs.sum(:price)
     @variable_cost_all = user.variable_costs.sum(:price)
-    @savings　= @income_all - (@fixed_cost_all + @variable_cost_all)
+    @savings = @income_all - (@fixed_cost_all + @variable_cost_all)
 
 
     @purchase_plans = user.purchase_plans.order("purchase_date ASC")

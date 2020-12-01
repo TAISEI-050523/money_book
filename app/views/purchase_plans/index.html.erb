@@ -34,7 +34,7 @@
                     <% end %>
                 </li>
                 <li>
-                  ¥<%= plan.price %>円を
+                  ¥<%= plan.price.to_s(:delimited) %>円を
                 </li>
                 <li>
                   <%= plan.purchase_date.strftime("%Y年%m月%d日")%>に買う！
