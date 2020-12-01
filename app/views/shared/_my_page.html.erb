@@ -64,27 +64,19 @@
     <div class="purchase-plans-content">
           <% @purchase_plans.each do |plan|%>
           <div class="purchases-box">
-            <ul calss="purchase-plan">
-              <li>
-                <h2><%= plan.name %></h2>
-              </li>
-              <div>
-                <%= image_tag plan.image.variant(resize: '120x120'), class: 'plan-image' if plan.image.attached? %> 
-                <% unless plan.image.attached? %>
-                  <%= image_tag 'noimage.png'%>
-                <% end %>
-              </div>
-              <li>
-                ¥<%= plan.price.to_s(:delimited) %>円
-              </li>
-              <li>
-                <% if plan.purchase_date <= Date.today %>
-                  <b>購入できます！</b>
-                <% else %>
-                  残り<%= (plan.purchase_date - Date.today).numerator %>日
-                <% end %>
-              </li>
-            </ul>
+            <h2 class="plan-title"><%= plan.name %></h2>
+            <%= image_tag plan.image.variant(resize: '120x120'), class: 'plan-image' if plan.image.attached? %> 
+            <% unless plan.image.attached? %>
+              <%= image_tag 'noimage.png'%>
+            <% end %>
+            <div class="plan-prie"><%= plan.price.to_s(:delimited) %>円</div>
+            <div class="plan-date">
+              <% if plan.purchase_date <= Date.today %>
+                <b>購入できます！</b>
+              <% else %>
+                残り<%= (plan.purchase_date - Date.today).numerator %>日
+              <% end %>
+            </div>
           </div>
         <% end %>
     </div>
