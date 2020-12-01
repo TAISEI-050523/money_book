@@ -51,7 +51,7 @@
   </div>
   <div class="purchase_plans_data">
     <ul>・欲しい物リストから一日に貯金すべき金額
-      <li><%= @sum %>円</li>
+      <li><%= @sum.to_s(:delimited) %>円</li>
     </ul>
   </div>
   <div class="bottom-contents">
@@ -75,7 +75,7 @@
                 <% end %>
               </div>
               <li>
-                ¥<%= plan.price %>円
+                ¥<%= plan.price.to_s(:delimited) %>円
               </li>
               <li>
                 <% if plan.purchase_date <= Date.today %>
