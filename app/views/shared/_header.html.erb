@@ -17,20 +17,22 @@
       </div>
     </div>
   </div>
-    <div class="input-contents">
-    <ul class="inputs-lists">
-      <li class="input-list home-btn">
-        <%= link_to 'HOME', root_path, class: "home_btn" %>
-      </li>
-      <li class="input-list income-btn">
-        <%= link_to '収入', new_income_path, class: "income_btn" %>
-      </li>
-      <li class="input-list">
-        <%= link_to '固定費', new_fixed_cost_path, class: "fixed_btn" %>
-      </li>
-      <li class="input-list">
-        <%= link_to '変動費', new_variable_cost_path, class: "valiable_btn" %>
-      </li>
-    </ul>
-  </div>
+    <% if user_signed_in? %>
+      <div class="input-contents">
+        <ul class="inputs-lists">
+          <li class="input-list home-btn">
+            <%= link_to 'HOME', root_path, class: "home_btn" %>
+          </li>
+          <li class="input-list income-btn">
+            <%= link_to '収入', new_income_path, class: "income_btn" %>
+          </li>
+          <li class="input-list">
+            <%= link_to '固定費', new_fixed_cost_path, class: "fixed_btn" %>
+          </li>
+          <li class="input-list">
+            <%= link_to '変動費', new_variable_cost_path, class: "valiable_btn" %>
+          </li>
+        </ul>
+      </div>
+    <% end %>
 </header>
