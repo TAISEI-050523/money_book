@@ -1,5 +1,150 @@
 <%= render "shared/header" %>
+<div class="contents">
+  <div class="top-contents">
+    <div class="top-left-content">
+        <div class="chart-title-box">
+          <h2 class="chart-title">収支変動(過去１年間)</h2>
+        </div>
+      <div class="chart-box">
 
-<%= render "shared/my_page"%>
+        <div class="chart">
+            <%= line_chart [
+            {name: "収入", data: @income},
+            {name: "固定費", data: @fixed_cost},
+            {name: "変動費", data: @variable_cost} ],
+            id: "users-chart",
+            width: "500px", height: "400px", 
+            # min: 0, max: 500000,
+            xmin: 1, xmax: 12,
+            xtitle: "年, 月", ytitle: "金額（円）" ,
+            thousands: ","
+            %>
+        </div>
+        <div class="annual-income">
+        </div>
+      </div>
+    </div>
+    <div class="top-right-content">
+      <div class="month-data">
+        <div class="month-data-title">
+          <%= Date.today.mon%>月の収支
+        </div>
+        <ul>
+          <li class="price">収　入：　<%= @income_month.to_s(:delimited) %>円</li>
+          <li class="price">固定費：　<%= @fixed_cost_month.to_s(:delimited) %>円</li>
+          <li class="price">変動費：　<%= @variable_month.to_s(:delimited) %>円</li>
+          <li class="price">収　支：　<%= @this_month_balance.to_s(:delimited) %>円</li>
+        </ul>
+      </div>
+
+      <div class="total-data">
+        <div class="total-data-title">
+          総額（過去データの合計値）
+        </div>
+        <ul>
+          <li class="price">　収入総額：　<%= @income_all.to_s(:delimited) %>円</li>
+          <li class="price">固定費総額：　<%= @fixed_cost_all.to_s(:delimited) %>円</li>
+          <li class="price">変動費総額：　<%= @variable_cost_all.to_s(:delimited) %>円</li>
+          <li class="price">　収支総額：　<%= @savings.to_s(:delimited)%>円</li>
+        </ul>
+      </div>
+      <div class="purchase-plans-data">
+        <div class="purchase-plans-data-title">
+          購入予定リストから一日に貯金すべき金額
+        </div>
+        <%= @sum.to_s(:delimited) %>円
+      </div>
+    </div>
+  </div>
+  <div class="middle-contents">
+    <div class="middle-left-content">
+      <div class="month-data-title">
+        <%= Date.today.mon%>月の支出内訳
+      </div>
+      <div class="breakdowns">
+        <div class="left-breakdown">
+          <div class="left-breakdown-title">
+            <%= link_to '固定費', new_fixed_cost_path %>
+          </div>
+          <div class="variable-cost-lists">
+            <div class="category-names">
+              <div class="category-name">住居費</div>
+              <div class="category-name">通信費</div>
+              <div class="category-name">水道光熱費</div>
+              <div class="category-name">教育費</div>
+              <div class="category-name">保険料</div>
+              <div class="category-name">その他</div>
+            </div>
+            <div class="category-numbers">
+              <%# 固定費のcategory_idは2-8 %>
+              <% 6.times do |num|%>                 
+                <div class="category-number">
+                <%= @fixed_cost_category.where(fixed_cost_category_id: num+2 ).sum(:price).to_s(:delimited)%>円
+                </div>
+              <%end%>
+            </div>
+          </div>
+        </div>
+        <div class="right-breakdown">
+          <div class="right-breakdown-title">
+            <%= link_to '変動費', new_variable_cost_path %>
+          </div>
+          <div class="variable-cost-lists">
+            <div class="category-names">
+              <div class="category-name ">食費費</div>
+              <div class="category-name">日用品</div>
+              <div class="category-name ">交通費</div>
+              <div class="category-name">趣味・娯楽</div>
+              <div class="category-name">被服・美容</div>
+              <div class="category-name">健康・医療</div>
+              <div class="category-name">書籍</div>
+              <div class="category-name">カフェ</div>
+              <div class="category-name">交際費</div>
+              <div class="category-name">特別費</div>
+              <div class="category-name">その他</div>
+            </div>
+            <div class="category-numbers">
+              <%# 変動費のcategory_idは2-13 %>
+              <% 11.times do |num|%>                 
+                <div class="category-number">
+                <%= @variable_cost_category.where(variable_cost_category_id: num+2 ).sum(:price).to_s(:delimited)%>円
+                </div>
+              <%end%>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="middle-right-content">
+    </div>
+  </div>
+  <div class="bottom-contents">
+    <div class="purchase-title-box">
+      <h2 class="purchase-title"><%= link_to '購入予定リスト', purchase_plans_path %></h2>
+    </div>
+    <div class="add-purchase-plan">
+      
+    </div>
+    <div class="purchase-plans-content">
+          <% @purchase_plans.each do |plan|%>
+          <div class="purchases-box">
+            <h2 class="plan-title"><%= plan.name %></h2>
+            <%= image_tag plan.image.variant(resize: '120x120'), class: 'plan-image' if plan.image.attached? %> 
+            <% unless plan.image.attached? %>
+              <%= image_tag 'noimage.png'%>
+            <% end %>
+            <div class="plan-prie"><%= plan.price.to_s(:delimited) %>円</div>
+            <div class="plan-date">
+              <% if plan.purchase_date <= Date.today %>
+                <b>購入できます！</b>
+              <% else %>
+                残り<%= (plan.purchase_date - Date.today).numerator %>日
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+    </div>
+  </div>
+</div>
 
 <%= render "shared/footer" %>
