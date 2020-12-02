@@ -97,6 +97,7 @@
               <div class="category-name">趣味・娯楽</div>
               <div class="category-name">被服・美容</div>
               <div class="category-name">健康・医療</div>
+              <div class="category-name">教養・教育</div>
               <div class="category-name">書籍</div>
               <div class="category-name">カフェ</div>
               <div class="category-name">交際費</div>
@@ -105,7 +106,7 @@
             </div>
             <div class="category-numbers">
               <%# 変動費のcategory_idは2-13 %>
-              <% 11.times do |num|%>                 
+              <% 12.times do |num|%>                 
                 <div class="category-number">
                 <%= @variable_cost_category.where(variable_cost_category_id: num+2 ).sum(:price).to_s(:delimited)%>円
                 </div>
