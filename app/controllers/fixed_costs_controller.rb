@@ -16,6 +16,14 @@ class FixedCostsController < ApplicationController
     end
   end
 
+  def destroy
+    @fixed_cost = FixedCost.find(params[:id])
+    @fixed_cost.destroy
+    user = User.find(current_user.id)
+    @fixed_costs = user.fixed_costs.order("expense_date DESC")
+    render 'new'
+  end
+
   private
 
   def fixed_cost_params
