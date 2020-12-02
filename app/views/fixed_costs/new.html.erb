@@ -43,6 +43,9 @@
     <div class="remarks-detail">      
       備 考
     </div>
+    <div class="delete-detail">
+      削 除
+    </div>
   </div>
   <% @fixed_costs.each do |fixed_cost| %>
   <div class="details">
@@ -57,6 +60,9 @@
     </div>
     <div class="remarks-detail">      
       <%= fixed_cost.remarks %>
+    </div>
+    <div class="delete-detail">
+      <%= link_to '削除', fixed_cost_path(fixed_cost.id), method: :delete, class: "delete-btn" %>
     </div>
   </div>
   <% end %>

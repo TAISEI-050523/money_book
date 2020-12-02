@@ -355,7 +355,7 @@ a {
   color: #ffffff;
   background-color: #CA3F34;
   border: none;
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 2px 20px;
 }
 
@@ -445,6 +445,10 @@ a {
   justify-content: center;
 }
 
+.detail-color {
+  background-color: rgb(189, 187, 187);
+}
+
 .category-detail {
   width: 150px;
   border: 1px solid gray;
@@ -466,6 +470,11 @@ a {
 
 .remarks-detail {
   width: 400px;
+  border: 1px solid gray;
+}
+
+.delete-detail {
+  width: 100px;
   border: 1px solid gray;
 }
 

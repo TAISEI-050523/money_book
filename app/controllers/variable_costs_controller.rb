@@ -16,6 +16,14 @@ class VariableCostsController < ApplicationController
     end
   end
 
+  def destroy
+    @variable_cost = VariableCost.find(params[:id])
+    @variable_cost.destroy
+    user = User.find(current_user.id)
+    @variable_costs = user.variable_costs.order("expense_date DESC")
+    render 'new'
+  end
+
   private
 
   def variable_cost_params

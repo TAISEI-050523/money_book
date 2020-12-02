@@ -44,6 +44,9 @@
     <div class="remarks-detail">      
       備 考
     </div>
+    <div class="delete-detail">
+      削除する
+    </div>
   </div>
   <% @variable_costs.each do |variable_cost| %>
   <div class="details">
@@ -58,6 +61,9 @@
     </div>
     <div class="remarks-detail">      
       <%= variable_cost.remarks %>
+    </div>
+    <div class="delete-detail">
+      <%= link_to '削除', variable_cost_path(variable_cost.id), method: :delete, class: "delete-btn" %>
     </div>
   </div>
   <% end %>

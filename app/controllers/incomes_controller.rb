@@ -16,6 +16,14 @@ class IncomesController < ApplicationController
     end
   end
 
+  def destroy
+    @income = Income.find(params[:id])
+    @income.destroy
+    user = User.find(current_user.id)
+    @incomes = user.incomes.order("income_date DESC")
+    render 'new'
+  end
+
   private
 
   def income_params
