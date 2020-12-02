@@ -1,6 +1,6 @@
 <div class="contents">
   <div class="top-contents">
-    <div class="left-content">
+    <div class="top-left-content">
         <div class="chart-title-box">
           <h2 class="chart-title">収支変動(過去１年間)</h2>
         </div>
@@ -23,10 +23,10 @@
         </div>
       </div>
     </div>
-    <div class="right-content">
+    <div class="top-right-content">
       <div class="month-data">
         <div class="month-data-title">
-          ・<%= Date.today.mon%>月の収支
+          <%= Date.today.mon%>月の収支
         </div>
         <ul>
           <li class="price">収　入：　<%= @income_month.to_s(:delimited) %>円</li>
@@ -38,7 +38,7 @@
 
       <div class="total-data">
         <div class="total-data-title">
-          ・総額（過去データの合計値）
+          総額（過去データの合計値）
         </div>
         <ul>
           <li class="price">　収入総額：　<%= @income_all.to_s(:delimited) %>円</li>
@@ -47,19 +47,82 @@
           <li class="price">　収支総額：　<%= @savings.to_s(:delimited)%>円</li>
         </ul>
       </div>
+      <div class="purchase-plans-data">
+        <div class="purchase-plans-data-title">
+          購入予定リストから一日に貯金すべき金額
+        </div>
+        <%= @sum.to_s(:delimited) %>円
+      </div>
     </div>
   </div>
-  <div class="purchase_plans_data">
-    <ul>・購入予定リストから一日に貯金すべき金額
-      <li><%= @sum.to_s(:delimited) %>円</li>
-    </ul>
+  <div class="middle-contents">
+    <div class="middle-left-content">
+      <div class="month-data-title">
+        <%= Date.today.mon%>月の支出内訳
+      </div>
+      <div class="breakdowns">
+        <div class="left-breakdown">
+          <div class="left-breakdown-title">
+            <%= link_to '固定費', new_fixed_cost_path %>
+          </div>
+          <div class="variable-cost-lists">
+            <div class="left">
+              <div class="category-name">住居費</div>
+              <div class="category-name">通信費</div>
+              <div class="category-name">水道光熱費</div>
+              <div class="category-name">教育費</div>
+              <div class="category-name">保険料</div>
+              <div class="category-name">その他</div>
+            </div>
+            <div class="right">
+              <%# 固定費のcategory_idは2-8 %>
+              <% 6.times do |num|%>                 
+                <div class="category-num">
+                <%= @fixed_cost_category.where(fixed_cost_category_id: num+2 ).sum(:price).to_s(:delimited)%>円
+                </div>
+              <%end%>
+            </div>
+          </div>
+        </div>
+        <div class="right-breakdown">
+          <div class="right-breakdown-title">
+            <%= link_to '変動費', new_variable_cost_path %>
+          </div>
+          <div class="variable-cost-lists">
+            <div class="left">
+              <div class="category-name">食費費</div>
+              <div class="category-name">日用品</div>
+              <div class="category-name">交通費</div>
+              <div class="category-name">趣味・娯楽</div>
+              <div class="category-name">被服・美容</div>
+              <div class="category-name">健康・医療</div>
+              <div class="category-name">書籍</div>
+              <div class="category-name">カフェ</div>
+              <div class="category-name">交際費</div>
+              <div class="category-name">特別費</div>
+              <div class="category-name">その他</div>
+            </div>
+            <div class="right">
+              <%# 変動費のcategory_idは2-13 %>
+              <% 11.times do |num|%>                 
+                <div class="category-num">
+                <%= @variable_cost_category.where(variable_cost_category_id: num+2 ).sum(:price).to_s(:delimited)%>円
+                </div>
+              <%end%>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="middle-right-content">
+    </div>
   </div>
   <div class="bottom-contents">
     <div class="purchase-title-box">
-      <h2 class="purchase-title">購入予定リスト</h2>
+      <h2 class="purchase-title"><%= link_to '購入予定リスト', purchase_plans_path %></h2>
     </div>
     <div class="add-purchase-plan">
-      <%= link_to 'リスト追加', purchase_plans_path , class: :new_plan %>
+      
     </div>
     <div class="purchase-plans-content">
           <% @purchase_plans.each do |plan|%>

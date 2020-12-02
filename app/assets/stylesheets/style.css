@@ -115,23 +115,23 @@ a {
 }
 /**********   common end  ***************************************************************************************/
 /**********   top start ***************************************************************************************/
-.home-btn {
-  border-bottom: 5px solid orange;
-}
+
 .contents {
-  padding: 0 80px;
+  padding: 0 150px;
 }
+
+/* 上段 */
 .top-contents {
   width: 100%;
-  height: 600px;
+  height: 500px;
   margin: 40px 0;
   display: flex;
   justify-content: space-between;
   align-self: start;
 }
 
-.left-content {
-  width: 45%;
+.top-left-content {
+  width: 50%;
   height: 500px;
   background-color: #FFFF;
 }
@@ -167,21 +167,23 @@ a {
   overflow: scroll;
 }
 
-.right-content {
-  width: 55%;
+.top-right-content {
+  width: 50%;
   height: 500px;
   margin-left: 50px;
   background-color: #FFFF;
+  text-align: center;
 }
 
 .month-data,
 .total-data {
-  width: 50%;
+  width: 80%;
   margin-bottom: 30px;
 }
 
 .month-data-title,
-.total-data-title {
+.total-data-title,
+.purchase-plans-data-title {
   font-size: 18px;
   font-weight: bold;
   margin: 0 30px;
@@ -193,7 +195,73 @@ a {
   margin-top: 5px;
   background-color: rgb(202, 199, 199);
 }
+/* 中段 */
+.middle-contents {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  border: 1px solid red;
+}
 
+.middle-left-content {
+  width: 65%;
+  height: 500px;
+  padding: 10px 5px 0;
+  background-color: #FFFF;
+  text-align: center;
+  border: 1px solid red;
+}
+
+.breakdowns {
+  width: 100%;
+  height: 420px;
+  margin-top: 20px;
+  border: 1px solid gray;
+  box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+  border-radius: 10px;
+  display: flex;
+}
+
+.left-breakdown,
+.right-breakdown  {
+  width: 50%;
+  height: 420px;
+  background-color: #FFFF;
+  text-align: center;
+  border: 1px solid green;
+}
+
+.left-breakdown-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 30px;
+  border-bottom: 1px solid orange;
+}
+
+.variable-cost-lists {
+
+  margin-top: 10px;
+  display: flex;
+}
+
+
+.right-breakdown-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0 30px;
+  border-bottom: 1px solid orange;
+}
+
+.middle-right-content {
+  width: 35%;
+  height: 500px;
+  background-color: #FFFF;
+  border: 1px solid red;
+}
+
+
+
+/* 下段 */
 .bottom-contents{
   width: 100%x;
   height: 350px;
@@ -217,33 +285,21 @@ a {
   border-bottom: 2px solid orange;
 }
 
-.add-purchase-plan {
-  width: 100%;
-  height: 40px;
-}
-
-.new_plan {
-  position: relative;
-  display: inline-block;
-  padding: 0.25em 0.5em;
-  text-decoration: none;
-  border-bottom: 2px solid orange;
-  font-weight: bold;
-}
 
 .purchase-plans-content {
   width: 100%;
   height: 240px;
   display: flex;
   justify-content: center;
+  align-items: center;
   overflow: scroll;
 }
 
 .purchases-box {
-  width: 180px;
+  width: calc((100% - 250px) / 3);;
   height: 220px;
   border: 2px solid gray;
-  border-radius: 4px;/*角の丸み*/
+  border-radius: 4px;
   box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
   padding: 10px;
   margin-left: 5px;
