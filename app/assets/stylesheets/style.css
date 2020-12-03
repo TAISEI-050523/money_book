@@ -289,16 +289,12 @@ a {
   box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
 }
 
-
-
 .middle-right-content {
   width: 35%;
   height: 500px;
   background-color: rgb(250, 247, 241);
   border: 1px solid red;
 }
-
-
 
 /* 下段 */
 .bottom-contents{
