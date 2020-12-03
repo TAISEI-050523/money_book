@@ -11,7 +11,7 @@
     <div class='right-header'>
       <div class='lists-right'>
         <% if user_signed_in? %>
-          <div class="user-nickname"><%= link_to current_user.nickname, "#", class: "user-nickname" %>さんのページ </div> 
+          <div class="user-nickname fas fa-user-alt"> <%= link_to current_user.nickname, "#", class: "user-nickname" %>さんのページ </div> 
           <div class="logout"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "log-out" %> </div> 
         <% else %>
           <div><%= link_to 'ログイン', new_user_session_path, class: "login" %></div>
@@ -24,19 +24,19 @@
       <div class="input-contents">
         <ul class="inputs-lists">
           <li class="input-list input-list-color">
-            <%= image_tag 'home.png'%><%= link_to ' HOME', root_path, class: "home_btn" %>
+            <%= link_to ' HOME', root_path, class: "home_btn fas fa-home" %>
           </li>
           <li class="input-list income-btn">
-            <%= link_to ' 収入', new_income_path, class: "income_btn" %>
+            <%= link_to ' 収入', new_income_path, class: "income_btn fas fa-money-bill" %>
           </li>
           <li class="input-list fixed-btn">
-            <%= link_to '固定費', new_fixed_cost_path, class: "fixed_btn" %>
+            <%= link_to ' 固定費', new_fixed_cost_path, class: "fixed_btn fas fa-money-bill-wave" %>
           </li>
           <li class="input-list valiable-btn">
-            <%= link_to '変動費', new_variable_cost_path, class: "valiable_btn" %>
+            <%= link_to ' 変動費', new_variable_cost_path, class: "valiable_btn fas fa-money-bill-wave-alt" %>
           </li>
           <li class="input-list purchase-btn">
-            <%=  link_to '購入予定リスト', purchase_plans_path , class: "purchase_btn" %>
+            <%=  link_to ' 購入予定リスト', purchase_plans_path , class: "purchase_btn fas fa-shopping-cart" %>
           </li>
         </ul>
       </div>
