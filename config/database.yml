@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: money_book_production
-  username: money_book
-  password: <%= ENV['MONEY_BOOK_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
