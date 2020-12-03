@@ -5,7 +5,7 @@ html, body {
 .top-page-header {
   width: 100%;
   height: 120px;
-  background-color:#FFF;
+  background-color:rgb(255, 255, 255);
   border-bottom: 3px solid gray;
   padding: 0 50px;
   position: relative;
@@ -39,20 +39,21 @@ h1 {
 }
 
 .lists-right {
-  width: 50%;
+  width: 220px;
   height: 70px;
   margin: 0 0 0 auto;
-  display: flex;
-  align-items: center;
+
 }
 .user-nickname {
+  width: 200px;
   height: 25px;
   font-size: 16px;
   font-weight:bold;
-  height: 30px;
+  padding: 2px 2px;
 }
 .log-out {
   color: #ffffff;
+  font-weight: bold;
 }
 .logout {
   width: 120px;
@@ -63,7 +64,7 @@ h1 {
   margin-left: 10px;
   border-radius: 4px;
   box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
-  font-weight: bold;
+
 }
 
 .input-contents {
@@ -81,7 +82,7 @@ h1 {
   padding: 0 5px;
 }
 .input-list {
-  width: 120px;
+  width: 150px;
   height: 30px;
   text-align: center;
   text-decoration: none;
@@ -118,14 +119,16 @@ a {
 /**********   common end  ***************************************************************************************/
 /**********   top start ***************************************************************************************/
 .contents {
-  padding: 0 150px;
+  padding: 50px 150px 30px;
+  background-color: rgb(250, 247, 241);
 }
 
 /* 上段 */
 .top-contents {
   width: 100%;
   height: 500px;
-  margin: 50px 0;
+  background-color: rgb(250, 247, 241);
+  margin-bottom: 50px;
   display: flex;
   justify-content: space-between;
   align-self: start;
@@ -134,12 +137,13 @@ a {
 .top-left-content {
   width: 50%;
   height: 500px;
-  background-color: #FFFF;
+  background-color: rgb(250, 247, 241);
 }
 
 .chart-title-box {
   width: 100%;
   height: 30px;
+  background-color: rgb(250, 247, 241);
   text-align: center;
   display: flex;
   justify-content: center;
@@ -156,6 +160,7 @@ a {
 .chart-box {
   width: 100%x;
   height: 450px;
+  background-color: rgb(253, 253, 250);
   margin: 10px;
   padding: 5px;
   border: 1px solid gray;
@@ -172,7 +177,7 @@ a {
   width: 50%;
   height: 500px;
   margin-left: 50px;
-  background-color: #FFFF;
+  background-color: rgb(250, 247, 241);
   text-align: center;
 }
 
@@ -200,6 +205,7 @@ a {
 .middle-contents {
   width: 100%;
   height: 500px;
+  background-color: rgb(250, 247, 241);
   margin-bottom: 50px;
   display: flex;
 
@@ -208,8 +214,8 @@ a {
 .middle-left-content {
   width: 65%;
   height: 500px;
+  background-color: rgb(250, 247, 241);
   padding: 10px 5px 0;
-  background-color: #FFFF;
   text-align: center;
 
 }
@@ -217,22 +223,24 @@ a {
 .breakdowns {
   width: 100%;
   height: 420px;
-  margin-top: 20px;
+  background-color: rgb(250, 247, 241);
+  margin-top: 10px;
   display: flex;
-}
-
-.left-breakdown {
-  border-right: 2px dotted gray;
 }
 
 .left-breakdown,
 .right-breakdown  {
   width: 50%;
   height: 420px;
+  background-color: rgb(248, 237, 211);
+  border-radius: 10px;
+  box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+  margin: 5px;
   text-align: center;
 }
 
-.left-breakdown-title {
+.left-breakdown-title,
+.right-breakdown-title {
   font-size: 18px;
   font-weight: bold;
   margin: 0 30px;
@@ -240,8 +248,10 @@ a {
 }
 
 .variable-cost-lists {
-  margin-top: 10px;
+  padding: 5px;
+  margin: 10px;
   display: flex;
+  
 }
 
 .category-names {
@@ -252,29 +262,39 @@ a {
 }
 
 .category-name {
-  width: 150px;
-  text-align: center;
-  padding-left: 10px;
-  margin-bottom: 10px;
+  width: 120px;
+  height: 20px;
+  font-weight: bolder;
+  text-align: left;
+  border-bottom: 1px dotted gray;
 }
 .category-number {
-  width: 100px;
-  text-align: center;
-  padding-left: 10px;
-  margin-bottom: 10px;
+  width: 125px;
+  height: 24px;
+  text-align: left;
+  border-bottom: 1px dotted gray;
+}
+.new_category_btn {
+  color: #ffffff;
+  font-size: 18px;
 }
 
-.right-breakdown-title {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0 30px;
-  border-bottom: 1px solid orange;
+.new-category-btn {
+  width: 200px;
+  height: 30px;
+  background-color: #51a351;
+  margin: 10px auto;
+  border: none;
+  border-radius: 10px;
+  box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
 }
+
+
 
 .middle-right-content {
   width: 35%;
   height: 500px;
-  background-color: #FFFF;
+  background-color: rgb(250, 247, 241);
   border: 1px solid red;
 }
 
@@ -283,7 +303,6 @@ a {
 /* 下段 */
 .bottom-contents{
   width: 100%x;
-  height: 350px;
   margin: 10px;
   padding: 5px;
 
@@ -292,6 +311,7 @@ a {
   width: 100%;
   height: 30px;
   text-align: center;
+  margin-bottom: 20px;
   display: flex;
   justify-content: center;
 }
@@ -307,21 +327,22 @@ a {
 
 .purchase-plans-content {
   width: 100%;
-  height: 240px;
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
   align-items: center;
-  overflow: scroll;
 }
 
 .purchases-box {
   width: calc((100% - 250px) / 3);;
   height: 220px;
+  background-color: #FFF;
   border: 2px solid gray;
   border-radius: 4px;
   box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
   padding: 10px;
-  margin-left: 5px;
+  margin: 5px;
+  text-align: center;
 }
 .purchase-plan {
   width: 180px;
@@ -349,19 +370,8 @@ a {
   text-align: center;
 }
 
-.form-image {
-  width: 100%;
-  font-size: 16px;
-  color: #ffffff;
-  background-color: orange;
-  border: none;
-  border-radius: 10px;
-  padding: 12px;
-  text-align: center;
-}
-
-.hidden {
-  display: none;
+.image-file {
+  padding: ;
 }
 
 .purchase-text,

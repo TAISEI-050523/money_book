@@ -4,9 +4,7 @@
     <%= form_with(model: @purchase_plan, local: true) do |form|%>
     <ul class="purchase-plan-form">
       <li>
-
-        <%= form.file_field :image, class: "image-file" %>
-
+        画像<%= form.file_field :image, class: "image-file" %>
       </li>
       <li>
         <%= form.text_field :name, placeholder: "商品名(例：自転車)", class: "purchase-text" %>
