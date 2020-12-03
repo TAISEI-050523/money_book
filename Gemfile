@@ -67,6 +67,10 @@ gem "chartkick"
 gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
 
+# EC2
 group :production do
   gem 'unicorn', '5.4.1'
 end
+
+# S3
+gem "aws-sdk-s3", require: false
