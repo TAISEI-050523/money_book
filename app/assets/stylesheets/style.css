@@ -10,6 +10,7 @@ html, body {
 /**********   header start ***************************************************************************************/
 .top-page-header {
   width: 100%;
+  min-width: 1200px;
   height: 120px;
   background-color:rgb(255, 255, 255);
   border-bottom: 3px solid gray;
@@ -61,14 +62,25 @@ h1 {
   color: #ffffff;
   font-weight: bold;
 }
-.logout {
-  width: 120px;
+
+.log-out-btn,
+.log-in-btn,
+.sign-up-btn {
+  display: flex;
+  justify-content: center;
+}
+
+.log-in,
+.log-out,
+.sign-up {
+  width: 150px;
   height: 25px;
   text-align: center;
-  padding: 2px 2px;
-  background: orange;
-  margin-left: 10px;
-  border-radius: 4px;
+  color: #FFF;
+  background-color:orange;
+  margin: 5px auto;
+  border: none;
+  border-radius: 10px;
   box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
 }
 
@@ -101,6 +113,7 @@ h1 {
 /**********   footer start ***************************************************************************************/
 .footer {
   width: 100%;
+  min-width: 1000px;
   height: 80px;
   background-color: #FFF;
   border-top: 3px solid gray;
@@ -124,8 +137,155 @@ a {
 }
 
 /**********   common end  ***************************************************************************************/
+/**********   log-in&&sign-up start   ***************************************************************************/
+
+.form-contents {
+  width: 100%;
+  min-width: 1000px;
+  height: calc(100vh - 200px);
+  background-color: rgb(250, 247, 241);
+  padding: 50px 150px 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.form-contents-sing-up {
+  width: 100%;
+  min-width: 1000px;
+  height: calc(100% - 200px);
+  background-color: rgb(250, 247, 241);
+  padding: 50px 150px 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.login-title-box {
+  width: 300px;
+  text-align: center;
+  margin-right: 15px;
+}
+
+.h1, .login-title {
+  font-size: 40px;
+  font-weight: bold;
+  border-bottom: 2px solid orange;
+}
+
+.new_user {
+  width: 100%;
+  height: 100%;
+}
+
+.form-wrap-log-in,
+.form-wrap-sign-up {
+  width: 80%;
+  background-color: #FFF;
+  padding-bottom: 70px;
+}
+
+.form-wrap-log-in {
+  margin-top: 60px;
+}
+
+.form-wrap-sign-up {
+  height: 600px;
+  margin-top: 0px;
+}
+
+.form-header {
+  width: 100%;
+  height: 90px;
+  text-align: center;
+  font-size: 22px;
+}
+
+.form-header-text {
+  line-height: 100px;
+  border-bottom: 1px solid #FFF;
+  font-weight: bold;
+}
+
+.form-group {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.form-text-wrap {
+  width: 100%;
+  height: 20%;
+}
+
+.indispensable {
+  color: red;
+}
+
+.form-text {
+  font-size: 14px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.input-default {
+  width: 100%;
+  margin-top: 5px;
+  height: 48px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 16px;
+  resize: none;
+}
+
+.login-btn {
+  display: flex;
+  justify-content: center;
+}
+
+.login-blue-btn {
+  width: 200px;
+  height: 30px;
+  color: #FFF;
+  background-color: #0cc8f7;
+  margin: 20px auto;
+  border: none;
+  border-radius: 10px;
+  box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+}
+
+.input-name-wrap {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.input-name {
+  width: 130px;
+  margin: 5px 20px 0 20px;
+  height: 48px;
+  line-height: 30px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 14px;
+  resize: none;
+}
+
+/*ログイン・新規登録  共通 */
+.login-flash-message {
+  text-align: center;
+  color: red;
+}
+
+/**********   log-in&&sign-up end   ***************************************************************************/
 /**********   top start ***************************************************************************************/
 .contents {
+  width: 100%;
+  min-width: 1200px;
+  height: calc(100% - 200px);
   padding: 50px 150px 30px;
   background-color: rgb(250, 247, 241);
 }
