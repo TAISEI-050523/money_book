@@ -165,6 +165,9 @@ a {
 .h1, .login-title {
   font-size: 40px;
   font-weight: bold;
+  font-family: 'Merriweather', serif;
+  font-family: 'Oswald', sans-serif;
+  font-family: 'Work Sans', sans-serif;
   border-bottom: 2px solid orange;
 }
 
@@ -215,7 +218,25 @@ a {
 }
 
 .indispensable {
-  color: red;
+  background: #ea352d;
+  margin-left: 8px;
+  padding: 3px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* フォームの両端の面一のため */
+.indispensable-none {
+  margin-left: 8px;
+  padding: 3px;
+  border-radius: 2px;
+  font-size: 12px;
+  font-weight: bold;
+  text-indent:100%;
+  white-space:nowrap;
+  overflow:hidden;
 }
 
 .form-text {
@@ -574,25 +595,63 @@ a {
 }
 .plan-price
 .plan-date
+
 /**********   top end  ***************************************************************************************/
 /**********   purchase start  ***************************************************************************************/
+
 .input-purchase-plan {
   width: 100%;
-  height: 350px;
-  display: flex;
-  justify-content: center;
-}
-.purchase-plan-forms {
-  width: 50%;
-  height: 350px;
-  margin-top: 50px;
   display: flex;
   justify-content: center;
 }
 
+.purchase-plan-forms {
+  height: 400px;
+  margin-top: 50px;
+}
+
 .purchase-plan-form {
   width: 100%;
-  height: 330px;
+  text-align: center;
+}
+
+.purchase-plan-title {
+  width: 40%;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 auto 20px;
+  border-bottom: 2px solid orange;
+}
+
+.img-upload {
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.weight-bold-text {
+
+  text-align: left;
+  min-width: 170px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.click-up-load {
+  margin: 15px 0;
+  min-width: 250px;
+}
+
+.image-file {
+  font-size: 14px;
+  font-weight: bold;
+  padding: 0 20px;
+}
+
+.item-image {
   text-align: center;
 }
 
@@ -608,7 +667,7 @@ a {
 }
 
 .submit-btn {
-  width: 50%;
+  width: 200px;
   height: 40px;
   color: #ffffff;
   background-color: #51a351;
@@ -648,9 +707,19 @@ a {
   margin-bottom: 10px;
 }
 
+.item-image-box {
+  height: 250px;
+  background-color: #FFF;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .no-image {
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
 }
 
 .item-remarks,
@@ -701,15 +770,7 @@ a {
   border-bottom: 2px solid orange;
 }
 
-.input-select-btn {
-  width: 70%;
-  height: 40px;
-  background-color: #ffffff;
-  border: 1px solid gray;
-  border-radius: 10px;
-  margin: 10px auto;
-}
-
+.input-select-btn,
 .input-remarks,
 .input-price,
 .input-date {

@@ -1,27 +1,40 @@
 <%= render "shared/header" %>
+
 <div class="input-purchase-plan">
   <div class="purchase-plan-forms">
     <%= form_with(model: @purchase_plan, local: true) do |form|%>
-    <ul class="purchase-plan-form">
-      <li>
-        画像<%= form.file_field :image, class: "image-file" %>
-      </li>
-      <li>
-        <%= form.text_field :name, placeholder: "商品名(例：自転車)", class: "purchase-text" %>
-      </li>
-      <li>
-        <%= form.text_field :remarks, placeholder: "備考(例：Amazonで¥30000)", class: "purchase-text" %>
-      </li>
-      <li>
-        <%= form.text_field :price, placeholder: "値段(例：32000)", class: "purchase-text" %>
-      </li>
-      <li>
-        <%= form.date_field :purchase_date, class: "purchase-date" %>
-      </li>
-      <li>
+      <div class="purchase-plan-form">
+        <h2 class="purchase-plan-title">購入予定リスト</h2>
+        <div class="image-upload">
+          <div class="weight-bold-text">
+            <label class="image-file">商品画像</label>
+            <%= form.file_field :image, class:"item-image" %>
+          </div>
+        </div>
+        <div>
+          <label class="form-text">商品名</label>
+          <%= form.text_field :name, placeholder: "例：自転車", class: "purchase-text" %>
+          <span class="indispensable">必須</span>
+        </div>
+        <div>
+          <label class="form-text">備　考</label>
+          <%= form.text_field :remarks, placeholder: "例：Amazonで30000で購入", class: "purchase-text" %>
+          <span class="indispensable-none">　　</span>
+        </div>
+        <div>
+          <label class="form-text">値　段</label>
+          <%= form.text_field :price, placeholder: "例：32000", class: "purchase-text" %>
+          <span class="indispensable">必須</span>
+        </div>
+        <div>
+          <label class="form-text">日　付</label>
+          <%= form.date_field :purchase_date, class: "purchase-date" %>
+          <span class="indispensable">必須</span>
+        </div>
+        <div>
           <%= form.submit "保 存", class: "submit-btn" %>
-      <li>
-    </ul>
+        </div>
+      </div>
     <% end %>
   </div>
 </div>
@@ -32,35 +45,38 @@
     <div class="purchase-plans-lists">
         <% @purchase_plans.each do |plan|%>
           <div class="purchases-items">
-              <h2 class="item-title"><%= plan.name %></h2>
+            <div class="item-title">
+              <%= plan.name %>
+            </div>
+            <div class="item-image-box">
               <%= image_tag plan.image.variant(resize: '220x220'), class: 'plan-image' if plan.image.attached? %> 
               <% unless plan.image.attached? %>
                 <%= image_tag 'noimage.png', class: 'no-image'%>
               <% end %>
-              <div class="item-remarks">
-                備考：<%= plan.remarks %>
+            </div>
+            <div class="item-remarks">
+              備考： <%= plan.remarks %>
+            </div>
+            <div class="item-price">
+              値段： <%= plan.price.to_s(:delimited) %>円
+            </div>
+            <div class="item-date">
+              <div>
+                購入日： <%= plan.purchase_date.strftime("%Y年%m月%d日")%>
               </div>
-              <div class="item-price">
-                値段：¥<%= plan.price.to_s(:delimited) %>円
+              <div>
+                <% if plan.purchase_date <= Date.today %>
+                  <b>購入しよう！</b>
+                <% else %>
+                  <b>残り<%= (plan.purchase_date - Date.today).numerator %>日</b>
+                <% end %>
               </div>
-              <div class="item-date">
-                <div>
-                  購入日：<%= plan.purchase_date.strftime("%Y年%m月%d日")%>
-                </div>
-                <div>
-                  <% if plan.purchase_date <= Date.today %>
-                    <b>購入しよう！</b>
-                  <% else %>
-                    <b>残り<%= (plan.purchase_date - Date.today).numerator %>日</b>
-                  <% end %>
-                </div>
-              </div>
-              <%= link_to '削除', purchase_plan_path(plan.id), method: :delete, class: "delete-btn" %> 
+            </div>
+            <%= link_to '削除', purchase_plan_path(plan.id), method: :delete, class: "delete-btn" %> 
           </div>
         <% end %>
     </div>
     </div>
   </div>
-
 
 <%= render "shared/footer" %>
