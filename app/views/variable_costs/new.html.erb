@@ -2,24 +2,33 @@
 <div class="input-box">
   <div class="input-forms">
     <%= form_with(model: @variable_cost, local: true) do |form| %>
-    <ul class="input-form">
+    <div class="input-form">
       <h2 class="input-title">変動費入力</h2>
-      <li>
-        分類<%= form.collection_select(:variable_cost_category_id, VariableCostCategory.all, :id, :name, {}, {class: "input-select-btn"}) %>
-      </li>
-      <li>
-        備考　<%= form.text_field :remarks, placeholder: "例：インターベット代5,000円含む", class: "input-remarks" %>　
-      </li>
-      <li>
-        金額￥<%= form.text_field :price, placeholder: "金額", class: "input-price" %>円
-      </li>
-      <li>
-        入金日<%= form.date_field :expense_date, placeholder: "出金日", class: "input-date" %>　
-      </li>
-      <li>
-          　　<%= form.submit "保　存", class: "input-btn" %>
-      <li>
-    </ul>
+      <div>
+        <label class="form-text">分　類</label>
+        <%= form.collection_select(:variable_cost_category_id, VariableCostCategory.all, :id, :name, {}, {class: "input-select-btn"}) %>
+        <span class="indispensable">必須</span>
+      </div>
+      <div>
+        <label class="form-text">備　考</label>
+        <%= form.text_field :remarks, placeholder: "例：ランチ1,000円含む", class: "input-remarks" %>
+        <span class="indispensable-none">　　</span>
+      </div>
+      <div>
+        <label class="form-text">金　額</label>
+        <%= form.text_field :price, placeholder: "10000", class: "input-price" %>
+        <label class="form-text"></label>
+        <span class="indispensable">必須</span>
+      </div>
+      <div>
+        <label class="form-text">入金日</label>
+        <%= form.date_field :expense_date, placeholder: "入金日", class: "input-date" %>
+        <span class="indispensable">必須</span>
+      </div>
+      <div>
+          <%= form.submit "CREATE", class: "input-btn" %>
+      </div>
+    </div>
     <% end %>
   </div>
 </div>
