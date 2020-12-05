@@ -1,6 +1,12 @@
 html, body {
   font-family: "HG正楷書体-PRO";
 }
+
+.wrap {
+  overflow: hidden;
+  background-color: rgb(250, 247, 241);
+}
+
 /**********   header start ***************************************************************************************/
 .top-page-header {
   width: 100%;
@@ -64,7 +70,6 @@ h1 {
   margin-left: 10px;
   border-radius: 4px;
   box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
-
 }
 
 .input-contents {
@@ -112,10 +117,12 @@ h1 {
 
 /**********   footer end  ***************************************************************************************/
 /**********   common start ***************************************************************************************/
+
 a {
   color: black;
   text-decoration: none;
 }
+
 /**********   common end  ***************************************************************************************/
 /**********   top start ***************************************************************************************/
 .contents {
@@ -196,11 +203,62 @@ a {
   border-bottom: 2px solid orange;
 }
 
+.category-price{
+  width: 90%;
+  height: 200px;
+  text-align: center;
+  background-color: rgb(248, 237, 211);
+  padding: 30px;
+  margin: 5px;
+  border-radius: 10px;
+  box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+  display: flex;
+}
+
+.categorys {
+  width: 40%;
+  margin-top: 5px;
+}
+.prices {
+  width: 60%;
+  margin-top: 5px;
+}
+
+.category {
+  width: 100%;
+  height: 25px;
+  font-size: 20px;
+  text-align: left;
+  margin-bottom: 8px;
+  border-bottom: 1px dotted gray;
+}
 .price {
   width: 100%;
-  margin-top: 5px;
-  background-color: rgb(202, 199, 199);
+  height: 26px;
+  font-size: 20px;
+  text-align: right;
+  margin-bottom: 8px;
+  border-bottom: 1px dotted gray;
 }
+
+.category-balance {
+  width: 100%;
+  height: 25px;
+  font-size: 20px;
+  text-align: left;
+  margin-bottom: 8px;
+  border-bottom: 1px dotted gray;
+}
+
+.price-balance {
+  width: 100%;
+  height: 26px;
+  font-size: 20px;
+  text-align: right;
+  margin-bottom: 8px;
+  border-bottom: 1px dotted gray;
+}
+
 /* 中段 */
 .middle-contents {
   width: 100%;
@@ -266,12 +324,14 @@ a {
   height: 20px;
   font-weight: bolder;
   text-align: left;
+  margin-bottom: 3px;
   border-bottom: 1px dotted gray;
 }
 .category-number {
   width: 125px;
   height: 24px;
   text-align: left;
+  margin-bottom: 3px;
   border-bottom: 1px dotted gray;
 }
 .new_category_btn {
@@ -283,7 +343,7 @@ a {
   width: 200px;
   height: 30px;
   background-color: #51a351;
-  margin: 10px auto;
+  margin: 5px auto;
   border: none;
   border-radius: 10px;
   box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
@@ -331,19 +391,32 @@ a {
 
 .purchases-box {
   width: calc((100% - 250px) / 3);;
-  height: 220px;
-  background-color: #FFF;
-  border: 2px solid gray;
-  border-radius: 4px;
-  box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
-  padding: 10px;
-  margin: 5px;
+  height: 260px;
   text-align: center;
+  background-color: rgb(248, 237, 211);
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
 }
-.purchase-plan {
-  width: 180px;
-  height: 220px;
+
+.plan-title {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
 }
+.plan-image-box {
+  height: 140px;
+  background-color: #FFF;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.plan-price
+.plan-date
 /**********   top end  ***************************************************************************************/
 /**********   purchase start  ***************************************************************************************/
 .input-purchase-plan {
@@ -364,10 +437,6 @@ a {
   width: 100%;
   height: 330px;
   text-align: center;
-}
-
-.image-file {
-  padding: ;
 }
 
 .purchase-text,
@@ -565,7 +634,7 @@ a {
 
 /**********   input・fixed-cost・variable-cost start  **************************************************************/
 
-/*** errorのよるレイアウト崩れの防止 ***/
+/*** フォーム入力errorによるレイアウト崩れの防止 ***/
 .field_with_errors {
   display: contents;
 }
