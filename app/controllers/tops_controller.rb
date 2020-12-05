@@ -1,6 +1,5 @@
 class TopsController < ApplicationController
   def index
-
     user = User.find(current_user.id)
     one_year_period = (1.years.ago)..(Date.today)
 
@@ -20,19 +19,13 @@ class TopsController < ApplicationController
     @variable_cost_all = user.variable_costs.sum(:price)
     @savings = @income_all - (@fixed_cost_all + @variable_cost_all)
 
-
-    @purchase_plans = user.purchase_plans.order("purchase_date ASC")
+    @purchase_plans = user.purchase_plans.order('purchase_date ASC')
     @sum = 0
     @purchase_plans.each do |plan|
-      if plan.purchase_date > Date.today
-      @sum += plan.price/(plan.purchase_date - plan.created_at.to_date).numerator
-      end
+      @sum += plan.price / (plan.purchase_date - plan.created_at.to_date).numerator if plan.purchase_date > Date.today
     end
-    
-    @fixed_cost_category = user.fixed_costs.where(expense_date: this_month )
-    @variable_cost_category = user.variable_costs.where(expense_date: this_month )
 
+    @fixed_cost_category = user.fixed_costs.where(expense_date: this_month)
+    @variable_cost_category = user.variable_costs.where(expense_date: this_month)
   end
 end
-
-
