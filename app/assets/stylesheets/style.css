@@ -10,7 +10,7 @@ html, body {
 /**********   header start ***************************************************************************************/
 .top-page-header {
   width: 100%;
-  min-width: 1200px;
+  min-width: 800px;
   height: 120px;
   padding: 0 50px;
   background-color:rgb(255, 255, 255);
@@ -108,21 +108,22 @@ h1 {
 
 /**********   header end ***************************************************************************************/
 /**********   footer start ***************************************************************************************/
+
 .footer {
   width: 100%;
-  min-width: 1000px;
+  min-width: 800px;
   height: 80px;
   background-color: #FFF;
   border-top: 3px solid gray;
-  padding: 0 20px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  font-family: 'Corben', cursive;
+  
 }
 
 .footer-title {
-  margin: auto;
+  font-size: 16px;
+  font-family: 'Corben', cursive;
 }
 
 /**********   footer end  ***************************************************************************************/
@@ -287,6 +288,7 @@ a {
 
 /**********   log-in&&sign-up end   ***************************************************************************/
 /**********   top start ***************************************************************************************/
+
 .contents {
   width: 100%;
   min-width: 1200px;
