@@ -1,30 +1,37 @@
 class IncomesController < ApplicationController
+  before_action :set_incomes, only: [:new, :create, :destroy]
+
   def new
-    user = User.find(current_user.id)
+    set_incomes
     @income = Income.new
-    @incomes = user.incomes.order('income_date DESC')
   end
 
   def create
+    set_incomes
     @income = Income.new(income_params)
     if @income.save
-      redirect_to root_path
+      redirect_to '/incomes/new'
     else
-      user = User.find(current_user.id)
-      @incomes = user.incomes.order('income_date DESC')
       render 'new'
     end
   end
 
   def destroy
+    set_incomes
     @income = Income.find(params[:id])
-    @income.destroy
-    user = User.find(current_user.id)
-    @incomes = user.incomes.order('income_date DESC')
-    render 'new'
+    if @income.destroy
+      redirect_to '/incomes/new'
+    else
+      render 'new'
+    end
   end
 
   private
+
+  def set_incomes
+    user = User.find(current_user.id)
+    @incomes = user.incomes.order('income_date DESC')
+  end
 
   def income_params
     params.require(:income).permit(:income_category_id, :remarks, :price, :income_date).merge(user_id: current_user.id)
