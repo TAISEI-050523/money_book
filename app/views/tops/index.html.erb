@@ -3,20 +3,20 @@
   <% if user_signed_in? %>
     <div class="input-contents">
       <ul class="inputs-lists">
-        <li class="input-list input-list-color">
-          <%= link_to ' HOME', root_path, class: "home_btn fas fa-home" %>
+        <li class="input-list input-list-color" >
+          <%= link_to ' HOME', root_path, class: "home_btn fas fa-home", id: "home-btn" %>
         </li>
         <li class="input-list">
-          <%= link_to ' 収入', new_income_path, class: "income_btn fas fa-money-bill" %>
+          <%= link_to ' 収入', new_income_path, class: "income_btn fas fa-money-bill", id: "income-btn" %>
         </li>
         <li class="input-list">
-          <%= link_to ' 固定費', new_fixed_cost_path, class: "fixed_btn fas fa-money-bill-wave" %>
+          <%= link_to ' 固定費', new_fixed_cost_path, class: "fixed_btn fas fa-money-bill-wave", id: "fixed-btn" %>
         </li>
         <li class="input-list">
-          <%= link_to ' 変動費', new_variable_cost_path, class: "valiable_btn fas fa-money-bill-wave-alt" %>
+          <%= link_to ' 変動費', new_variable_cost_path, class: "variable_btn fas fa-money-bill-wave-alt", id: "variable-btn" %>
         </li>
-        <li class="input-list">
-          <%=  link_to ' 購入予定リスト', purchase_plans_path , class: "purchase_btn fas fa-shopping-cart" %>
+        <li class="input-list" >
+          <%=  link_to ' 購入予定リスト', purchase_plans_path , class: "purchase_btn fas fa-shopping-cart ", id: "purchase-btn" %>
         </li>
       </ul>
     </div>
@@ -142,7 +142,7 @@
             </div>
           </div>
           <div class="new-category-btn">
-            <%= link_to '入 力', new_fixed_cost_path, class: "new_category_btn" %>
+            <%= link_to '入 力', new_fixed_cost_path, class: "new_category_btn", id: "left-input-btn" %>
           </div>
         </div>
         <div class="right-breakdown">
@@ -174,7 +174,7 @@
             </div>
           </div>
           <div class="new-category-btn">
-            <%= link_to '入  力', new_variable_cost_path, class: "new_category_btn" %>
+            <%= link_to '入  力', new_variable_cost_path, class: "new_category_btn", id: "right-input-btn" %>
           </div>
         </div>
       </div>
