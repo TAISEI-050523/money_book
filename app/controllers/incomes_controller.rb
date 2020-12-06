@@ -2,7 +2,7 @@ class IncomesController < ApplicationController
   def new
     user = User.find(current_user.id)
     @income = Income.new
-    @incomes = user.incomes.order("income_date DESC")
+    @incomes = user.incomes.order('income_date DESC')
   end
 
   def create
@@ -11,7 +11,7 @@ class IncomesController < ApplicationController
       redirect_to root_path
     else
       user = User.find(current_user.id)
-      @incomes = user.incomes.order("income_date DESC")
+      @incomes = user.incomes.order('income_date DESC')
       render 'new'
     end
   end
@@ -20,7 +20,7 @@ class IncomesController < ApplicationController
     @income = Income.find(params[:id])
     @income.destroy
     user = User.find(current_user.id)
-    @incomes = user.incomes.order("income_date DESC")
+    @incomes = user.incomes.order('income_date DESC')
     render 'new'
   end
 

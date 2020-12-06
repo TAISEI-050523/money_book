@@ -26,16 +26,12 @@
         <span class="indispensable">必須</span>
       </div>
       <div>
-          <%= form.submit "CREATE", class: "input-btn" %>
+          <%= form.submit "入 力", class: "input-btn" %>
       </div>
     </div>
     <% end %>
   </div>
 </div>
-
-
-
-
 <div class="detail-box">
   <div class="detail-title-box">
     <h2 class="detail-title">変動費詳細</h2>
@@ -57,6 +53,13 @@
       削 除
     </div>
   </div>
+  <% unless @variable_costs.present? %>
+    <div class="prompt-purchase-plans">
+      <div class="prompt-purchase-plan">
+        変動費リスト未登録です。
+      </div>
+    </div>
+  <% end %>
   <% @variable_costs.each do |variable_cost| %>
   <div class="details">
     <div class="category-detail">

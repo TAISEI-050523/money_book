@@ -1,9 +1,8 @@
 class PurchasePlansController < ApplicationController
-  
   def index
     user = User.find(current_user.id)
     @purchase_plan = PurchasePlan.new
-    @purchase_plans = user.purchase_plans.order("purchase_date ASC")
+    @purchase_plans = user.purchase_plans.order('purchase_date ASC')
   end
 
   def create
@@ -12,7 +11,7 @@ class PurchasePlansController < ApplicationController
       redirect_to root_path
     else
       user = User.find(current_user.id)
-      @purchase_plans = user.purchase_plans.order("purchase_date ASC")
+      @purchase_plans = user.purchase_plans.order('purchase_date ASC')
       render 'index'
     end
   end
@@ -21,7 +20,7 @@ class PurchasePlansController < ApplicationController
     @purchase_plan = PurchasePlan.find(params[:id])
     @purchase_plan.destroy
     user = User.find(current_user.id)
-    @purchase_plans = user.purchase_plans.order("purchase_date ASC")
+    @purchase_plans = user.purchase_plans.order('purchase_date ASC')
     render 'index'
   end
 
