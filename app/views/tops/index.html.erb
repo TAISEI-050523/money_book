@@ -15,13 +15,10 @@
             {name: "変動費", data: @variable_cost} ],
             id: "users-chart",
             width: "500px", height: "400px", 
-            # min: 0, max: 500000,
             xmin: 1, xmax: 12,
             xtitle: "年, 月", ytitle: "金額（円）" ,
             thousands: ","
             %>
-        </div>
-        <div class="annual-income">
         </div>
       </div>
     </div>
@@ -30,18 +27,29 @@
         <div class="month-data-title">
           <%= Date.today.mon%>月の収支
         </div>
-        <div class="category-price">
-          <div class="categorys">
-            <div class="category fas fa-money-bill"> 収 入</div>
-            <div class="category fas fa-money-bill-wave"> 固定費</div>
-            <div class="category fas fa-money-bill-wave-alt"> 変動費</div>
-            <div class="category-balance fas fa-balance-scale"> 収 支</div>
+        <div class="category-prices">
+          <div class="category-price">
+            <div class="category fas fa-money-bill"> 収　入</div>
+            <div class="price income-color"><%= @income_month.to_s(:delimited) %>円</div>
           </div>
-          <div class="prices">
-            <div class="price"><%= @income_month.to_s(:delimited) %>円</div>
-            <div class="price"><%= @fixed_cost_month.to_s(:delimited) %>円</div>
-            <div class="price"><%= @variable_month.to_s(:delimited) %>円</div>
-            <div class="price-balance"><%= @this_month_balance.to_s(:delimited) %>円</div>
+          <div class="category-price">
+            <div class="category fas fa-money-bill-wave"> 固定費</div>
+            <div class="price expense-color"><%= @fixed_cost_month.to_s(:delimited) %>円</div>
+          </div>
+          <div class="category-price">
+            <div class="category fas fa-money-bill-wave-alt"> 変動費</div>
+            <div class="price expense-color"><%= @variable_month.to_s(:delimited) %>円</div>
+          </div>
+          <div class="category-price">
+            <div class="category fas fa-balance-scale"> 収　支</div>
+            <% if @this_month_balance > 0 %>       <%# 収支総額がプラスの場合は青字、0の場合は黒字マイナスの場合は赤字 %>
+              <div class="price income-color">
+            <% elsif @this_month_balance == 0 %>
+              <div class="price zeo-color">
+            <% else %>
+              <div class="price expense-color">
+            <% end %>
+              <%= @this_month_balance.to_s(:delimited) %>円</div>
           </div>
         </div>
       </div>
@@ -49,18 +57,31 @@
         <div class="total-data-title">
           総額（過去データの合計値）
         </div>
-        <div class="category-price">
-          <div class="categorys">
+        <div class="category-prices">
+          <div class="category-price">
             <div class="category fas fa-money-bill"> 収入総額</div>
-            <div class="category fas fa-money-bill-wave"> 固定費総額</div>
-            <div class="category fas fa-money-bill-wave-alt"> 変動費総額</div>
-            <div class="category-balance fas fa-balance-scale"> 収支総額</div>
+            <div class="price income-color"><%= @income_all.to_s(:delimited) %>円</div>
           </div>
-          <div class="prices">
-            <div class="price"><%= @income_all.to_s(:delimited) %>円</div>
-            <div class="price"><%= @fixed_cost_all.to_s(:delimited) %>円</div>
-            <div class="price"><%= @variable_cost_all.to_s(:delimited) %>円</div>
-            <div class="price-balance"><%= @savings.to_s(:delimited)%>円</div>
+          <div class="category-price">
+            <div class="category fas fa-money-bill-wave"> 固定費総額</div>
+            <div class="price expense-color"><%= @fixed_cost_all.to_s(:delimited) %>円</div>
+          </div>
+          <div class="category-price">
+            <div class="category fas fa-money-bill-wave-alt"> 変動費総額</div>
+            <div class="price expense-color"><%= @variable_cost_all.to_s(:delimited) %>円</div>
+          </div>
+          <div class="balance-var">
+          </div>
+          <div class="category-price">
+            <div class="category fas fa-balance-scale"> 収支総額</div>
+            <% if @savings > 0 %>       <%# 収支総額がプラスの場合は青字、0の場合は黒字マイナスの場合は赤字 %>
+              <div class="price income-color">
+            <% elsif @savings == 0 %>
+              <div class="price zeo-color">
+            <% else %>
+              <div class="price expense-color">
+            <% end %>
+              <%= @savings.to_s(:delimited)%>円</div>
           </div>
         </div>
       </div>
@@ -90,7 +111,7 @@
             </div>
             <div class="category-numbers">
               <%# 固定費のcategory_idは2-10  分類ごとに当月の合計値を算出 %>
-              <% 9.times do |num|%>                 
+              <% 9.times do |num|%>
                 <div class="category-number">
                   <%= @fixed_cost_category.where(fixed_cost_category_id: num+2 ).sum(:price).to_s(:delimited)%>円
                 </div>
@@ -148,6 +169,13 @@
     <div class="purchase-title-box">
       <h2 class="purchase-title"><%= link_to '購入予定リスト', purchase_plans_path %></h2>
     </div>
+    <% unless @purchase_plans.present? %>
+      <div class="prompt-purchase-plans">
+        <div class="prompt-purchase-plan">
+          購入予定リスト未登録です。
+        </div>
+      </div>
+    <% end %>
     <div class="purchase-plans-content">
           <% @purchase_plans.each do |plan|%>
           <div class="purchases-box">

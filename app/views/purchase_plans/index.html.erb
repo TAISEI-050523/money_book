@@ -38,43 +38,50 @@
     <% end %>
   </div>
 </div>
-<div class="bottom-purchase-conttens">
+<div class="bottom-purchase-contents">
     <div class="purchase-title-box">
       <h2 class="purchase-title">購入予定リスト</h2>
     </div>
     <div class="purchase-plans-lists">
-        <% @purchase_plans.each do |plan|%>
-          <div class="purchases-items">
-            <div class="item-title">
-              <%= plan.name %>
+      <% unless @purchase_plans.present? %>
+        <div class="prompt-purchase-plans">
+          <div class="prompt-purchase-plan">
+            購入予定リスト未登録です。
+          </div>
+        </div>
+      <% end %>
+      <% @purchase_plans.each do |plan|%>
+        <div class="purchases-items">
+          <div class="item-title">
+            <%= plan.name %>
+          </div>
+          <div class="item-image-box">
+            <%= image_tag plan.image.variant(resize: '220x220'), class: 'plan-image' if plan.image.attached? %> 
+            <% unless plan.image.attached? %>
+              <%= image_tag 'noimage.png', class: 'no-image'%>
+            <% end %>
+          </div>
+          <div class="item-remarks">
+            備考： <%= plan.remarks %>
+          </div>
+          <div class="item-price">
+            値段： <%= plan.price.to_s(:delimited) %>円
+          </div>
+          <div class="item-date">
+            <div>
+              購入日： <%= plan.purchase_date.strftime("%Y年%m月%d日")%>
             </div>
-            <div class="item-image-box">
-              <%= image_tag plan.image.variant(resize: '220x220'), class: 'plan-image' if plan.image.attached? %> 
-              <% unless plan.image.attached? %>
-                <%= image_tag 'noimage.png', class: 'no-image'%>
+            <div>
+              <% if plan.purchase_date <= Date.today %>
+                <b>購入しよう！</b>
+              <% else %>
+                <b>残り<%= (plan.purchase_date - Date.today).numerator %>日</b>
               <% end %>
             </div>
-            <div class="item-remarks">
-              備考： <%= plan.remarks %>
-            </div>
-            <div class="item-price">
-              値段： <%= plan.price.to_s(:delimited) %>円
-            </div>
-            <div class="item-date">
-              <div>
-                購入日： <%= plan.purchase_date.strftime("%Y年%m月%d日")%>
-              </div>
-              <div>
-                <% if plan.purchase_date <= Date.today %>
-                  <b>購入しよう！</b>
-                <% else %>
-                  <b>残り<%= (plan.purchase_date - Date.today).numerator %>日</b>
-                <% end %>
-              </div>
-            </div>
-            <%= link_to '削除', purchase_plan_path(plan.id), method: :delete, class: "delete-btn" %> 
           </div>
-        <% end %>
+          <%= link_to '削除', purchase_plan_path(plan.id), method: :delete, class: "delete-btn" %> 
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
