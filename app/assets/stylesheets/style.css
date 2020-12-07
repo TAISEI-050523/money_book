@@ -721,6 +721,11 @@ img {
   align-items: center;
 }
 
+.plan-image {
+  width: 220px;
+  height: 220px;
+}
+
 .no-image {
   width: 100px;
   height: 100px;
