@@ -9,14 +9,15 @@ if (document.URL.match( /purchase_plans/ )) {
      // 表示する画像を生成
       const blobImage = document.createElement('img');
       blobImage.setAttribute('src', blob);
+      blobImage.setAttribute('class', 'preview');
      // 生成したHTMLの要素をブラウザに表示させる
       imageElement.appendChild(blobImage);
       ImageList.appendChild(imageElement);
     };
 
     document.getElementById('purchase_plan_image').addEventListener('change', function(e){
-      // 画像が表示されている場合のみ、すでに存在している画像を削除する
-      const imageContent = document.querySelector('img');
+      // 画像が表示されている場合のみ、すでに存在しているプレビュー画像を削除する
+      const imageContent = document.querySelector('.preview');
       if (imageContent){
         imageContent.remove();
       }

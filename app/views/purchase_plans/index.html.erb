@@ -79,7 +79,7 @@
             <%= plan.name %>
           </div>
           <div class="item-image-box">
-            <%= image_tag plan.image.variant(resize: '220x220'), class: 'plan-image' if plan.image.attached? %> 
+            <%= image_tag plan.image, class: 'plan_image' if plan.image.attached? %> 
             <% unless plan.image.attached? %>
               <%= image_tag 'noimage.png', class: 'no-image'%>
             <% end %>
