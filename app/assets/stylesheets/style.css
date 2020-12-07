@@ -620,6 +620,10 @@ img {
   object-fit: contain;
 }
 
+.hidden {
+  display: none;
+}
+
 .weight-bold-text {
   text-align: left;
   min-width: 170px;
