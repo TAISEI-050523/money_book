@@ -1,0 +1,2 @@
+class VariableBudgetsController < ApplicationController
+end
