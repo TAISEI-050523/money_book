@@ -75,7 +75,11 @@
               <%= @this_month_balance.to_s(:delimited) %>円</div>
           </div>
         </div>
+        <div class="fas fa-question-circle">
+            収 支 ＝ 収 入 - (固定費 + 変動費)
+        </div>
       </div>
+
       <div class="total-data">
         <div class="total-data-title">
           総額（過去データの合計値）
@@ -200,29 +204,29 @@
       </div>
     <% end %>
     <div class="purchase-plans-content">
-          <% @purchase_plans.each do |plan|%>
-          <div class="purchases-box">
-            <div class="plan-title">
-              <%= plan.name %>
-            </div>
-            <div class="plan-image-box">
-              <%= image_tag plan.image.variant(resize: '120x120'), class: 'plan-image' if plan.image.attached? %>
-              <% unless plan.image.attached? %>
-                <%= image_tag 'noimage.png'%>
-              <% end %>
-            </div>
-            <div class="plan-prie">
-              <%= plan.price.to_s(:delimited) %>円
-            </div>
-            <div class="plan-date">
-              <% if plan.purchase_date <= Date.today %>
-                <b>購入できます！</b>
-              <% else %>
-                購入まで残り<b><%= (plan.purchase_date - Date.today).numerator %></b>日
-              <% end %>
-            </div>
+      <% @purchase_plans.each do |plan|%>
+        <div class="purchases-box">
+          <div class="plan-title">
+            <%= plan.name %>
           </div>
-        <% end %>
+          <div class="plan-image-box">
+            <%= image_tag plan.image.variant(resize: '120x120'), class: 'plan-image' if plan.image.attached? %>
+            <% unless plan.image.attached? %>
+              <%= image_tag 'noimage.png'%>
+            <% end %>
+          </div>
+          <div class="plan-prie">
+            <%= plan.price.to_s(:delimited) %>円
+          </div>
+          <div class="plan-date">
+            <% if plan.purchase_date <= Date.today %>
+              <b>購入できます！</b>
+            <% else %>
+              購入まで残り<b><%= (plan.purchase_date - Date.today).numerator %></b>日
+            <% end %>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

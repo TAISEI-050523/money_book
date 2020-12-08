@@ -59,6 +59,18 @@
   <div class="detail-title-box">
     <h2 class="detail-title">収入詳細</h2>
   </div>
+  <div class="search_box">
+    <%= form_with(url: search_incomes_path, local: true, method: :get, class: "search-form fas fa-search") do |form| %>
+      <label class="form-text">分類:</label>
+      <%= form.collection_select(:income_category_id, IncomeCategory.all, :id, :name, {}, {class: "search-select"}) %>
+      <label class="form-text">　入金日:</label>
+      <%= form.select :year,(Date.today.year-10)..(Date.today.year+5), prompt:"--", class: "search-year" %>
+      <label class="form-text">年 </label>
+      <%= form.select :month, 1..12, prompt:"--", class: "search-month" %>
+      <label class="form-text">月 </label>
+      <%= form.submit "検索", class: "search-btn" %>
+    <% end %>
+  </div>
   <div class="details">
     <div class="category-detail detail-color">
       分 類
@@ -94,7 +106,7 @@
     <div class="date-detail">
       <%= income.income_date.strftime("%Y年%m月%d日") %>
     </div>
-    <div class="remarks-detail">      
+    <div class="remarks-detail">
       <%= income.remarks %>
     </div>
     <div class="delete-detail">
