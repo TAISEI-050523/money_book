@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_many :fixed_costs
   has_many :variable_costs
   has_many :purchase_plans
+  has_one  :fixed_budget
+  has_one  :variable_budget
 
   validates :nickname, presence: true
   validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{6,128}+\z/i, message: 'is including both half-width alphabet and number.' }
