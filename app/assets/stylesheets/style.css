@@ -369,7 +369,7 @@ a {
 .month-data,
 .total-data {
   width: 80%;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .month-data-title,
@@ -820,6 +820,18 @@ img {
   font-weight: bold;
   border-bottom: 2px solid orange;
   margin-bottom: 30px;
+}
+
+.search_box {
+  height: 50px;  
+}
+
+.search-price {
+  width: 100px;
+}
+
+.search-btn {
+  width: 70px;
 }
 
 .details {
