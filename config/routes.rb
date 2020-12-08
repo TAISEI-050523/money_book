@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   resources :fixed_costs, only: [:new, :create, :destroy]
   resources :variable_costs, only: [:new, :create, :destroy]
   resources :purchase_plans, only: [:index, :new, :create, :destroy]
+  resources :budgets, only: [:index, :new, :create, :edit, :update]
+
 end

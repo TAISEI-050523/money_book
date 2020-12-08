@@ -1,2 +1,0 @@
-module FixedBudgetsHelper
-end

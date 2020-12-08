@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class FixedBudgetsControllerTest < ActionDispatch::IntegrationTest
+class BudgetsControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end
