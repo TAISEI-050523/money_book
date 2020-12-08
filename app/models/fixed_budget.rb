@@ -1,0 +1,2 @@
+class FixedBudget < ApplicationRecord
+end

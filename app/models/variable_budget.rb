@@ -1,0 +1,2 @@
+class VariableBudget < ApplicationRecord
+end
