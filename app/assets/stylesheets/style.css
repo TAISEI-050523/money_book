@@ -105,6 +105,7 @@ h1 {
 .income_btn,
 .fixed_btn,
 .variable_btn,
+.budget_btn,
 .purchase_btn {
   width: 150px;
   height: 28px;
@@ -866,6 +867,88 @@ img {
 }
 
 /**********   input・fixed-cost・variable-cost start  **************************************************************/
+
+.budget-contents {
+  height: 800px;
+}
+.top-budget-content {
+  width: 100%;
+  height: 80px;
+}
+
+.budget-btn-box {
+  width: 600px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.budget-btn {
+  width: 150px;
+  height: 25px;
+  font-weight: bold;
+  text-align: center;
+  color: #FFF;
+  background-color:#51a351;
+  margin: 10px auto;
+  border: none;
+  border-radius: 10px;
+  box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+}
+
+.bottom-budget-content {
+  display: flex;
+  justify-content: center;
+}
+
+.budget-title {
+  width: 900px;
+  background-color: rgb(250, 204, 118);
+  border: 1px solid gray;
+}
+
+.budget-bar {
+  width: 900px;
+  height: 3px;
+  background-color: white;
+}
+
+.budget {
+  width: 900px;
+  display: flex;
+}
+
+.category-budget {
+  width: 300px;
+  height: 25px;
+  padding: 3px 0 3px 20px;
+  border-top: 1px solid gray;
+}
+.month-budget,
+.month-expense,
+.month-balance {
+  width: 200px;
+  height: 25px;
+  font-weight: 500;
+  text-align: right;
+  padding-right: 50px;
+  border-top: 1px solid gray;
+}
+
+.odd-color {
+  background-color: rgb(201, 200, 199);
+}
+.even-color {
+  background-color: white;
+}
+
+
+
+
+
+
+
 
 /*** フォーム入力errorによるレイアウト崩れの防止 ***/
 .field_with_errors {

@@ -1,0 +1,51 @@
+<header class='top-page-header'>
+  <%= render "shared/header" %>
+  <% if user_signed_in? %>
+    <div class="input-contents">
+      <ul class="inputs-lists">
+        <li class="input-list input-list-color" >
+          <%= link_to ' HOME', root_path, class: "home_btn fas fa-home", id: "home-btn" %>
+        </li>
+        <li class="input-list">
+          <%= link_to ' 収入', new_income_path, class: "income_btn fas fa-money-bill", id: "income-btn" %>
+        </li>
+        <li class="input-list">
+          <%= link_to ' 固定費', new_fixed_cost_path, class: "fixed_btn fas fa-money-bill-wave", id: "fixed-btn" %>
+        </li>
+        <li class="input-list">
+          <%= link_to ' 変動費', new_variable_cost_path, class: "variable_btn fas fa-money-bill-wave-alt", id: "variable-btn" %>
+        </li>
+        <li class="input-list" >
+          <%=  link_to ' 購入予定リスト', purchase_plans_path , class: "purchase_btn fas fa-shopping-cart ", id: "purchase-btn" %>
+        </li>
+      </ul>
+    </div>
+  <% end %>
+</header>
+<div class="budget-contents">
+  <div class="top-budget-content">
+    <div class="budget-btn-box">
+      <% unless @budget.present?%>
+        <%= link_to '予算登録', new_budget_path , class: "budget-btn", id: "" %>
+      <% else %>
+        <%=  link_to '予算編集', edit_budget_path(@budget) , class: "budget-btn", id: "" %>
+      <% end %>
+    </div>
+  </div>
+  <div class="bottom-budget-content">
+    <div class="budget-content">
+      <div class="budget">
+        <div class="category-budget">分 類</div>
+        <div class="month-budget"><%= Date.today.mon%>月の予算</div>
+        <div class="month-expense"><%= Date.today.mon%>月使った金額</div>
+        <div class="month-balance">残り使える金額</div>
+      </div>
+      <% unless @budget.present?%>
+        <%= render "blank" %>
+      <% else %>
+        <%= render "entered" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<%= render "shared/footer" %>

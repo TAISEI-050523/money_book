@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_30_022353) do
+ActiveRecord::Schema.define(version: 2020_12_09_031914) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -31,6 +31,34 @@ ActiveRecord::Schema.define(version: 2020_11_30_022353) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "budgets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "house", null: false
+    t.integer "communications", null: false
+    t.integer "electricity", null: false
+    t.integer "gas", null: false
+    t.integer "water", null: false
+    t.integer "education", null: false
+    t.integer "premium", null: false
+    t.integer "lawn", null: false
+    t.integer "fixed_etcetera", null: false
+    t.integer "food", null: false
+    t.integer "commodity", null: false
+    t.integer "transportation", null: false
+    t.integer "hobby", null: false
+    t.integer "clothes", null: false
+    t.integer "health", null: false
+    t.integer "culture", null: false
+    t.integer "book", null: false
+    t.integer "cafe", null: false
+    t.integer "social", null: false
+    t.integer "special", null: false
+    t.integer "variable_etcetera", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_budgets_on_user_id"
   end
 
   create_table "fixed_costs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -91,6 +119,7 @@ ActiveRecord::Schema.define(version: 2020_11_30_022353) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "budgets", "users"
   add_foreign_key "fixed_costs", "users"
   add_foreign_key "incomes", "users"
   add_foreign_key "purchase_plans", "users"

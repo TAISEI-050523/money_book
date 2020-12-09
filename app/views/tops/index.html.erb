@@ -7,7 +7,7 @@
           <%= link_to ' HOME', root_path, class: "home_btn fas fa-home", id: "home-btn" %>
         </li>
         <li class="input-list">
-          <%= link_to ' 収入', new_income_path, class: "income_btn fas fa-money-bill", id: "income-btn" %>
+          <%= link_to ' 収 入', new_income_path, class: "income_btn fas fa-money-bill", id: "income-btn" %>
         </li>
         <li class="input-list">
           <%= link_to ' 固定費', new_fixed_cost_path, class: "fixed_btn fas fa-money-bill-wave", id: "fixed-btn" %>
@@ -16,7 +16,10 @@
           <%= link_to ' 変動費', new_variable_cost_path, class: "variable_btn fas fa-money-bill-wave-alt", id: "variable-btn" %>
         </li>
         <li class="input-list" >
-          <%=  link_to ' 購入予定リスト', purchase_plans_path , class: "purchase_btn fas fa-shopping-cart ", id: "purchase-btn" %>
+          <%= link_to ' 予 算', budgets_path, class: "budget_btn fas fa-wallet", id:"budget-btn" %>
+        </li>
+        <li class="input-list" >
+          <%=  link_to ' 購入予定リスト', purchase_plans_path, class: "purchase_btn fas fa-shopping-cart ", id: "purchase-btn" %>
         </li>
       </ul>
     </div>
@@ -189,6 +192,7 @@
           購入予定リストから一日に貯金すべき金額
         </div>
         <%= @sum.to_s(:delimited) %>円
+        <%= link_to '詳細', budgets_path, class: "new_category_btn", id: "right-input-btn" %>
       </div>
     </div>
   </div>
