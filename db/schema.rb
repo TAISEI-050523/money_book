@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_08_072446) do
+ActiveRecord::Schema.define(version: 2020_12_09_031914) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2020_12_08_072446) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "fixed_budgets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "budgets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "house"
     t.integer "communications"
     t.integer "electricity"
@@ -42,11 +42,23 @@ ActiveRecord::Schema.define(version: 2020_12_08_072446) do
     t.integer "education"
     t.integer "premium"
     t.integer "lawn"
-    t.integer "etcetera"
+    t.integer "fixed_etcetera"
+    t.integer "food"
+    t.integer "commodity"
+    t.integer "transportation"
+    t.integer "hobby"
+    t.integer "clothes"
+    t.integer "health"
+    t.integer "culture"
+    t.integer "book"
+    t.integer "cafe"
+    t.integer "social"
+    t.integer "special"
+    t.integer "variable_etcetera"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_fixed_budgets_on_user_id"
+    t.index ["user_id"], name: "index_budgets_on_user_id"
   end
 
   create_table "fixed_costs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -95,25 +107,6 @@ ActiveRecord::Schema.define(version: 2020_12_08_072446) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "variable_budgets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "food"
-    t.integer "commodity"
-    t.integer "transportation"
-    t.integer "hobby"
-    t.integer "clothes"
-    t.integer "health"
-    t.integer "culture"
-    t.integer "book"
-    t.integer "cafe"
-    t.integer "social"
-    t.integer "special"
-    t.integer "etcetera"
-    t.bigint "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_variable_budgets_on_user_id"
-  end
-
   create_table "variable_costs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "variable_cost_category_id", null: false
     t.text "remarks"
@@ -126,10 +119,9 @@ ActiveRecord::Schema.define(version: 2020_12_08_072446) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "fixed_budgets", "users"
+  add_foreign_key "budgets", "users"
   add_foreign_key "fixed_costs", "users"
   add_foreign_key "incomes", "users"
   add_foreign_key "purchase_plans", "users"
-  add_foreign_key "variable_budgets", "users"
   add_foreign_key "variable_costs", "users"
 end

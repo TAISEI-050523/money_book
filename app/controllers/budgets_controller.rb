@@ -7,12 +7,12 @@ class BudgetsController < ApplicationController
   end
 
   def new
-    @fixed_budget = FixedBudget.new
+    @budget = Budget.new
   end
 
   def create
-    @fixed_budget = FixedBudget.new(fixed_budget_params)
-    if @fixed_budget.save
+    @budget = Budget.new(budget_params)
+    if @budget.save
       redirect_to new_budget_path
     else
       render 'new'
@@ -20,12 +20,12 @@ class BudgetsController < ApplicationController
   end
 
   def edit
-    @fixed_budget = FixedBudget.find(params[:id])
+    @budget = Budget.find(params[:id])
   end
 
   def update
-    fixed_budget = FixedBudget.find(params[:id])
-    if fixed_budget.update(fixed_budget_params)
+    budget = Budget.find(params[:id])
+    if budget.update(budget_params)
       redirect_to budgets_path
     else
       render 'edit'
@@ -34,8 +34,8 @@ class BudgetsController < ApplicationController
 
   private
 
-  def fixed_budget_params
-    params.require(:fixed_budget).permit(:house, :communications, :electricity, :gas, :water, :education, :premium, :lawn, :etcetera).merge(user_id: current_user.id)
+  def budget_params
+    params.require(:budget).permit(:house, :communications, :electricity, :gas, :water, :education, :premium, :lawn, :etcetera, :food, :commodity, :transportation, :hobby, :clothes, :health, :culture, :book, :cafe, :social, :special, :etcetera)
   end
 
 end
