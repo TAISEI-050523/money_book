@@ -13,7 +13,7 @@ class BudgetsController < ApplicationController
   def create
     @fixed_budget = FixedBudget.new(fixed_budget_params)
     if @fixed_budget.save
-      redirect_to '/budgets/new'
+      redirect_to new_budget_path
     else
       render 'new'
     end

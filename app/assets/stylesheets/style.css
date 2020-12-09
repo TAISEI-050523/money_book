@@ -105,6 +105,7 @@ h1 {
 .income_btn,
 .fixed_btn,
 .variable_btn,
+.budget_btn,
 .purchase_btn {
   width: 150px;
   height: 28px;
