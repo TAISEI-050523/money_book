@@ -1,0 +1,44 @@
+
+
+<%= form_with(model: @fixed_budget, url: budgets_path, local: true) do |form| %>
+  <div>
+    <label class="form-text">住居費</label>
+    <%= form.text_field :house, placeholder: "10000", class: "input-price" %>
+  </div>
+  <div>
+    <label class="form-text">交通費</label>
+    <%= form.text_field :communications, placeholder: "10000", class: "input-price" %>
+  </div>
+  <div>
+    <label class="form-text">電気代</label>
+    <%= form.text_field :electricity, placeholder: "10000", class: "input-price" %>
+  </div>
+  <div>
+    <label class="form-text">ガス代</label>
+    <%= form.text_field :gas, placeholder: "10000", class: "input-price" %>
+  </div>
+  <div>
+    <label class="form-text">水道代</label>
+    <%= form.text_field :water, placeholder: "10000", class: "input-price" %>
+  </div>
+  <div>
+    <label class="form-text">教育費</label>
+    <%= form.text_field :education, placeholder: "10000", class: "input-price" %>
+  </div>
+  <div>
+    <label class="form-text">保険代</label>
+    <%= form.text_field :premium, placeholder: "10000", class: "input-price" %>
+  </div>
+  <div>
+    <label class="form-text">ローン</label>
+    <%= form.text_field :lawn, placeholder: "10000", class: "input-price" %>
+  </div>
+  <div>
+    <label class="form-text">その他</label>
+    <%= form.text_field :etcetera, placeholder: "10000", class: "input-price" %>
+  </div>
+  <div>
+    <%= form.submit "入 力", class: "input-btn", id: "submit-btn" %>
+  </div>
+
+<%end%>

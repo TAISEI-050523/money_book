@@ -1,7 +1,7 @@
 class TopsController < ApplicationController
   def index
     user = User.find(current_user.id)
-    one_year_period = (1.years.ago)..(Date.today)
+    one_year_period = (1.years.ago.beginning_of_month)..(Date.today.end_of_month)
 
     @income = user.incomes.where(income_date: one_year_period).group('YEAR(income_date)').group('MONTH(income_date)').sum(:price)
     @fixed_cost = user.fixed_costs.where(expense_date: one_year_period).group('YEAR(expense_date)').group('MONTH(expense_date)').sum(:price)
