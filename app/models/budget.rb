@@ -1,7 +1,7 @@
 class Budget < ApplicationRecord
   belongs_to :user
 
-  with_options  numericality: { only_integer: true } do
+  with_options presence: true, numericality: { only_integer: true }  do
     validates :house 
     validates :communications 
     validates :electricity 
@@ -10,7 +10,7 @@ class Budget < ApplicationRecord
     validates :education 
     validates :premium 
     validates :lawn 
-    validates :etcetera 
+    validates :fixed_etcetera 
     validates :food 
     validates :commodity 
     validates :transportation 
@@ -22,6 +22,7 @@ class Budget < ApplicationRecord
     validates :cafe 
     validates :social 
     validates :special 
-    validates :etcetera
+    validates :variable_etcetera
   end
+  
 end

@@ -34,27 +34,27 @@ ActiveRecord::Schema.define(version: 2020_12_09_031914) do
   end
 
   create_table "budgets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "house"
-    t.integer "communications"
-    t.integer "electricity"
-    t.integer "gas"
-    t.integer "water"
-    t.integer "education"
-    t.integer "premium"
-    t.integer "lawn"
-    t.integer "fixed_etcetera"
-    t.integer "food"
-    t.integer "commodity"
-    t.integer "transportation"
-    t.integer "hobby"
-    t.integer "clothes"
-    t.integer "health"
-    t.integer "culture"
-    t.integer "book"
-    t.integer "cafe"
-    t.integer "social"
-    t.integer "special"
-    t.integer "variable_etcetera"
+    t.integer "house", null: false
+    t.integer "communications", null: false
+    t.integer "electricity", null: false
+    t.integer "gas", null: false
+    t.integer "water", null: false
+    t.integer "education", null: false
+    t.integer "premium", null: false
+    t.integer "lawn", null: false
+    t.integer "fixed_etcetera", null: false
+    t.integer "food", null: false
+    t.integer "commodity", null: false
+    t.integer "transportation", null: false
+    t.integer "hobby", null: false
+    t.integer "clothes", null: false
+    t.integer "health", null: false
+    t.integer "culture", null: false
+    t.integer "book", null: false
+    t.integer "cafe", null: false
+    t.integer "social", null: false
+    t.integer "special", null: false
+    t.integer "variable_etcetera", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

@@ -1,6 +1,6 @@
 
 
-<%= form_with(model: @budget, url: budgets_path, local: true) do |form| %>
+<%= form_with(model: @budget, local: true) do |form| %>
   <div>
     <label class="form-text">住居費</label>
     <%= form.text_field :house, placeholder: "10000", class: "input-price" %>
@@ -35,12 +35,16 @@
   </div>
   <div>
     <label class="form-text">その他</label>
-    <%= form.text_field :etcetera, placeholder: "10000", class: "input-price" %>
+    <%= form.text_field :fixed_etcetera, placeholder: "10000", class: "input-price" %>
   </div>
 
   <div>
     <label class="form-text">食費</label>
     <%= form.text_field :food, placeholder: "10000", class: "input-price" %>
+  </div>
+  <div>
+    <label class="form-text">日用品</label>
+    <%= form.text_field :commodity , placeholder: "10000", class: "input-price" %>
   </div>
   <div>
     <label class="form-text">交通費</label>
@@ -80,7 +84,7 @@
   </div>
   <div>
     <label class="form-text">その他</label>
-    <%= form.text_field :etcetera, placeholder: "10000", class: "input-price" %>
+    <%= form.text_field :variable_etcetera, placeholder: "10000", class: "input-price" %>
   </div>
 
 
