@@ -405,11 +405,13 @@ a {
 
 .category {
   width: 40%;
+  padding-left: 20px;
   margin-top: 5px;
 }
 .price {
   width: 60%;
-  padding-left: 20px;
+  text-align: right;
+  padding-right: 50px;
 }
 
 /* 収入詳細・固定費詳細・変動費詳細ページ 共通 */
@@ -648,7 +650,6 @@ img {
   text-align: center;
 }
 
-
 .purchase-text,
 .purchase-date {
   width: 300px;
@@ -676,7 +677,7 @@ img {
 
 .prompt-purchase-plans {
   width: 100%;
-  height: 200px;
+  height: 100px;
   text-align: center;
 }
 
@@ -799,7 +800,7 @@ img {
   text-align: center;
   color: #FFF;
   background-color:#51a351;
-  margin: 10px auto;
+  margin: 30px auto;
   border: none;
   border-radius: 10px;
   box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
@@ -808,7 +809,7 @@ img {
 .detail-box {
   width: 100%;
   padding: 0 100px;
-  margin-bottom: 50px;
+  margin-bottom: 150px;
   text-align: center;
   overflow: scroll;
 }
@@ -866,8 +867,8 @@ img {
   border: 1px solid gray;
 }
 
-/**********   input・fixed-cost・variable-cost start  **************************************************************/
-
+/**********   input・fixed-cost・variable-cost end   **************************************************************/
+/**********************************   budget start  **************************************************************/
 .budget-contents {
   height: 800px;
 }
@@ -943,12 +944,63 @@ img {
   background-color: white;
 }
 
+/* budget new edit */
+.set-contents {
+  width: 100%;
+  height: 700px;
+  padding: 0 20%;
+  text-align: center;
+}
 
+.set-budget-title {
+  width: 40%;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 20px auto 10px;
+  border-bottom: 2px solid orange;
+}
 
+.set-content {
+  background-color: rgb(248, 237, 211);
+  padding: 0px 10px;
+  margin-top: 30px;
+  border-radius: 10px;
+  box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+}
 
+.middle-set-content {
+  display: flex;
+}
 
+.right-set-content,
+.left-set-content {
+  width: 50%;
+  padding:0 50px;
+}
+.set-title {
+  width: 40%;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0 10px 30px;
+  border-bottom: 2px solid orange;
+}
 
+.budget-form {
+  text-align: right;
+  margin-bottom: 5px;
+}
 
+.budget-price {
+  width: 200px;
+  color: red;
+  text-align: right;
+  padding-right: 15px;
+  margin: 0 5px;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+/**********************************   budget end  **************************************************************/
 
 /*** フォーム入力errorによるレイアウト崩れの防止 ***/
 .field_with_errors {
