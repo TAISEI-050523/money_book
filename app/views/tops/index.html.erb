@@ -43,8 +43,7 @@
             width: "500px", height: "400px", 
             xmin: 1, xmax: 12,
             xtitle: "年, 月", ytitle: "金額（円）" ,
-            thousands: ","
-            %>
+            thousands: "," %>
         </div>
       </div>
     </div>
@@ -64,7 +63,7 @@
           </div>
           <div class="category-price">
             <div class="category fas fa-money-bill-wave-alt"> 変動費</div>
-            <div class="price expense-color"><%= @variable_month.to_s(:delimited) %>円</div>
+            <div class="price expense-color"><%= @variable_cost_month.to_s(:delimited) %>円</div>
           </div>
           <div class="category-price">
             <div class="category fas fa-balance-scale"> 収　支</div>
@@ -104,7 +103,8 @@
           </div>
           <div class="category-price">
             <div class="category fas fa-balance-scale"> 収支総額</div>
-            <% if @savings > 0 %>       <%# 収支総額がプラスの場合は青字、0の場合は黒字マイナスの場合は赤字 %>
+            <%# 収支総額がプラスの場合は青字、0の場合は黒字マイナスの場合は赤字 %>
+            <% if @savings > 0 %>
               <div class="price income-color">
             <% elsif @savings == 0 %>
               <div class="price zeo-color">
@@ -187,12 +187,47 @@
       </div>
     </div>
     <div class="middle-right-content">
-      <div class="purchase-plans-data">
-        <div class="purchase-plans-data-title">
-          購入予定リストから一日に貯金すべき金額
+      <div class="budget-data-titles">
+        予 算
+      </div>
+      <div class="budget-data">
+        <div class="budget-data-title">
+          固定費予算＋変動費予算
         </div>
-        <%= @sum.to_s(:delimited) %>円
-        <%= link_to '詳細', budgets_path, class: "new_category_btn", id: "right-input-btn" %>
+        <div class="sum-budget-data">
+          <div>支出合計<%= @budget_sum.to_s(:delimited) %>円</div>
+          <div>残り使えるお金<%= @budget_nokori.to_s(:delimited) %>円</div>
+        </div>
+        <div class="budget-data-title">
+          固定費予算
+        </div>
+        <div class="fixed-budget-data">
+          <div>固定費予算<%= @fixed_budget.to_s(:delimited) %>円</div>
+          <div>残り使えるお金<%= (@fixed_budget - @fixed_cost_month).to_s(:delimited) %>円</div>
+        </div>
+        <div class="budget-data-title">
+          変動費予算
+        </div>
+        <div class="variable-budget-data">
+          <div>変動費予算<%= @variable_budget.to_s(:delimited) %>円</div>
+          <div>残り使えるお金<%= (@variable_budget - @variable_cost_month).to_s(:delimited) %>円</div>
+          <div>
+            今月残り<b><%= (Date.today.end_of_month - Date.today).numerator %></b>日で<br>
+            １日に使えるお金<%= ((@variable_budget - @variable_cost_month)/(Date.today.end_of_month - Date.today).numerator).to_s(:delimited) %>円
+          </div>
+        </div>
+        <div class="budget-data-title">
+          貯金額目安
+        </div>
+        <div class="one-day-purchase">
+          購入予定リストから１日貯金すべき金額<br><%= @sum.to_s(:delimited) %>円
+        </div>
+        <div class="show-budget-btn">
+          <%= link_to '予算詳細', budgets_path, class: "show_budget_btn", id: "        " %>
+        </div>
+      </div>
+      <div class="fas fa-question-circle">
+          １日に使えるお金 ＝ 変動費予算残り➗当月の残日数
       </div>
     </div>
   </div>

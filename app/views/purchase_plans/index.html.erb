@@ -7,7 +7,7 @@
           <%= link_to ' HOME', root_path, class: "home_btn fas fa-home", id: "home-btn" %>
         </li>
         <li class="input-list">
-          <%= link_to ' 収入', new_income_path, class: "income_btn fas fa-money-bill", id: "income-btn" %>
+          <%= link_to ' 収 入', new_income_path, class: "income_btn fas fa-money-bill", id: "income-btn" %>
         </li>
         <li class="input-list">
           <%= link_to ' 固定費', new_fixed_cost_path, class: "fixed_btn fas fa-money-bill-wave", id: "fixed-btn" %>
@@ -29,7 +29,7 @@
   <div class="purchase-plan-forms">
     <%= form_with(model: @purchase_plan, local: true) do |form|%>
       <div class="purchase-plan-form">
-        <h2 class="purchase-plan-title">購入予定リスト</h2>
+        <h2 class="purchase-plan-title">購入予定リスト追加</h2>
         <div class="image-upload">
           <div class="weight-bold-text">
             <label class="image-file">商品画像</label>
