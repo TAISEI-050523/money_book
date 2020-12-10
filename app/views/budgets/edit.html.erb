@@ -1,95 +1,136 @@
-
-
-<%= form_with(model: @budget, url: budget_path(@budget), local: true) do |form| %>
-  <div>
-    <label class="form-text">住居費</label>
-    <%= form.text_field :house, placeholder: "10000", class: "input-price" %>
+<header class='top-page-header'>
+  <%= render "shared/header" %>
+  <% if user_signed_in? %>
+    <div class="input-contents">
+      <ul class="inputs-lists">
+        <li class="input-list" >
+          <%= link_to ' HOME', root_path, class: "home_btn fas fa-home", id: "home-btn" %>
+        </li>
+        <li class="input-list">
+          <%= link_to ' 収入', new_income_path, class: "income_btn fas fa-money-bill", id: "income-btn" %>
+        </li>
+        <li class="input-list">
+          <%= link_to ' 固定費', new_fixed_cost_path, class: "fixed_btn fas fa-money-bill-wave", id: "fixed-btn" %>
+        </li>
+        <li class="input-list">
+          <%= link_to ' 変動費', new_variable_cost_path, class: "variable_btn fas fa-money-bill-wave-alt", id: "variable-btn" %>
+        </li>
+        <li class="input-list input-list-color" >
+          <%= link_to ' 予 算', budgets_path, class: "budget_btn fas fa-wallet", id:"budget-btn" %>
+        </li>
+        <li class="input-list" >
+          <%=  link_to ' 購入予定リスト', purchase_plans_path , class: "purchase_btn fas fa-shopping-cart ", id: "purchase-btn" %>
+        </li>
+      </ul>
+    </div>
+  <% end %>
+</header>
+<div class="set-contents">
+  <div class="set-budget-title">
+    予算編集
   </div>
-  <div>
-    <label class="form-text">通信費</label>
-    <%= form.text_field :communications, placeholder: "10000", class: "input-price" %>
+  <div class="set-content">
+    <%= form_with(model: @budget, url: budget_path(@budget), local: true) do |form| %>
+      <div class="middle-set-content">
+        <div class="left-set-content">
+          <div class="set-title">
+            固定費予算
+          </div>
+          <div class="budget-form">
+            <label class="budget-category fas fa-house-user"> 住居費</label>
+            <%= form.text_field :house, placeholder: "10000", class: "budget-price" %><b>円</b>
+          </div>
+          <div class="budget-form">
+            <label class="budget-category fas fa-broadcast-tower"> 通信費</label>
+            <%= form.text_field :communications, placeholder: "10000", class: "budget-price" %><b>円</b>
+          </div>
+          <div class="budget-form">
+            <label class="budget-category fas fa-lightbulb"> 電気代</label>
+            <%= form.text_field :electricity, placeholder: "10000", class: "budget-price" %><b>円</b>
+          </div>
+          <div class="budget-form">
+            <label class="budget-category fas fa-fire-alt"> ガス代</label>
+            <%= form.text_field :gas, placeholder: "10000", class: "budget-price" %><b>円</b>
+          </div>
+          <div class="budget-form">
+            <label class="budget-category fas fa-faucet"> 水道代</label>
+            <%= form.text_field :water, placeholder: "10000", class: "budget-price" %><b>円</b>
+          </div>
+          <div class="budget-form">
+            <label class="budget-category fas fa-school"> 教育費</label>
+            <%= form.text_field :education, placeholder: "10000", class: "budget-price" %><b>円</b>
+          </div>
+          <div class="budget-form">
+            <label class="budget-category fas fa-notes-medical"> 保険代</label>
+            <%= form.text_field :premium, placeholder: "10000", class: "budget-price" %><b>円</b>
+          </div>
+          <div class="budget-form">
+            <label class="budget-category fas fa-coins"> ローン</label>
+            <%= form.text_field :lawn, placeholder: "10000", class: "budget-price" %><b>円</b>
+          </div>
+          <div class="budget-form">
+            <label class="budget-category fas fa-question-circle"> その他</label>
+            <%= form.text_field :fixed_etcetera, placeholder: "10000", class: "budget-price" %><b>円</b>
+          </div>
+        </div>
+        <div class="set-right-content">
+          <div class="set-title">
+            変動費予算
+          </div>
+          <div class="budget-form">
+            <label class="budget-category fas fa-utensils"> 食費</label>
+            <%= form.text_field :food, placeholder: "10000", class: "budget-price" %><b>円</b>
+          </div>
+          <div class="budget-form">
+            <label class="budget-category fas fa-box-tissue"> 日用品</label>
+            <%= form.text_field :commodity , placeholder: "10000", class: "budget-price" %><b>円</b>
+          </div>
+          <div class="budget-form">
+            <label class="budget-category fas fa-bus"> 交通費</label>
+            <%= form.text_field :transportation, placeholder: "10000", class: "budget-price" %><b>円</b>
+          </div>
+          <div class="budget-form">
+            <label class="budget-category fas fa-futbol"> 趣味・娯楽</label>
+            <%= form.text_field :hobby, placeholder: "10000", class: "budget-price" %><b>円</b>
+          </div>
+          <div class="budget-form">
+            <label class="budget-category fas fa-tshirt"> 衣服・美容</label>
+            <%= form.text_field :clothes, placeholder: "10000", class: "budget-price" %><b>円</b>
+          </div>
+          <div class="budget-form">
+            <label class="budget-category fas fa-hospital-user"> 健康・医療</label>
+            <%= form.text_field :health, placeholder: "10000", class: "budget-price" %><b>円</b>
+          </div>
+          <div class="budget-form">
+            <label class="budget-category fas fa-book-reader"> 教養・教育</label>
+            <%= form.text_field :culture, placeholder: "10000", class: "budget-price" %><b>円</b>
+          </div>
+          <div class="budget-form">
+            <label class="budget-category fas fa-book-open"> 書籍</label>
+            <%= form.text_field :book, placeholder: "10000", class: "budget-price" %><b>円</b>
+          </div>
+          <div class="budget-form">
+            <label class="budget-category fas fa-coffee"> カフェ</label>
+            <%= form.text_field :cafe, placeholder: "10000", class: "budget-price" %><b>円</b>
+          </div>
+          <div class="budget-form">
+            <label class="budget-category fas fa-user-friends"> 交際費</label>
+            <%= form.text_field :social, placeholder: "10000", class: "budget-price" %><b>円</b>
+          </div>
+          <div class="budget-form">
+            <label class="budget-category fas fa-gifts"> 特別費</label>
+            <%= form.text_field :special, placeholder: "10000", class: "budget-price" %><b>円</b>
+          </div>
+          <div class="budget-form">
+            <label class="budget-category fas fa-question-circle"> その他</label>
+            <%= form.text_field :variable_etcetera, placeholder: "10000", class: "budget-price" %><b>円</b>
+          </div>
+        </div>
+      </div>
+      <div>
+        <%= form.submit "保 存", class: "input-btn", id: "submit-btn" %>
+      </div>
+    <%end%>
   </div>
-  <div>
-    <label class="form-text">電気代</label>
-    <%= form.text_field :electricity, placeholder: "10000", class: "input-price" %>
-  </div>
-  <div>
-    <label class="form-text">ガス代</label>
-    <%= form.text_field :gas, placeholder: "10000", class: "input-price" %>
-  </div>
-  <div>
-    <label class="form-text">水道代</label>
-    <%= form.text_field :water, placeholder: "10000", class: "input-price" %>
-  </div>
-  <div>
-    <label class="form-text">教育費</label>
-    <%= form.text_field :education, placeholder: "10000", class: "input-price" %>
-  </div>
-  <div>
-    <label class="form-text">保険代</label>
-    <%= form.text_field :premium, placeholder: "10000", class: "input-price" %>
-  </div>
-  <div>
-    <label class="form-text">ローン</label>
-    <%= form.text_field :lawn, placeholder: "10000", class: "input-price" %>
-  </div>
-  <div>
-    <label class="form-text">その他</label>
-    <%= form.text_field :fixed_etcetera, placeholder: "10000", class: "input-price" %>
-  </div>
-
-  <div>
-    <label class="form-text">食費</label>
-    <%= form.text_field :food, placeholder: "10000", class: "input-price" %>
-  </div>
-  <div>
-    <label class="form-text">日用品</label>
-    <%= form.text_field :commodity , placeholder: "10000", class: "input-price" %>
-  </div>
-  <div>
-    <label class="form-text">交通費</label>
-    <%= form.text_field :transportation, placeholder: "10000", class: "input-price" %>
-  </div>
-  <div>
-    <label class="form-text">趣味・娯楽</label>
-    <%= form.text_field :hobby, placeholder: "10000", class: "input-price" %>
-  </div>
-  <div>
-    <label class="form-text">衣服・美容</label>
-    <%= form.text_field :clothes, placeholder: "10000", class: "input-price" %>
-  </div>
-  <div>
-    <label class="form-text">健康・医療</label>
-    <%= form.text_field :health, placeholder: "10000", class: "input-price" %>
-  </div>
-  <div>
-    <label class="form-text">教養・教育</label>
-    <%= form.text_field :culture, placeholder: "10000", class: "input-price" %>
-  </div>
-  <div>
-    <label class="form-text">書籍</label>
-    <%= form.text_field :book, placeholder: "10000", class: "input-price" %>
-  </div>
-  <div>
-    <label class="form-text">カフェ</label>
-    <%= form.text_field :cafe, placeholder: "10000", class: "input-price" %>
-  </div>
-  <div>
-    <label class="form-text">交際費</label>
-    <%= form.text_field :social, placeholder: "10000", class: "input-price" %>
-  </div>
-  <div>
-    <label class="form-text">特別費</label>
-    <%= form.text_field :special, placeholder: "10000", class: "input-price" %>
-  </div>
-  <div>
-    <label class="form-text">その他</label>
-    <%= form.text_field :variable_etcetera, placeholder: "10000", class: "input-price" %>
-  </div>
-
-
-  <div>
-    <%= form.submit "入 力", class: "input-btn", id: "submit-btn" %>
-  </div>
-
-<%end%>
+</div>
+<%= render "shared/footer" %>
