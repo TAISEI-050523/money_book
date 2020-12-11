@@ -14,6 +14,12 @@ class Income < ApplicationRecord
   def self.search(search1, search2, search3)
     if search1 != "1" && search2.present? && search3.present?
       Income.where(income_category_id: search1 ).where("YEAR(income_date) = #{search2} AND MONTH(income_date) = #{search3}")
+    elsif search1 != "1" && search2.present?
+      Income.where(income_category_id: search1 ).where("YEAR(income_date) = #{search2}")
+    elsif search1 != "1" && search3.present?
+      Income.where(income_category_id: search1 ).where("MONTH(income_date) = #{search3}")
+    elsif search1 != "1"
+      Income.where(income_category_id: search1 )
     elsif search2.present? && search3.present?
       Income.where("YEAR(income_date) = #{search2} AND MONTH(income_date) = #{search3}")
     elsif search2.present?
@@ -24,7 +30,6 @@ class Income < ApplicationRecord
       Income.all
     end
   end
-
 end
 
 
