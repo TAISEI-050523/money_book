@@ -142,3 +142,13 @@ window.addEventListener('load', function(){
     budgetNewButton.removeAttribute("style", "background-color:#66CDAA;")
   })
 })
+
+window.addEventListener('load', function(){
+  const backButton = document.getElementById("back-btn")
+  backButton.addEventListener('mouseover', function(){
+    backButton.setAttribute("style", "background-color:#66CDAA;")
+  })
+  backButton.addEventListener('mouseout', function(){
+    backButton.removeAttribute("style", "background-color:#66CDAA;")
+  })
+})

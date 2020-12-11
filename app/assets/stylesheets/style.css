@@ -830,7 +830,7 @@ img {
 /**********   input・fixed-cost・variable-cost start  **************************************************************/
 .input-box {
   width: 100%;
-  height: 500px;
+  height: 400px;
   display: flex;
   justify-content: center;
 }
@@ -882,26 +882,31 @@ img {
   box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
 }
 
-.detail-box {
+.detail-box,
+.search-result-content {
   width: 100%;
   padding: 0 100px;
-  margin-bottom: 150px;
+  margin-top: 50px;
+  margin-bottom: 100px;
   text-align: center;
   overflow: scroll;
 }
-.detail-title-box {
+
+.detail-title-box,
+.search-result-title-box  {
   text-align: center;
 }
 
-.detail-title {
+.detail-title,
+.search-result-title {
   font-size: 18px;
   font-weight: bold;
   border-bottom: 2px solid orange;
   margin-bottom: 30px;
 }
 
-.search_box {
-  height: 50px;  
+.search-box {
+  height: 50px;
 }
 
 .search-price {
@@ -941,6 +946,27 @@ img {
 .delete-detail {
   width: 100px;
   border: 1px solid gray;
+}
+
+.back-btn-box {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.back-btn {
+  width: 150px;
+  height: 25px;
+  font-weight: bold;
+  text-align: center;
+  color: #FFF;
+  background-color:#51a351;
+  margin: 10px auto;
+  border: none;
+  border-radius: 10px;
+  box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
 }
 
 /**********   input・fixed-cost・variable-cost end   **************************************************************/

@@ -62,7 +62,7 @@
   <div class="detail-title-box">
     <h2 class="detail-title">収入詳細</h2>
   </div>
-  <div class="search_box">
+  <div class="search-box">
     <%= form_with(url: search_incomes_path, local: true, method: :get, class: "search-form fas fa-search") do |form| %>
       <label class="form-text">分類:</label>
       <%= form.collection_select(:income_category_id, IncomeCategory.all, :id, :name, {}, {class: "search-select"}) %>
