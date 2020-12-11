@@ -30,6 +30,7 @@
     <%= form_with(model: @purchase_plan, local: true) do |form|%>
       <div class="purchase-plan-form">
         <h2 class="purchase-plan-title">購入予定リスト追加</h2>
+        <%= render 'shared/error_messages', model: form.object %>
         <div class="image-upload">
           <div class="weight-bold-text">
             <label class="image-file">商品画像</label>
