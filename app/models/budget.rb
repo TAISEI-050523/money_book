@@ -1,7 +1,7 @@
 class Budget < ApplicationRecord
   belongs_to :user
 
-  with_options presence: true, numericality: { only_integer: true }  do
+  with_options presence: true, numericality: { only_integer: true, message: 'を半角数字で入力してください' }  do
     validates :house 
     validates :communications 
     validates :electricity 

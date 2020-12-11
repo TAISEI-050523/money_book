@@ -4,11 +4,11 @@ class Income < ApplicationRecord
   belongs_to :income_category
 
   with_options presence: true do
-    validates :price, numericality: { only_integer: true }
+    validates :price, numericality: { only_integer: true, message: 'は半角数字で入力してください' }
     validates :income_date
   end
   # 収入区分の選択が「--」の時は保存できないようにする
-  validates :income_category_id, numericality: { other_than: 1, message: 'Select.' }
+  validates :income_category_id, numericality: { other_than: 1, message: 'を選択してください' }
 
   def self.search(search1, search2, search3)
     if search1 != "1" && search2.present? && search3.present?
