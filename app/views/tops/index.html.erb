@@ -67,7 +67,8 @@
           </div>
           <div class="category-price">
             <div class="category fas fa-balance-scale"> 収　支</div>
-            <% if @this_month_balance > 0 %>       <%# 収支総額がプラスの場合は青字、0の場合は黒字マイナスの場合は赤字 %>
+            <%# 収支がプラスの場合は青字、0の場合は黒字、マイナスの場合は赤字 %>
+            <% if @this_month_balance > 0 %>
               <div class="price income-color">
             <% elsif @this_month_balance == 0 %>
               <div class="price zeo-color">
@@ -100,7 +101,7 @@
           </div>
           <div class="category-price">
             <div class="category fas fa-balance-scale"> 収支総額</div>
-            <%# 収支総額がプラスの場合は青字、0の場合は黒字マイナスの場合は赤字 %>
+            <%# 収支総額がプラスの場合は青字、0の場合は、黒字マイナスの場合は赤字 %>
             <% if @savings > 0 %>
               <div class="price income-color">
             <% elsif @savings == 0 %>
