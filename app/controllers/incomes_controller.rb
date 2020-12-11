@@ -28,7 +28,7 @@ class IncomesController < ApplicationController
 
   def search
     user = User.find(current_user.id)
-    @incomes = user.incomes.search(params[:income_category_id], params[:year], params[:month])
+    @incomes = user.incomes.search(params[:income_category_id], params[:year], params[:month]).order('income_date DESC')
   end
 
   private

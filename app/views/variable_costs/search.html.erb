@@ -6,13 +6,13 @@
         <li class="input-list" >
           <%= link_to ' HOME', root_path, class: "home_btn fas fa-home", id: "home-btn" %>
         </li>
-        <li class="input-list input-list-color">
+        <li class="input-list ">
           <%= link_to ' 収 入', new_income_path, class: "income_btn fas fa-money-bill", id: "income-btn" %>
         </li>
         <li class="input-list">
           <%= link_to ' 固定費', new_fixed_cost_path, class: "fixed_btn fas fa-money-bill-wave", id: "fixed-btn" %>
         </li>
-        <li class="input-list">
+        <li class="input-list input-list-color">
           <%= link_to ' 変動費', new_variable_cost_path, class: "variable_btn fas fa-money-bill-wave-alt", id: "variable-btn" %>
         </li>
         <li class="input-list">
@@ -25,10 +25,9 @@
     </div>
   <% end %>
 </header>
-<div class="search-result-contents">
 <div class="search-result-content">
   <div class="search-result-title-box">
-    <h2 class="search-result-title">収入詳細検索結果</h2>
+    <h2 class="search-result-title">変動費詳細検索結果</h2>
   </div>
   <div class="detail-box">
     <div class="details">
@@ -39,38 +38,37 @@
         金 額
       </div>
       <div class="date-detail detail-color">
-        入金日
+        出金日
       </div>
-      <div class="remarks-detail detail-color">      
+      <div class="remarks-detail detail-color">
         備 考
       </div>
       <div class="delete-detail detail-color">
         削 除
       </div>
     </div>
-    <% @incomes.each do |income| %>
+    <% @variable_costs.each do |variable_cost| %>
       <div class="details">
         <div class="category-detail">
-          <%= income.income_category.name %> 
+          <%= variable_cost.variable_cost_category.name %> 
         </div>
-        <div class="price-detail income-color">
-          <%= income.price.to_s(:delimited) %>円
+        <div class="price-detail variable_cost-color">
+          <%= variable_cost.price.to_s(:delimited) %>円
         </div>
         <div class="date-detail">
-          <%= income.income_date.strftime("%Y年%m月%d日") %>
+          <%= variable_cost.expense_date.strftime("%Y年%m月%d日") %>
         </div>
         <div class="remarks-detail">      
-          <%= income.remarks %>
+          <%= variable_cost.remarks %>
         </div>
         <div class="delete-detail">
-          <%= link_to '削除', income_path(income.id), method: :delete, class: "delete-btn"%>
+          <%= link_to '削除', variable_cost_path(variable_cost.id), method: :delete, class: "delete-btn"%>
         </div>
       </div>
     <% end %>
   </div>
   <div class="back-btn-box">
-    <%= link_to ' 戻る', new_income_path, class: "back-btn", id: "back-btn" %>
+    <%= link_to ' 戻る', new_variable_cost_path, class: "back-btn", id: "back-btn" %>
   </div>
-</div>
 </div>
 <%= render "shared/footer" %>
