@@ -26,6 +26,11 @@ class FixedCostsController < ApplicationController
     end
   end
 
+  def search
+    user = User.find(current_user.id)
+    @fixed_costs = user.fixed_costs.search(params[:fixed_cost_category_id], params[:year], params[:month]).order('expense_date DESC')
+  end
+
   private
 
   def set_fixed_costs
