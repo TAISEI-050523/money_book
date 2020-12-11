@@ -598,18 +598,6 @@ a {
   margin-top: 20px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
 /* 下段 */
 .bottom-contents{
   width: 100%x;
@@ -992,24 +980,24 @@ img {
 }
 
 .budget-title {
-  width: 900px;
+  width: 800px;
   background-color: rgb(250, 204, 118);
   border: 1px solid gray;
 }
 
 .budget-bar {
-  width: 900px;
+  width: 800px;
   height: 3px;
   background-color: white;
 }
 
 .budget {
-  width: 900px;
+  width: 800px;
   display: flex;
 }
 
 .category-budget {
-  width: 300px;
+  width: 200px;
   height: 25px;
   padding: 3px 0 3px 20px;
   border-top: 1px solid gray;
@@ -1025,8 +1013,23 @@ img {
   border-top: 1px solid gray;
 }
 
+.top-font {
+  font-weight: bold;
+}
+
+.gray-color {
+  font-weight: bold;
+  background-color: #cacaca;
+  border-top: 1px solid rgb(216, 212, 212);
+}
+
+.orange-color{
+  background-color: rgb(250, 204, 118);
+  border: 1px solid rgb(216, 212, 212);
+}
+
 .odd-color {
-  background-color: rgb(201, 200, 199);
+  background-color: rgb(230, 227, 224);
 }
 .even-color {
   background-color: white;

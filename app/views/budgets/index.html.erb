@@ -29,24 +29,24 @@
   <div class="top-budget-content">
     <div class="budget-btn-box">
       <% unless @budget.present?%>
-        <%= link_to '予算登録', new_budget_path , class: "budget-btn", id: "" %>
+        <%= link_to '予算登録', new_budget_path , class: "budget-btn", id: "budget-new-btn" %>
       <% else %>
-        <%=  link_to '予算編集', edit_budget_path(@budget) , class: "budget-btn", id: "" %>
+        <%=  link_to '予算編集', edit_budget_path(@budget) , class: "budget-btn", id: "budget-new-btn" %>
       <% end %>
     </div>
   </div>
   <div class="bottom-budget-content">
     <div class="budget-content">
-      <div class="budget">
-        <div class="category-budget">分 類</div>
-        <div class="month-budget"><%= Date.today.mon%>月の予算</div>
-        <div class="month-expense"><%= Date.today.mon%>月使った金額</div>
-        <div class="month-balance">残り使える金額</div>
+      <div class="budget gray-color">
+        <div class="category-budget top-font">分 類</div>
+        <div class="month-budget top-font"><%= Date.today.mon%>月の予算</div>
+        <div class="month-expense top-font"><%= Date.today.mon%>月使った金額</div>
+        <div class="month-balance top-font">残り使える金額</div>
       </div>
-      <% unless @budget.present?%>
-        <%= render "blank" %>
-      <% else %>
+      <% if @budget.present?%>
         <%= render "entered" %>
+      <% else %>
+        <%= render "blank" %>
       <% end %>
     </div>
   </div>
