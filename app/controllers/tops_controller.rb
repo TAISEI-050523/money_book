@@ -27,13 +27,13 @@ class TopsController < ApplicationController
     @fixed_cost_category = user.fixed_costs.where(expense_date: this_month)
     @variable_cost_category = user.variable_costs.where(expense_date: this_month)
 
-
+    if user.budget.present?
     @budget = user.budget
     @fixed_budget = (@budget.house + @budget.communications + @budget.electricity + @budget.gas + @budget.water + @budget.education + @budget.premium + @budget.lawn + @budget.fixed_etcetera)
     @variable_budget = (@budget.food + @budget.commodity + @budget.transportation + @budget.hobby + @budget.clothes + @budget.health + @budget.culture + @budget.book + @budget.cafe + @budget.social + @budget.special + @budget.variable_etcetera)
     @budget_sum = (@fixed_budget + @variable_budget)
     @budget_nokori = @budget_sum - (@fixed_cost_month + @fixed_cost_month)
-
+    end
 
   end
 end

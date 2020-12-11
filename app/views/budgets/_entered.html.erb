@@ -1,134 +1,140 @@
-<div class="budget-title">
-  <h2>固定費</h2>
+<div class="budget orange-color">
+  <div class="category-budget fas fa-money-bill-wave"> 固定費</div>
+  <div class="month-budget"><%= @fixed_budget.to_s(:delimited) %><b> 円</b></div>
+  <div class="month-expense"><%= @fixed_cost_month.to_s(:delimited) %><b> 円</b></div>
+  <div class="month-balance"><%= (@fixed_budget - @fixed_cost_month).to_s(:delimited) %><b> 円</b></div>
 </div>
 <div class="budget odd-color">
   <div class="category-budget fas fa-house-user"> 住居費</div>
-  <div class="month-budget"><%= @budget.house.to_s(:delimited) %>円</div>
-  <div class="month-expense"><%= @fixed_cost.where(fixed_cost_category_id: 2).sum(:price).to_s(:delimited)%>円</div>
-  <div class="month-balance"><%= (@budget.house - @fixed_cost.where(fixed_cost_category_id: 2).sum(:price)).to_s(:delimited)%>円</div>
+  <div class="month-budget"><%= @budget.house.to_s(:delimited) %><b> 円</b></div>
+  <div class="month-expense"><%= @fixed_cost.where(fixed_cost_category_id: 2).sum(:price).to_s(:delimited) %><b> 円</b></div>
+  <div class="month-balance"><%= (@budget.house - @fixed_cost.where(fixed_cost_category_id: 2).sum(:price)).to_s(:delimited) %><b> 円</b></div>
 </div>
 <div class="budget even-color">
   <div class="category-budget fas fa-broadcast-tower"> 通信費</div>
-  <div class="month-budget"><%= @budget.communications.to_s(:delimited) %>円</div>
-  <div class="month-expense"><%= @fixed_cost.where(fixed_cost_category_id: 3).sum(:price).to_s(:delimited)%>円</div>
-  <div class="month-balance"><%= (@budget.communications - @fixed_cost.where(fixed_cost_category_id: 3).sum(:price)).to_s(:delimited)%>円</div>
+  <div class="month-budget"><%= @budget.communications.to_s(:delimited) %><b> 円</b></div>
+  <div class="month-expense"><%= @fixed_cost.where(fixed_cost_category_id: 3).sum(:price).to_s(:delimited) %><b> 円</b></div>
+  <div class="month-balance"><%= (@budget.communications - @fixed_cost.where(fixed_cost_category_id: 3).sum(:price)).to_s(:delimited) %><b> 円</b></div>
 </div>
 <div class="budget odd-color">
   <div class="category-budget fas fa-lightbulb"> 電気代</div>
-  <div class="month-budget"><%= @budget.electricity.to_s(:delimited) %>円</div>
-  <div class="month-expense"><%= @fixed_cost.where(fixed_cost_category_id: 4).sum(:price).to_s(:delimited)%>円</div>
-  <div class="month-balance"><%= (@budget.electricity - @fixed_cost.where(fixed_cost_category_id: 4).sum(:price)).to_s(:delimited)%>円</div>
+  <div class="month-budget"><%= @budget.electricity.to_s(:delimited) %><b> 円</b></div>
+  <div class="month-expense"><%= @fixed_cost.where(fixed_cost_category_id: 4).sum(:price).to_s(:delimited) %><b> 円</b></div>
+  <div class="month-balance"><%= (@budget.electricity - @fixed_cost.where(fixed_cost_category_id: 4).sum(:price)).to_s(:delimited) %><b> 円</b></div>
 </div>
 <div class="budget even-color">
   <div class="category-budget fas fa-fire-alt"> ガス代</div>
-  <div class="month-budget"><%= @budget.gas.to_s(:delimited) %>円</div>
-  <div class="month-expense"><%= @fixed_cost.where(fixed_cost_category_id: 5).sum(:price).to_s(:delimited)%>円</div>
-  <div class="month-balance"><%= (@budget.gas - @fixed_cost.where(fixed_cost_category_id: 5).sum(:price)).to_s(:delimited)%>円</div>
+  <div class="month-budget"><%= @budget.gas.to_s(:delimited) %><b> 円</b></div>
+  <div class="month-expense"><%= @fixed_cost.where(fixed_cost_category_id: 5).sum(:price).to_s(:delimited) %><b> 円</b></div>
+  <div class="month-balance"><%= (@budget.gas - @fixed_cost.where(fixed_cost_category_id: 5).sum(:price)).to_s(:delimited) %><b> 円</b></div>
 </div>
 <div class="budget odd-color">
   <div class="category-budget fas fa-faucet"> 水道代</div>
-  <div class="month-budget"><%= @budget.water.to_s(:delimited) %>円</div>
-  <div class="month-expense"><%= @fixed_cost.where(fixed_cost_category_id: 6).sum(:price).to_s(:delimited)%>円</div>
-  <div class="month-balance"><%= (@budget.water - @fixed_cost.where(fixed_cost_category_id: 6).sum(:price)).to_s(:delimited)%>円</div>
+  <div class="month-budget"><%= @budget.water.to_s(:delimited) %><b> 円</b></div>
+  <div class="month-expense"><%= @fixed_cost.where(fixed_cost_category_id: 6).sum(:price).to_s(:delimited) %><b> 円</b></div>
+  <div class="month-balance"><%= (@budget.water - @fixed_cost.where(fixed_cost_category_id: 6).sum(:price)).to_s(:delimited) %><b> 円</b></div>
 </div>
 <div class="budget even-color">
   <div class="category-budget fas fa-school"> 教育費</div>
-  <div class="month-budget"><%= @budget.education.to_s(:delimited) %>円</div>
-  <div class="month-expense"><%= @fixed_cost.where(fixed_cost_category_id: 7).sum(:price).to_s(:delimited)%>円</div>
-  <div class="month-balance"><%= (@budget.education - @fixed_cost.where(fixed_cost_category_id: 7).sum(:price)).to_s(:delimited)%>円</div>
+  <div class="month-budget"><%= @budget.education.to_s(:delimited) %><b> 円</b></div>
+  <div class="month-expense"><%= @fixed_cost.where(fixed_cost_category_id: 7).sum(:price).to_s(:delimited) %><b> 円</b></div>
+  <div class="month-balance"><%= (@budget.education - @fixed_cost.where(fixed_cost_category_id: 7).sum(:price)).to_s(:delimited) %><b> 円</b></div>
 </div>
 <div class="budget odd-color">
   <div class="category-budget fas fa-notes-medical"> 保険代</div>
-  <div class="month-budget"><%= @budget.premium.to_s(:delimited) %>円</div>
-  <div class="month-expense"><%= @fixed_cost.where(fixed_cost_category_id: 8).sum(:price).to_s(:delimited)%>円</div>
-  <div class="month-balance"><%= (@budget.premium - @fixed_cost.where(fixed_cost_category_id: 8).sum(:price)).to_s(:delimited)%>円</div>
+  <div class="month-budget"><%= @budget.premium.to_s(:delimited) %><b> 円</b></div>
+  <div class="month-expense"><%= @fixed_cost.where(fixed_cost_category_id: 8).sum(:price).to_s(:delimited) %><b> 円</b></div>
+  <div class="month-balance"><%= (@budget.premium - @fixed_cost.where(fixed_cost_category_id: 8).sum(:price)).to_s(:delimited) %><b> 円</b></div>
 </div>
 <div class="budget even-color">
   <div class="category-budget fas fa-coins"> ローン</div>
-  <div class="month-budget"><%= @budget.lawn.to_s(:delimited) %>円</div>
-  <div class="month-expense"><%= @fixed_cost.where(fixed_cost_category_id: 9).sum(:price).to_s(:delimited)%>円</div>
-  <div class="month-balance"><%= (@budget.lawn - @fixed_cost.where(fixed_cost_category_id: 9).sum(:price)).to_s(:delimited)%>円</div>
+  <div class="month-budget"><%= @budget.lawn.to_s(:delimited) %><b> 円</b></div>
+  <div class="month-expense"><%= @fixed_cost.where(fixed_cost_category_id: 9).sum(:price).to_s(:delimited) %><b> 円</b></div>
+  <div class="month-balance"><%= (@budget.lawn - @fixed_cost.where(fixed_cost_category_id: 9).sum(:price)).to_s(:delimited) %><b> 円</b></div>
 </div>
 <div class="budget odd-color">
   <div class="category-budget fas fa-question-circle"> その他</div>
-  <div class="month-budget"><%= @budget.fixed_etcetera.to_s(:delimited) %>円</div>
-  <div class="month-expense"><%= @fixed_cost.where(fixed_cost_category_id: 10).sum(:price).to_s(:delimited)%>円</div>
-  <div class="month-balance"><%= (@budget.fixed_etcetera - @fixed_cost.where(fixed_cost_category_id: 10).sum(:price)).to_s(:delimited)%>円</div>
+  <div class="month-budget"><%= @budget.fixed_etcetera.to_s(:delimited) %><b> 円</b></div>
+  <div class="month-expense"><%= @fixed_cost.where(fixed_cost_category_id: 10).sum(:price).to_s(:delimited) %><b> 円</b></div>
+  <div class="month-balance"><%= (@budget.fixed_etcetera - @fixed_cost.where(fixed_cost_category_id: 10).sum(:price)).to_s(:delimited) %><b> 円</b></div>
 </div>
 <div class="budget-bar">
 </div>
-<div class="budget-title">
-    <h2>変動費</h2>
+<div class="budget orange-color">
+  <div class="category-budget fas fa-money-bill-wave-alt"> 変動費</div>
+  <div class="month-budget"><%= @variable_budget.to_s(:delimited) %><b> 円</b></div>
+  <div class="month-expense"><%= @variable_cost_month.to_s(:delimited) %><b> 円</b></div>
+  <div class="month-balance"><%= (@variable_budget - @variable_cost_month).to_s(:delimited) %><b> 円</b></div>
 </div>
 <div class="budget odd-color">
   <div class="category-budget fas fa-utensils"> 食費</div>
-  <div class="month-budget"><%= @budget.food.to_s(:delimited) %>円</div>
-  <div class="month-expense"><%= @variable_cost.where(variable_cost_category_id: 2).sum(:price).to_s(:delimited)%>円</div>
-  <div class="month-balance"><%= (@budget.food - @variable_cost.where(variable_cost_category_id: 2).sum(:price)).to_s(:delimited)%>円</div>
+  <div class="month-budget"><%= @budget.food.to_s(:delimited) %><b> 円</b></div>
+  <div class="month-expense"><%= @variable_cost.where(variable_cost_category_id: 2).sum(:price).to_s(:delimited) %><b> 円</b></div>
+  <div class="month-balance"><%= (@budget.food - @variable_cost.where(variable_cost_category_id: 2).sum(:price)).to_s(:delimited) %><b> 円</b></div>
 </div>
 <div class="budget even-color">
   <div class="category-budget fas fa-box-tissue"> 日用品</div>
-  <div class="month-budget"><%= @budget.commodity.to_s(:delimited) %>円</div>
-  <div class="month-expense"><%= @variable_cost.where(variable_cost_category_id: 3).sum(:price).to_s(:delimited)%>円</div>
-  <div class="month-balance"><%= (@budget.commodity - @variable_cost.where(variable_cost_category_id: 3).sum(:price)).to_s(:delimited)%>円</div>
+  <div class="month-budget"><%= @budget.commodity.to_s(:delimited) %><b> 円</b></div>
+  <div class="month-expense"><%= @variable_cost.where(variable_cost_category_id: 3).sum(:price).to_s(:delimited) %><b> 円</b></div>
+  <div class="month-balance"><%= (@budget.commodity - @variable_cost.where(variable_cost_category_id: 3).sum(:price)).to_s(:delimited) %><b> 円</b></div>
 </div>
 <div class="budget odd-color">
   <div class="category-budget fas fa-bus"> 交通費</div>
-  <div class="month-budget"><%= @budget.transportation.to_s(:delimited) %>円</div>
-  <div class="month-expense"><%= @variable_cost.where(variable_cost_category_id: 4).sum(:price).to_s(:delimited)%>円</div>
-  <div class="month-balance"><%= (@budget.transportation - @variable_cost.where(variable_cost_category_id: 4).sum(:price)).to_s(:delimited)%>円</div>
+  <div class="month-budget"><%= @budget.transportation.to_s(:delimited) %><b> 円</b></div>
+  <div class="month-expense"><%= @variable_cost.where(variable_cost_category_id: 4).sum(:price).to_s(:delimited) %><b> 円</b></div>
+  <div class="month-balance"><%= (@budget.transportation - @variable_cost.where(variable_cost_category_id: 4).sum(:price)).to_s(:delimited) %><b> 円</b></div>
 </div>
 <div class="budget">
   <div class="category-budget fas fa-futbol"> 趣味・娯楽</div>
-  <div class="month-budget"><%= @budget.hobby.to_s(:delimited) %>円</div>
-  <div class="month-expense"><%= @variable_cost.where(variable_cost_category_id: 5).sum(:price).to_s(:delimited)%>円</div>
-  <div class="month-balance"><%= (@budget.hobby - @variable_cost.where(variable_cost_category_id: 5).sum(:price)).to_s(:delimited)%>円</div>
+  <div class="month-budget"><%= @budget.hobby.to_s(:delimited) %><b> 円</b></div>
+  <div class="month-expense"><%= @variable_cost.where(variable_cost_category_id: 5).sum(:price).to_s(:delimited) %><b> 円</b></div>
+  <div class="month-balance"><%= (@budget.hobby - @variable_cost.where(variable_cost_category_id: 5).sum(:price)).to_s(:delimited) %><b> 円</b></div>
 </div>
 <div class="budget odd-color">
   <div class="category-budget fas fa-tshirt"> 衣服・美容</div>
-  <div class="month-budget"><%= @budget.clothes.to_s(:delimited) %>円</div>
-  <div class="month-expense"><%= @variable_cost.where(variable_cost_category_id: 6).sum(:price).to_s(:delimited)%>円</div>
-  <div class="month-balance"><%= (@budget.clothes- @variable_cost.where(variable_cost_category_id: 6).sum(:price)).to_s(:delimited)%>円</div>
+  <div class="month-budget"><%= @budget.clothes.to_s(:delimited) %><b> 円</b></div>
+  <div class="month-expense"><%= @variable_cost.where(variable_cost_category_id: 6).sum(:price).to_s(:delimited) %><b> 円</b></div>
+  <div class="month-balance"><%= (@budget.clothes- @variable_cost.where(variable_cost_category_id: 6).sum(:price)).to_s(:delimited) %><b> 円</b></div>
 </div>
 <div class="budget even-color">
   <div class="category-budget fas fa-hospital-user"> 健康・医療</div>
-  <div class="month-budget"><%= @budget.health.to_s(:delimited) %>円</div>
-  <div class="month-expense"><%= @variable_cost.where(variable_cost_category_id: 7).sum(:price).to_s(:delimited)%>円</div>
-  <div class="month-balance"><%= (@budget.health - @variable_cost.where(variable_cost_category_id: 7).sum(:price)).to_s(:delimited)%>円</div>
+  <div class="month-budget"><%= @budget.health.to_s(:delimited) %><b> 円</b></div>
+  <div class="month-expense"><%= @variable_cost.where(variable_cost_category_id: 7).sum(:price).to_s(:delimited) %><b> 円</b></div>
+  <div class="month-balance"><%= (@budget.health - @variable_cost.where(variable_cost_category_id: 7).sum(:price)).to_s(:delimited) %><b> 円</b></div>
 </div>
 <div class="budget odd-color">
   <div class="category-budget fas fa-book-reader"> 教養・教育</div>
-  <div class="month-budget"><%= @budget.culture.to_s(:delimited)%>円</div>
-  <div class="month-expense"><%= @variable_cost.where(variable_cost_category_id: 8).sum(:price).to_s(:delimited)%>円</div>
-  <div class="month-balance"><%= (@budget.culture - @variable_cost.where(variable_cost_category_id: 8).sum(:price)).to_s(:delimited)%>円</div>
+  <div class="month-budget"><%= @budget.culture.to_s(:delimited) %><b> 円</b></div>
+  <div class="month-expense"><%= @variable_cost.where(variable_cost_category_id: 8).sum(:price).to_s(:delimited) %><b> 円</b></div>
+  <div class="month-balance"><%= (@budget.culture - @variable_cost.where(variable_cost_category_id: 8).sum(:price)).to_s(:delimited) %><b> 円</b></div>
 </div>
 <div class="budget even-color">
   <div class="category-budget fas fa-book-open"> 書籍</div>
-  <div class="month-budget"><%= @budget.book.to_s(:delimited) %>円</div>
-  <div class="month-expense"><%= @variable_cost.where(variable_cost_category_id: 9).sum(:price).to_s(:delimited)%>円</div>
-  <div class="month-balance"><%= (@budget.book - @variable_cost.where(variable_cost_category_id: 9).sum(:price)).to_s(:delimited)%>円</div>
+  <div class="month-budget"><%= @budget.book.to_s(:delimited) %><b> 円</b></div>
+  <div class="month-expense"><%= @variable_cost.where(variable_cost_category_id: 9).sum(:price).to_s(:delimited) %><b> 円</b></div>
+  <div class="month-balance"><%= (@budget.book - @variable_cost.where(variable_cost_category_id: 9).sum(:price)).to_s(:delimited) %><b> 円</b></div>
 </div>
 <div class="budget odd-color">
   <div class="category-budget fas fa-coffee"> カフェ</div>
-  <div class="month-budget"><%= @budget.cafe.to_s(:delimited)%>円</div>
-  <div class="month-expense"><%= @variable_cost.where(variable_cost_category_id: 10).sum(:price).to_s(:delimited)%>円</div>
-  <div class="month-balance"><%= (@budget.cafe - @variable_cost.where(variable_cost_category_id: 10).sum(:price)).to_s(:delimited)%>円</div>
+  <div class="month-budget"><%= @budget.cafe.to_s(:delimited) %><b> 円</b></div>
+  <div class="month-expense"><%= @variable_cost.where(variable_cost_category_id: 10).sum(:price).to_s(:delimited) %><b> 円</b></div>
+  <div class="month-balance"><%= (@budget.cafe - @variable_cost.where(variable_cost_category_id: 10).sum(:price)).to_s(:delimited) %><b> 円</b></div>
 </div>
 <div class="budget even-color">
   <div class="category-budget fas fa-user-friends"> 交際費</div>
-  <div class="month-budget"><%= @budget.social.to_s(:delimited) %>円</div>
-  <div class="month-expense"><%= @variable_cost.where(variable_cost_category_id: 11).sum(:price).to_s(:delimited)%>円</div>
-  <div class="month-balance"><%= (@budget.social - @variable_cost.where(variable_cost_category_id: 11).sum(:price)).to_s(:delimited)%>円</div>
+  <div class="month-budget"><%= @budget.social.to_s(:delimited) %><b> 円</b></div>
+  <div class="month-expense"><%= @variable_cost.where(variable_cost_category_id: 11).sum(:price).to_s(:delimited) %><b> 円</b></div>
+  <div class="month-balance"><%= (@budget.social - @variable_cost.where(variable_cost_category_id: 11).sum(:price)).to_s(:delimited) %><b> 円</b></div>
 </div>
 <div class="budget odd-color">
   <div class="category-budget fas fa-gifts"> 特別費</div>
-  <div class="month-budget"><%= @budget.special.to_s(:delimited) %>円</div>
-  <div class="month-expense"><%= @variable_cost.where(variable_cost_category_id: 12).sum(:price).to_s(:delimited)%>円</div>
-  <div class="month-balance"><%= (@budget.special - @variable_cost.where(variable_cost_category_id: 12).sum(:price)).to_s(:delimited)%>円</div>
+  <div class="month-budget"><%= @budget.special.to_s(:delimited) %><b> 円</b></div>
+  <div class="month-expense"><%= @variable_cost.where(variable_cost_category_id: 12).sum(:price).to_s(:delimited) %><b> 円</b></div>
+  <div class="month-balance"><%= (@budget.special - @variable_cost.where(variable_cost_category_id: 12).sum(:price)).to_s(:delimited) %><b> 円</b></div>
 </div>
 <div class="budget even-color">
   <div class="category-budget fas fa-question-circle"> その他</div>
-  <div class="month-budget"><%= @budget.variable_etcetera.to_s(:delimited) %>円</div>
-  <div class="month-expense"><%= @variable_cost.where(variable_cost_category_id: 13).sum(:price).to_s(:delimited)%>円</div>
-  <div class="month-balance"><%= (@budget.variable_etcetera - @variable_cost.where(variable_cost_category_id: 13).sum(:price)).to_s(:delimited)%>円</div>
+  <div class="month-budget"><%= @budget.variable_etcetera.to_s(:delimited) %><b> 円</b></div>
+  <div class="month-expense"><%= @variable_cost.where(variable_cost_category_id: 13).sum(:price).to_s(:delimited) %><b> 円</b></div>
+  <div class="month-balance"><%= (@budget.variable_etcetera - @variable_cost.where(variable_cost_category_id: 13).sum(:price)).to_s(:delimited) %><b> 円</b></div>
 </div>
