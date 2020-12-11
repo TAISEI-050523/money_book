@@ -11,5 +11,5 @@ class User < ApplicationRecord
   has_one  :budget
 
   validates :nickname, presence: true
-  validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{6,128}+\z/i, message: 'is including both half-width alphabet and number.' }
+  validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{6,128}+\z/i, message: 'は英字と数字の両方を含めて設定してください' }
 end

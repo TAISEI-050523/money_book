@@ -1,0 +1,48 @@
+ja:
+  activerecord:
+      attributes:
+        user:
+          nickname: ニックネーム
+        income:
+          income_category_id: 分類
+          remarks: 備考
+          price: 金額
+          income_date: 入金日
+        fixed_cost:
+          fixed_cost_category_id: 分類
+          remarks: 備考
+          price: 金額
+          expense_date: 出金日
+        variable_cost:
+          variable_cost_category_id: 分類
+          remarks: 備考
+          price: 金額
+          expense_date: 出金日
+        purchase_plan:
+          image: 商品画像
+          name: 商品名
+          remarks: 備考
+          price: 金額
+          purchase_date: 購入日
+        budget:
+          house: 住居費
+          communications: 通信費 
+          electricity: 電気代
+          gas: ガス代
+          water: 水道代
+          education: 教育費
+          premium: 保険代
+          lawn: ローン
+          fixed_etcetera: その他
+          food: 食費
+          commodity: 日用品
+          transportation: 交通費
+          hobby: 趣味・娯楽
+          clothes: 衣服・美容
+          health: 健康
+          culture: 教養・教育
+          book: 書籍
+          cafe: カフェ
+          social: 交際費
+          special: 特別費
+          variable_etcetera: その他

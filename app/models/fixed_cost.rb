@@ -4,12 +4,12 @@ class FixedCost < ApplicationRecord
   belongs_to :fixed_cost_category
 
   with_options presence: true do
-    validates :price, numericality: { only_integer: true }
+    validates :price, numericality: { only_integer: true, message: 'は半角数字で入力してください' }
     validates :expense_date
   end
 
   # 収入区分の選択が「--」の時は保存できないようにする
-  validates :fixed_cost_category_id, numericality: { other_than: 1, message: 'Select.' }
+  validates :fixed_cost_category_id, numericality: { other_than: 1, message: 'を選択してください' }
 
   def self.search(search1, search2, search3)
     if search1 != "1" && search2.present? && search3.present?

@@ -1121,6 +1121,19 @@ img {
   border-radius: 5px;
 }
 
+.error-message {
+  color: red;
+}
+
+.error-message-box {
+  width: 350px;
+  height: 110px;
+  background-color: silver;
+  margin: 10px 30px 10px;
+  border: 1px solid red;
+  overflow: scroll;
+}
+
 /**********************************   budget end  **************************************************************/
 
 /*** フォーム入力errorによるレイアウト崩れの防止 ***/
