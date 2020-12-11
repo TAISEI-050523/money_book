@@ -26,6 +26,11 @@ class VariableCostsController < ApplicationController
     end
   end
 
+  def search
+    user = User.find(current_user.id)
+    @variable_costs = user.variable_costs.search(params[:variable_cost_category_id], params[:year], params[:month]).order('expense_date DESC')
+  end
+
   private
 
   def set_variable_costs

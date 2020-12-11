@@ -47,7 +47,7 @@
         <span class="indispensable">必須</span>
       </div>
       <div>
-        <label class="form-text">入金日</label>
+        <label class="form-text">出金日</label>
         <%= form.date_field :expense_date, placeholder: "入金日", class: "input-date" %>
         <span class="indispensable">必須</span>
       </div>
@@ -61,6 +61,18 @@
 <div class="detail-box">
   <div class="detail-title-box">
     <h2 class="detail-title">変動費詳細</h2>
+  </div>
+  <div class="search-box">
+    <%= form_with(url: search_variable_costs_path, local: true, method: :get, class: "search-form fas fa-search") do |form| %>
+      <label class="form-text">分類:</label>
+      <%= form.collection_select(:variable_cost_category_id, VariableCostCategory.all, :id, :name, {}, {class: "search-select"}) %>
+      <label class="form-text">　出金日:</label>
+      <%= form.select :year,(Date.today.year-10)..(Date.today.year+5), prompt:"--", class: "search-year" %>
+      <label class="form-text">年 </label>
+      <%= form.select :month, 1..12, prompt:"--", class: "search-month" %>
+      <label class="form-text">月 </label>
+      <%= form.submit "検索", class: "search-btn" %>
+    <% end %>
   </div>
   <div class="details">
     <div class="category-detail detail-color">
