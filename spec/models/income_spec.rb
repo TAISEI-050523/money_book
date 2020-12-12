@@ -34,7 +34,7 @@ RSpec.describe Income, type: :model do
       expect(@income.errors.full_messages).to include("Income date can't be blank")
     end
     #### price ####
-    it 'price(金額)が半角数字以外では登録できないこと' do
+    it 'price(金額)が半角英字では登録できないこと' do
       @income.price = 'abcdef'
       @income.valid?
       expect(@income.errors.full_messages).to include("Price は半角数字で入力してください")
