@@ -40,17 +40,17 @@ RSpec.describe PurchasePlan, type: :model do
     it 'price(値段)が半角数字以外では登録できないこと' do
       @purchase_plan.price = 'abcdef'
       @purchase_plan.valid?
-      expect(@purchase_plan.errors.full_messages).to include("Price は半角数字で入力してください")
+      expect(@purchase_plan.errors.full_messages).to include('Price は半角数字で入力してください')
     end
     it 'price(値段)が全角数字では登録できないこと' do
       @purchase_plan.price = '１２３４５６'
       @purchase_plan.valid?
-      expect(@purchase_plan.errors.full_messages).to include("Price は半角数字で入力してください")
+      expect(@purchase_plan.errors.full_messages).to include('Price は半角数字で入力してください')
     end
     it 'price(値段)にコンマ(,)が含まれていると登録できないこと' do
       @purchase_plan.price = '10,000'
       @purchase_plan.valid?
-      expect(@purchase_plan.errors.full_messages).to include("Price は半角数字で入力してください")
+      expect(@purchase_plan.errors.full_messages).to include('Price は半角数字で入力してください')
     end
     #### user_id ####
     it 'userが紐付いていないと保存できないこと' do
@@ -59,5 +59,4 @@ RSpec.describe PurchasePlan, type: :model do
       expect(@purchase_plan.errors.full_messages).to include('User must exist')
     end
   end
-
 end

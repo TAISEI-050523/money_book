@@ -9,6 +9,5 @@ FactoryBot.define do
     after(:build) do |purchase_plan|
       purchase_plan.image.attach(io: File.open('public/images/test_image.png'), filename: 'test_image.png')
     end
-
   end
 end

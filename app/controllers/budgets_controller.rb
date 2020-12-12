@@ -1,7 +1,7 @@
 class BudgetsController < ApplicationController
   def index
     user = User.find(current_user.id)
-    this_month = Date.today.beginning_of_month..Date.today.end_of_month 
+    this_month = Date.today.beginning_of_month..Date.today.end_of_month
     @fixed_cost = user.fixed_costs.where(expense_date: this_month)
     @variable_cost = user.variable_costs.where(expense_date: this_month)
     if user.budget.present?
@@ -10,7 +10,7 @@ class BudgetsController < ApplicationController
       @variable_budget = (@budget.food + @budget.commodity + @budget.transportation + @budget.hobby + @budget.clothes + @budget.health + @budget.culture + @budget.book + @budget.cafe + @budget.social + @budget.special + @budget.variable_etcetera)
     end
     @fixed_cost_month = user.fixed_costs.where(expense_date: this_month).sum(:price)
-    @variable_cost_month = user.variable_costs.where(expense_date: this_month).sum(:price) 
+    @variable_cost_month = user.variable_costs.where(expense_date: this_month).sum(:price)
   end
 
   def new
@@ -44,6 +44,4 @@ class BudgetsController < ApplicationController
   def budget_params
     params.require(:budget).permit(:house, :communications, :electricity, :gas, :water, :education, :premium, :lawn, :fixed_etcetera, :food, :commodity, :transportation, :hobby, :clothes, :health, :culture, :book, :cafe, :social, :special, :variable_etcetera).merge(user_id: current_user.id)
   end
-
 end
-
