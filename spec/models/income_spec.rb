@@ -6,10 +6,10 @@ RSpec.describe Income, type: :model do
   end
 
   context '収入入力がうまくいくとき' do
-    it 'income_category_id, price, income_dateが存在すれば登録できる' do
+    it 'income_category_id, price, income_dateが存在すれば登録できること' do
       expect(@income).to be_valid
     end
-    it 'remarks(備考)が空でも登録できる' do
+    it 'remarks(備考)が空でも登録できること' do
       @income.remarks = nil
       expect(@income).to be_valid
     end
