@@ -670,6 +670,7 @@ a {
 .purchase-plan-forms {
   height: 500px;
   margin-top: 50px;
+  
 }
 
 .purchase-plan-form {
@@ -749,6 +750,7 @@ img {
 
 .bottom-purchase-contents {
   width: 100%;
+  margin-top: 50px;
 }
 
 .prompt-purchase-plans {
