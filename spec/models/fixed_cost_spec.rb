@@ -5,7 +5,7 @@ RSpec.describe FixedCost, type: :model do
     @fixed_cost = FactoryBot.build(:fixed_cost)
   end
 
-  context '収入入力がうまくいくとき' do
+  context '固定費入力がうまくいくとき' do
     it 'fixed_cost_category_id, price, expense_dateが存在すれば登録できること' do
       expect(@fixed_cost).to be_valid
     end
@@ -15,9 +15,9 @@ RSpec.describe FixedCost, type: :model do
     end
   end
 
-  context '収入入力がうまくいかないとき' do
-    #### 収入分類カテゴリー選択 ####
-    it 'fixed_cost_category_id(収入分類)が "1" (カテゴリーが"--")では登録できないこと' do
+  context '固定費入力がうまくいかないとき' do
+    #### 固定費分類カテゴリー選択 ####
+    it 'fixed_cost_category_id(固定費分類)が "1" (カテゴリーが"--")では登録できないこと' do
       @fixed_cost.fixed_cost_category_id = 1
       @fixed_cost.valid?
       expect(@fixed_cost.errors.full_messages).to include('Fixed cost category を選択してください')
@@ -28,7 +28,7 @@ RSpec.describe FixedCost, type: :model do
       @fixed_cost.valid?
       expect(@fixed_cost.errors.full_messages).to include("Price can't be blank", 'Price は半角数字で入力してください')
     end
-    it 'expense_date(入金日)が空では登録できないこと' do
+    it 'expense_date(出金日)が空では登録できないこと' do
       @fixed_cost.expense_date = nil
       @fixed_cost.valid?
       expect(@fixed_cost.errors.full_messages).to include("Expense date can't be blank")
