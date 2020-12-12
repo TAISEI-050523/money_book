@@ -6,7 +6,7 @@ describe User do
 
   describe 'ユーザー新規登録' do
     context '新規登録がうまくいくとき' do
-      it 'nicknameとemail、passwordとpassword_confirmationが存在すれば登録できる' do
+      it 'nicknameとemail、passwordとpassword_confirmationが存在すれば登録できること' do
         expect(@user).to be_valid
         binding.pry
       end
