@@ -119,114 +119,113 @@ RSpec.describe Budget, type: :model do
       expect(@budget).not_to be_valid
     end
 
-    # #### price ####
-    it 'house(住居費)が半角数字以外では登録できないこと' do
+    #### カラムに半角英字が含まれる ####
+    it 'house(住居費)が半角英字では登録できないこと' do
       @budget.house = 'abcdef'
       @budget.valid?
       expect(@budget).not_to be_valid
     end
-    it 'communications(通信費)が半角数字以外では登録できないこと' do
+    it 'communications(通信費)が半角英字では登録できないこと' do
       @budget.communications = 'abcdef'
       @budget.valid?
       expect(@budget).not_to be_valid
     end
-    it 'electricity(電気代)が半角数字以外では登録できないこと' do
+    it 'electricity(電気代)が半角英字では登録できないこと' do
       @budget.electricity = 'abcdef'
       @budget.valid?
       expect(@budget).not_to be_valid
     end
-    it 'gas(ガス代)が半角数字以外では登録できないこと' do
+    it 'gas(ガス代)が半角英字では登録できないこと' do
       @budget.gas = 'abcdef'
       @budget.valid?
       expect(@budget).not_to be_valid
     end
-    it 'water(水道代)が半角数字以外では登録できないこと' do
+    it 'water(水道代)が半角英字では登録できないこと' do
       @budget.water = 'abcdef'
       @budget.valid?
       expect(@budget).not_to be_valid
     end
-    it 'education(教育費)が半角数字以外では登録できないこと' do
+    it 'education(教育費)が半角英字では登録できないこと' do
       @budget.education = 'abcdef'
       @budget.valid?
       expect(@budget).not_to be_valid
     end
-    it 'premium(保険代)が半角数字以外では登録できないこと' do
+    it 'premium(保険代)が半角英字では登録できないこと' do
       @budget.premium = 'abcdef'
       @budget.valid?
       expect(@budget).not_to be_valid
     end
-    it 'lawn(ローン)が半角数字以外では登録できないこと' do
+    it 'lawn(ローン)が半角英字では登録できないこと' do
       @budget.lawn = 'abcdef'
       @budget.valid?
       expect(@budget).not_to be_valid
     end
-    it 'fixed_etcetera(固定費その他)が半角数字以外では登録できないこと' do
+    it 'fixed_etcetera(固定費その他)が半角英字では登録できないこと' do
       @budget.fixed_etcetera = 'abcdef'
       @budget.valid?
       expect(@budget).not_to be_valid
     end
-    it 'food(食費)が半角数字以外では登録できないこと' do
+    it 'food(食費)が半角英字では登録できないこと' do
       @budget.food = 'abcdef'
       @budget.valid?
       expect(@budget).not_to be_valid
     end
-    it 'commodity(日用品)が半角数字以外では登録できないこと' do
+    it 'commodity(日用品)が半角英字では登録できないこと' do
       @budget.commodity = 'abcdef'
       @budget.valid?
       expect(@budget).not_to be_valid
     end
-    it 'transportation(交通費)が半角数字以外では登録できないこと' do
+    it 'transportation(交通費)が半角英字では登録できないこと' do
       @budget.transportation = 'abcdef'
       @budget.valid?
       expect(@budget).not_to be_valid
     end
-    it 'hobby(趣味・娯楽)が半角数字以外では登録できないこと' do
+    it 'hobby(趣味・娯楽)が半角英字では登録できないこと' do
       @budget.hobby = 'abcdef'
       @budget.valid?
       expect(@budget).not_to be_valid
     end
-    it 'clothes(衣服・美容)が半角数字以外では登録できないこと' do
+    it 'clothes(衣服・美容)が半角英字では登録できないこと' do
       @budget.clothes = 'abcdef'
       @budget.valid?
       expect(@budget).not_to be_valid
     end
-    it 'health(健康・医療)が半角数字以外では登録できないこと' do
+    it 'health(健康・医療)が半角英字では登録できないこと' do
       @budget.health = 'abcdef'
       @budget.valid?
       expect(@budget).not_to be_valid
     end
-    it 'culture(教養・教育)が半角数字以外では登録できないこと' do
+    it 'culture(教養・教育)が半角英字では登録できないこと' do
       @budget.culture = 'abcdef'
       @budget.valid?
       expect(@budget).not_to be_valid
     end
-    it 'book(書籍)が半角数字以外では登録できないこと' do
+    it 'book(書籍)が半角英字では登録できないこと' do
       @budget.book = 'abcdef'
       @budget.valid?
       expect(@budget).not_to be_valid
     end
-    it 'cafe(カフェ)が半角数字以外では登録できないこと' do
+    it 'cafe(カフェ)が半角英字では登録できないこと' do
       @budget.cafe = 'abcdef'
       @budget.valid?
       expect(@budget).not_to be_valid
     end
-    it 'social(交際費)が半角数字以外では登録できないこと' do
+    it 'social(交際費)が半角英字では登録できないこと' do
       @budget.social = 'abcdef'
       @budget.valid?
       expect(@budget).not_to be_valid
     end
-    it 'special(特別費)が半角数字以外では登録できないこと' do
+    it 'special(特別費)が半角英字では登録できないこと' do
       @budget.special = 'abcdef'
       @budget.valid?
       expect(@budget).not_to be_valid
     end
-    it 'variable_etcetera(変動費その他)が半角数字以外では登録できないこと' do
+    it 'variable_etcetera(変動費その他)が半角英字では登録できないこと' do
       @budget.variable_etcetera = 'abcdef'
       @budget.valid?
       expect(@budget).not_to be_valid
     end
-    # *** 全角数字では登録できないこと ***
-
+    ####  全角数字が含まれる ####
     it 'house(住居費)が全角数字では登録できないこと' do
       @budget.house = '１２３４５６'
       @budget.valid?
@@ -332,8 +331,7 @@ RSpec.describe Budget, type: :model do
       @budget.valid?
       expect(@budget).not_to be_valid
     end
-    # it 'price(値段)にコンマ(,)が含まれていると登録できないこと' do
-
+    ##### コンマ(,)が含まれる ####
     it 'house(住居費)にコンマ(,)が含まれていると登録できないこと' do
       @budget.house = '10,000'
       @budget.valid?
@@ -439,7 +437,6 @@ RSpec.describe Budget, type: :model do
       @budget.valid?
       expect(@budget).not_to be_valid
     end
-
     #### user_id ####
     it 'userが紐付いていないと保存できないこと' do
       @budget.user = nil
