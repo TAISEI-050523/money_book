@@ -444,5 +444,4 @@ RSpec.describe Budget, type: :model do
       expect(@budget.errors.full_messages).to include('User must exist')
     end
   end
-  
 end
