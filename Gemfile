@@ -81,4 +81,4 @@ end
 gem "aws-sdk-s3", require: false
 
 # 'rails-i18n'日本語導入
-gem 'rails-i18n', '~> 6.0.0'
+gem 'rails-i18n'

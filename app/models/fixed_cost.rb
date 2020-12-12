@@ -12,23 +12,22 @@ class FixedCost < ApplicationRecord
   validates :fixed_cost_category_id, numericality: { other_than: 1, message: 'を選択してください' }
 
   def self.search(search1, search2, search3)
-    if search1 != "1" && search2.present? && search3.present?
-      FixedCost.where(fixed_cost_category_id: search1 ).where("YEAR(expanse_date) = #{search2} AND MONTH(expanse_date) = #{search3}")
-    elsif search1 != "1" && search2.present?
-      FixedCost.where(fixed_cost_category_id: search1 ).where("YEAR(expanse_date) = #{search2}")
-    elsif search1 != "1" && search3.present?
-      FixedCost.where(fixed_cost_category_id: search1 ).where("MONTH(expanse_date) = #{search3}")
-    elsif search1 != "1"
-      FixedCost.where(fixed_cost_category_id: search1 )
+    if search1 != '1' && search2.present? && search3.present?
+      FixedCost.where(fixed_cost_category_id: search1).where("YEAR(expanse_date) = #{search2} AND MONTH(expanse_date) = #{search3}")
+    elsif search1 != '1' && search2.present?
+      FixedCost.where(fixed_cost_category_id: search1).where("YEAR(expanse_date) = #{search2}")
+    elsif search1 != '1' && search3.present?
+      FixedCost.where(fixed_cost_category_id: search1).where("MONTH(expanse_date) = #{search3}")
+    elsif search1 != '1'
+      FixedCost.where(fixed_cost_category_id: search1)
     elsif search2.present? && search3.present?
       FixedCost.where("YEAR(expanse_date) = #{search2} AND MONTH(expanse_date) = #{search3}")
     elsif search2.present?
-      FixedCost.where("YEAR(expanse_date) = #{search2}") 
+      FixedCost.where("YEAR(expanse_date) = #{search2}")
     elsif search3.present?
       FixedCost.where("MONTH(expanse_date) = #{search3}")
     else
       FixedCost.all
     end
   end
-  
 end
