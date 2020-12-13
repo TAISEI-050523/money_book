@@ -75,7 +75,8 @@
       <%= form.submit "検索", class: "search-btn" %>
     <% end %>
   </div>
-  <div class="details">
+  <div class="details", id="details">
+  <div class="detail">
     <div class="category-detail detail-color">
       分 類
     </div>
@@ -85,7 +86,7 @@
     <div class="date-detail detail-color">
       入金日
     </div>
-    <div class="remarks-detail detail-color">      
+    <div class="remarks-detail detail-color">
       備 考
     </div>
     <div class="delete-detail detail-color">
@@ -100,7 +101,7 @@
     </div>
   <% end %>
   <% @incomes.each do |income| %>
-  <div class="details">
+  <div class="detail">
     <div class="category-detail">
       <%= income.income_category.name %> 
     </div>
@@ -118,5 +119,6 @@
     </div>
   </div>
   <% end %>
+  </div>
 </div>
 <%= render "shared/footer" %>
