@@ -76,49 +76,49 @@
     <% end %>
   </div>
   <div class="details", id="details">
-  <div class="detail">
-    <div class="category-detail detail-color">
-      分 類
-    </div>
-    <div class="price-detail detail-color">
-      金 額
-    </div>
-    <div class="date-detail detail-color">
-      入金日
-    </div>
-    <div class="remarks-detail detail-color">
-      備 考
-    </div>
-    <div class="delete-detail detail-color">
-      削 除
-    </div>
-  </div>
-  <% unless @incomes.present? %>
-    <div class="prompt-purchase-plans">
-      <div class="prompt-purchase-plan">
-        収入リスト未登録です。
+    <div class="detail">
+      <div class="category-detail detail-color">
+        分 類
+      </div>
+      <div class="price-detail detail-color">
+        金 額
+      </div>
+      <div class="date-detail detail-color">
+        入金日
+      </div>
+      <div class="remarks-detail detail-color">
+        備 考
+      </div>
+      <div class="delete-detail detail-color">
+        削 除
       </div>
     </div>
-  <% end %>
-  <% @incomes.each do |income| %>
-  <div class="detail">
-    <div class="category-detail">
-      <%= income.income_category.name %> 
+    <% unless @incomes.present? %>
+      <div class="prompt-purchase-plans">
+        <div class="prompt-purchase-plan">
+          収入リスト未登録です。
+        </div>
+      </div>
+    <% end %>
+    <% @incomes.each do |income| %>
+    <div class="detail">
+      <div class="category-detail">
+        <%= income.income_category.name %> 
+      </div>
+      <div class="price-detail income-color">
+        <%= income.price.to_s(:delimited) %>円
+      </div>
+      <div class="date-detail">
+        <%= income.income_date.strftime("%Y年%m月%d日") %>
+      </div>
+      <div class="remarks-detail">
+        <%= income.remarks %>
+      </div>
+      <div class="delete-detail">
+        <%= link_to '削除', income_path(income), method: :delete, class: "delete-btn"%>
+      </div>
     </div>
-    <div class="price-detail income-color">
-      <%= income.price.to_s(:delimited) %>円
-    </div>
-    <div class="date-detail">
-      <%= income.income_date.strftime("%Y年%m月%d日") %>
-    </div>
-    <div class="remarks-detail">
-      <%= income.remarks %>
-    </div>
-    <div class="delete-detail">
-      <%= link_to '削除', income_path(income.id), method: :delete, class: "delete-btn"%>
-    </div>
-  </div>
-  <% end %>
+    <% end %>
   </div>
 </div>
 <%= render "shared/footer" %>

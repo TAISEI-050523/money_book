@@ -101,7 +101,7 @@
       </div>
     <% end %>
     <% @variable_costs.each do |variable_cost| %>
-    <div class="details">
+    <div class="detail">
       <div class="category-detail">
         <%= variable_cost.variable_cost_category.name %> 
       </div>
@@ -115,7 +115,7 @@
         <%= variable_cost.remarks %>
       </div>
       <div class="delete-detail">
-        <%= link_to '削除', variable_cost_path(variable_cost.id), method: :delete, class: "delete-btn", id: "submit-btn" %>
+        <%= link_to '削除', variable_cost_path(variable_cost), method: :delete, class: "delete-btn", id: "submit-btn" %>
       </div>
     </div>
     <% end %>

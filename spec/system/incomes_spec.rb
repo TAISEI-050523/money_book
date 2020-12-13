@@ -86,4 +86,22 @@ RSpec.describe '収入削除', type: :system do
       expect(find("#details")).to have_no_content(@income1.income_date)
     end
   end
+  context '収入削除ができないとき' do
+    it 'ログインしたユーザーは自分以外が入力した収入の削除ができない' do
+      # 収入1を投稿したユーザーでログインする
+      visit new_user_session_path
+      fill_in 'email', with: @income1.user.email
+      fill_in 'password', with: @income1.user.password
+      find('input[name="commit"]').click
+      expect(current_path).to eq root_path
+      # 収入入力ページへのリンクがあることを確認する
+      expect(page).to have_link('収 入', href: new_income_path)
+      # 収入入力ページに移動する
+      visit new_income_path
+      # 収入詳細欄に収入1の「削除」ボタンがあることを確認する
+      expect(find("#details")).to have_link '削除', href: income_path(@income1)
+      # 収入詳細欄に収入2の「削除」ボタンがないことを確認する
+      expect(find("#details")).to have_no_link '削除', href: income_path(@income2)
+    end
+  end
 end
