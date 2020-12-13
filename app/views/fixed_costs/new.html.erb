@@ -75,48 +75,50 @@
       <%= form.submit "検索", class: "search-btn" %>
     <% end %>
   </div>
-  <div class="details">
-    <div class="category-detail detail-color">
-      分 類
-    </div>
-    <div class="price-detail detail-color">
-      金 額
-    </div>
-    <div class="date-detail detail-color">
-      出金日
-    </div>
-    <div class="remarks-detail detail-color">      
-      備 考
-    </div>
-    <div class="delete-detail detail-color">
-      削 除
-    </div>
-  </div>
-  <% unless @fixed_costs.present? %>
-    <div class="prompt-purchase-plans">
-      <div class="prompt-purchase-plan">
-        固定費リスト未登録です。
+  <div class="details", id="details">
+    <div class="detail">
+      <div class="category-detail detail-color">
+        分 類
+      </div>
+      <div class="price-detail detail-color">
+        金 額
+      </div>
+      <div class="date-detail detail-color">
+        出金日
+      </div>
+      <div class="remarks-detail detail-color">      
+        備 考
+      </div>
+      <div class="delete-detail detail-color">
+        削 除
       </div>
     </div>
-  <% end %>
-  <% @fixed_costs.each do |fixed_cost| %>
-  <div class="details">
-    <div class="category-detail">
-      <%= fixed_cost.fixed_cost_category.name %> 
+    <% unless @fixed_costs.present? %>
+      <div class="prompt-purchase-plans">
+        <div class="prompt-purchase-plan">
+          固定費リスト未登録です。
+        </div>
+      </div>
+    <% end %>
+    <% @fixed_costs.each do |fixed_cost| %>
+    <div class="detail">
+      <div class="category-detail">
+        <%= fixed_cost.fixed_cost_category.name %> 
+      </div>
+      <div class="price-detail expense-color">
+        <%= fixed_cost.price.to_s(:delimited) %>円
+      </div>
+      <div class="date-detail">
+        <%= fixed_cost.expense_date.strftime("%Y年%m月%d日") %>
+      </div>
+      <div class="remarks-detail">      
+        <%= fixed_cost.remarks %>
+      </div>
+      <div class="delete-detail">
+        <%= link_to '削除', fixed_cost_path(fixed_cost), method: :delete, class: "delete-btn" %>
+      </div>
     </div>
-    <div class="price-detail expense-color">
-      <%= fixed_cost.price.to_s(:delimited) %>円
-    </div>
-    <div class="date-detail">
-      <%= fixed_cost.expense_date.strftime("%Y年%m月%d日") %>
-    </div>
-    <div class="remarks-detail">      
-      <%= fixed_cost.remarks %>
-    </div>
-    <div class="delete-detail">
-      <%= link_to '削除', fixed_cost_path(fixed_cost.id), method: :delete, class: "delete-btn" %>
-    </div>
+    <% end %>
   </div>
-  <% end %>
 </div>
   <%= render "shared/footer" %>
