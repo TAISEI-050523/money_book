@@ -2,12 +2,10 @@ class IncomesController < ApplicationController
   before_action :set_incomes, only: [:new, :create, :destroy]
 
   def new
-    set_incomes
     @income = Income.new
   end
 
   def create
-    set_incomes
     @income = Income.new(income_params)
     if @income.save
       redirect_to '/incomes/new'
@@ -17,7 +15,6 @@ class IncomesController < ApplicationController
   end
 
   def destroy
-    set_incomes
     @income = Income.find(params[:id])
     if @income.destroy
       redirect_to '/incomes/new'

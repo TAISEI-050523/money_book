@@ -2,12 +2,10 @@ class VariableCostsController < ApplicationController
   before_action :set_variable_costs, only: [:new, :create, :destroy]
 
   def new
-    set_variable_costs
     @variable_cost = VariableCost.new
   end
 
   def create
-    set_variable_costs
     @variable_cost = VariableCost.new(variable_cost_params)
     if @variable_cost.save
       redirect_to '/variable_costs/new'
@@ -17,7 +15,6 @@ class VariableCostsController < ApplicationController
   end
 
   def destroy
-    set_variable_costs
     @variable_cost = VariableCost.find(params[:id])
     if @variable_cost.destroy
       redirect_to '/variable_costs/new'
