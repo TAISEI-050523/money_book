@@ -4,6 +4,6 @@ FactoryBot.define do
     remarks                   { Faker::Lorem.sentence }
     price                     { Faker::Number.between(from: 0, to: 9_999_999) }
     expense_date              { Faker::Date.between(from: Date.today.years_ago(10), to: Date.today.years_since(5)) }
-    association :user 
+    association :user
   end
 end
