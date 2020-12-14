@@ -7,7 +7,8 @@ RSpec.describe '収入入力', type: :system do
     @income_income_category_id = @income.income_category_id    # 収入分類
     @income_remarks = @income.remarks                          # 備考
     @income_price = @income.price                              # 金額
-    @income_date = "00#{@income.income_date.year}-#{@income.income_date.mon}-#{@income.income_date.day}" # 入金日
+    # date_fieldに入力するため変換(例：2020-01-01 ➜ 002020-01-01)
+    @income_date = "00#{@income.income_date.year}-#{@income.income_date.mon}-#{@income.income_date.day}"   # 入金日 
   end
   context '収入入力ができるとき' do
     it 'ログインしたユーザーは収入入力ページで収入の入力ができる' do
@@ -51,6 +52,7 @@ RSpec.describe '収入入力', type: :system do
     end
   end
 end
+
 RSpec.describe '収入削除', type: :system do
   before do
     @income1 = FactoryBot.create(:income)       # 収入１
@@ -105,6 +107,7 @@ RSpec.describe '収入削除', type: :system do
     end
   end
 end
+
 RSpec.describe '収入検索', type: :system do
   before do
     @income = FactoryBot.create(:income)
