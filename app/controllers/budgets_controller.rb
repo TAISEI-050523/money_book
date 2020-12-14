@@ -1,5 +1,4 @@
 class BudgetsController < ApplicationController
-
   def index
     user = User.find(current_user.id)
     this_month = Date.today.beginning_of_month..Date.today.end_of_month
@@ -14,10 +13,10 @@ class BudgetsController < ApplicationController
   # 予算登録済みログインユーザーが直接URLを入力して予算登録ページに遷移しようとするとトップページに遷移
   def new
     user = User.find(current_user.id)
-    unless user.budget.present?
-      @budget = Budget.new
+    if user.budget.present?
+      redirect_to root_path
     else
-      redirect_to root_path 
+      @budget = Budget.new
     end
   end
 
@@ -34,9 +33,7 @@ class BudgetsController < ApplicationController
   def edit
     user = User.find(current_user.id)
     @budget = Budget.find(params[:id])
-    unless current_user.id == @budget.user_id && user.budget.present?
-      redirect_to root_path 
-    end
+    redirect_to root_path unless current_user.id == @budget.user_id && user.budget.present?
   end
 
   def update
@@ -60,8 +57,7 @@ class BudgetsController < ApplicationController
     if user.budget.present?
       @budget = user.budget
       @fixed_budget = (@budget.house + @budget.communications + @budget.electricity + @budget.gas + @budget.water + @budget.education + @budget.premium + @budget.lawn + @budget.fixed_etcetera)
-      @variable_budget = (@budget.food + @budget.commodity + @budget.transportation + @budget.hobby+ @budget.clothes + @budget.health + @budget.culture + @budget.book + @budget.cafe + @budget.social + @budget.special + @budget.variable_etcetera)
+      @variable_budget = (@budget.food + @budget.commodity + @budget.transportation + @budget.hobby + @budget.clothes + @budget.health + @budget.culture + @budget.book + @budget.cafe + @budget.social + @budget.special + @budget.variable_etcetera)
     end
   end
-
 end
