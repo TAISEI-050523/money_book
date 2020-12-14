@@ -10,7 +10,7 @@ RSpec.describe '収入入力', type: :system do
     # date_fieldに入力するため変換(例：2020-01-01 ➜ 002020-01-01)
     @income_date = "00#{@income.income_date.year}-#{@income.income_date.mon}-#{@income.income_date.day}" # 入金日
   end
-  context '収入入力ができるとき' do
+  context '収入を入力ができるとき' do
     it 'ログインしたユーザーは収入入力ページで収入の入力ができる' do
       # ログインする
       visit new_user_session_path
@@ -42,13 +42,32 @@ RSpec.describe '収入入力', type: :system do
       # 収入入力ページには先ほど入力した内容が収入詳細欄に存在することを確認する（入金日）
       expect(find('#details')).to have_content(@income_income_date)
     end
-    context '収入入力ができないとき' do
-      it 'ログインしていないと収入入力ページに遷移できない' do
-        # 収入入力ページに遷移する
-        visit new_income_path
-        # ログインページにリダイレクトされる
-        expect(current_path).to eq new_user_session_path
-      end
+  end
+  context '収入を入力ができないとき' do
+    it '誤った情報では収入入力ができずに収入入力ページへ戻ってくる' do
+      # ログインする
+      visit new_user_session_path
+      fill_in 'email', with: @user.email
+      fill_in 'password', with: @user.password
+      find('input[name="commit"]').click
+      expect(current_path).to eq root_path
+      # 収入入力ページへのリンクがあることを確認する
+      expect(page).to have_link('収 入', href: new_income_path)
+      # 収入入力ページに移動する
+      visit new_income_path
+      # 入力フォームに誤った情報を入力する
+      find('#income_income_category_id').find("option[value='1']").select_option     # value='1' ➜ income_income_category_id=1
+      fill_in 'income_remarks', with: " "
+      fill_in 'income_price', with: " "
+      fill_in 'income_income_date', with: " "
+      # 送信してもIncomeモデルのカウントは上がらないことを確認する
+      expect  do
+        click_on('入 力')
+      end.to change { Income.count }.by(0)
+      # 入力後、収入入力ページに留まることを確認する
+      expect(current_path).to eq '/incomes'
+      # エラーメッセージが表示されていることを確認する
+      expect(page).to have_content('入力ミス')
     end
   end
 end
