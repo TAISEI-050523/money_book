@@ -56,10 +56,10 @@ RSpec.describe '収入入力', type: :system do
       # 収入入力ページに移動する
       visit new_income_path
       # 入力フォームに誤った情報を入力する
-      find('#income_income_category_id').find("option[value='1']").select_option     # value='1' ➜ income_income_category_id=1
-      fill_in 'income_remarks', with: " "
-      fill_in 'income_price', with: " "
-      fill_in 'income_income_date', with: " "
+      find('#income_income_category_id').find("option[value='1']").select_option # value='1' ➜ income_income_category_id=1
+      fill_in 'income_remarks', with: ' '
+      fill_in 'income_price', with: ' '
+      fill_in 'income_income_date', with: ' '
       # 送信してもIncomeモデルのカウントは上がらないことを確認する
       expect  do
         click_on('入 力')

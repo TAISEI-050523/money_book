@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "予算登録", type: :system do
+RSpec.describe '予算登録', type: :system do
   before do
     @user = FactoryBot.create(:user)
     @budget = FactoryBot.create(:budget)
@@ -110,27 +110,27 @@ RSpec.describe "予算登録", type: :system do
       # 予算ページに移動する
       visit new_budget_path
       # 入力フォームに誤った情報を入力する
-      fill_in 'budget_house', with: " "
-      fill_in 'budget_communications', with: " "
-      fill_in 'budget_electricity', with: " "
-      fill_in 'budget_gas', with: " "
-      fill_in 'budget_water', with: " "
-      fill_in 'budget_education', with: " "
-      fill_in 'budget_premium', with: " "
-      fill_in 'budget_lawn', with: " "
-      fill_in 'budget_fixed_etcetera', with: " "
-      fill_in 'budget_food', with: " "
-      fill_in 'budget_commodity', with: " "
-      fill_in 'budget_transportation', with: " "
-      fill_in 'budget_hobby', with: " "
-      fill_in 'budget_clothes', with: " "
-      fill_in 'budget_health', with: " "
-      fill_in 'budget_culture', with: " "
-      fill_in 'budget_book', with: " "
-      fill_in 'budget_cafe', with: " "
-      fill_in 'budget_social', with: " "
-      fill_in 'budget_special', with: " "
-      fill_in 'budget_variable_etcetera', with: " "
+      fill_in 'budget_house', with: ' '
+      fill_in 'budget_communications', with: ' '
+      fill_in 'budget_electricity', with: ' '
+      fill_in 'budget_gas', with: ' '
+      fill_in 'budget_water', with: ' '
+      fill_in 'budget_education', with: ' '
+      fill_in 'budget_premium', with: ' '
+      fill_in 'budget_lawn', with: ' '
+      fill_in 'budget_fixed_etcetera', with: ' '
+      fill_in 'budget_food', with: ' '
+      fill_in 'budget_commodity', with: ' '
+      fill_in 'budget_transportation', with: ' '
+      fill_in 'budget_hobby', with: ' '
+      fill_in 'budget_clothes', with: ' '
+      fill_in 'budget_health', with: ' '
+      fill_in 'budget_culture', with: ' '
+      fill_in 'budget_book', with: ' '
+      fill_in 'budget_cafe', with: ' '
+      fill_in 'budget_social', with: ' '
+      fill_in 'budget_special', with: ' '
+      fill_in 'budget_variable_etcetera', with: ' '
       # 送信してもBudgetモデルのカウントは上がらないことを確認する
       expect  do
         click_on('保 存')
@@ -143,7 +143,7 @@ RSpec.describe "予算登録", type: :system do
   end
 end
 
-RSpec.describe "予算編集", type: :system do
+RSpec.describe '予算編集', type: :system do
   before do
     @budget1 = FactoryBot.create(:budget)                     # 予算1
     @budget2 = FactoryBot.create(:budget)                     # 予算2
@@ -253,27 +253,27 @@ RSpec.describe "予算編集", type: :system do
       # 予算ページに移動する
       visit edit_budget_path(@budget1)
       # 入力フォームに誤った情報を入力する
-      fill_in 'budget_house', with: " "
-      fill_in 'budget_communications', with: " "
-      fill_in 'budget_electricity', with: " "
-      fill_in 'budget_gas', with: " "
-      fill_in 'budget_water', with: " "
-      fill_in 'budget_education', with: " "
-      fill_in 'budget_premium', with: " "
-      fill_in 'budget_lawn', with: " "
-      fill_in 'budget_fixed_etcetera', with: " "
-      fill_in 'budget_food', with: " "
-      fill_in 'budget_commodity', with: " "
-      fill_in 'budget_transportation', with: " "
-      fill_in 'budget_hobby', with: " "
-      fill_in 'budget_clothes', with: " "
-      fill_in 'budget_health', with: " "
-      fill_in 'budget_culture', with: " "
-      fill_in 'budget_book', with: " "
-      fill_in 'budget_cafe', with: " "
-      fill_in 'budget_social', with: " "
-      fill_in 'budget_special', with: " "
-      fill_in 'budget_variable_etcetera', with: " "
+      fill_in 'budget_house', with: ' '
+      fill_in 'budget_communications', with: ' '
+      fill_in 'budget_electricity', with: ' '
+      fill_in 'budget_gas', with: ' '
+      fill_in 'budget_water', with: ' '
+      fill_in 'budget_education', with: ' '
+      fill_in 'budget_premium', with: ' '
+      fill_in 'budget_lawn', with: ' '
+      fill_in 'budget_fixed_etcetera', with: ' '
+      fill_in 'budget_food', with: ' '
+      fill_in 'budget_commodity', with: ' '
+      fill_in 'budget_transportation', with: ' '
+      fill_in 'budget_hobby', with: ' '
+      fill_in 'budget_clothes', with: ' '
+      fill_in 'budget_health', with: ' '
+      fill_in 'budget_culture', with: ' '
+      fill_in 'budget_book', with: ' '
+      fill_in 'budget_cafe', with: ' '
+      fill_in 'budget_social', with: ' '
+      fill_in 'budget_special', with: ' '
+      fill_in 'budget_variable_etcetera', with: ' '
       # 送信してもBudgetモデルのカウントは上がらないことを確認する
       expect  do
         click_on('保 存')
