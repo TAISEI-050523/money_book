@@ -8,7 +8,7 @@ RSpec.describe '収入入力', type: :system do
     @income_remarks = @income.remarks                          # 備考
     @income_price = @income.price                              # 金額
     # date_fieldに入力するため変換(例：2020-01-01 ➜ 002020-01-01)
-    @income_date = "00#{@income.income_date.year}-#{@income.income_date.mon}-#{@income.income_date.day}"   # 入金日 
+    @income_date = "00#{@income.income_date.year}-#{@income.income_date.mon}-#{@income.income_date.day}" # 入金日
   end
   context '収入入力ができるとき' do
     it 'ログインしたユーザーは収入入力ページで収入の入力ができる' do
@@ -59,8 +59,8 @@ RSpec.describe '収入削除', type: :system do
     @income2 = FactoryBot.create(:income)       # 収入２
   end
   context '収入を削除ができるとき' do
-    it 'ログインしたユーザーは自らが投稿した収入詳細の削除ができる' do
-      # 収入1を投稿したユーザーでログインする
+    it 'ログインしたユーザーは自らが入力した収入詳細の削除ができる' do
+      # 収入1を入力したユーザーでログインする
       visit new_user_session_path
       fill_in 'email', with: @income1.user.email
       fill_in 'password', with: @income1.user.password
@@ -72,7 +72,7 @@ RSpec.describe '収入削除', type: :system do
       visit new_income_path
       # 収入詳細欄の収入1に「削除」ボタンがあることを確認する
       expect(page).to have_content('削除')
-      # 投稿を削除するとレコードの数が1減ることを確認する
+      # 入力を削除するとレコードの数が1減ることを確認する
       expect do
         find_link('削除', href: income_path(@income1)).click
       end.to change { Income.count }.by(-1)
@@ -90,7 +90,7 @@ RSpec.describe '収入削除', type: :system do
   end
   context '収入削除ができないとき' do
     it 'ログインしたユーザーは自分以外が入力した収入の削除ができない' do
-      # 収入1を投稿したユーザーでログインする
+      # 収入1を入力したユーザーでログインする
       visit new_user_session_path
       fill_in 'email', with: @income1.user.email
       fill_in 'password', with: @income1.user.password

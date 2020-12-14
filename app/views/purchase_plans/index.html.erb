@@ -54,7 +54,7 @@
           <span class="indispensable">必須</span>
         </div>
         <div>
-          <label class="form-text">日　付</label>
+          <label class="form-text">購入日</label>
           <%= form.date_field :purchase_date, class: "purchase-date" %>
           <span class="indispensable">必須</span>
         </div>
@@ -69,7 +69,7 @@
     <div class="purchase-title-box">
       <h2 class="purchase-title">購入予定リスト</h2>
     </div>
-    <div class="purchase-plans-lists">
+    <div class="purchase-plans-lists", id="purchase_item_box">
       <% unless @purchase_plans.present? %>
         <div class="prompt-purchase-plans">
           <div class="prompt-purchase-plan">
