@@ -53,6 +53,8 @@ RSpec.describe 'ユーザー新規登録', type: :system do
       end.to change { User.count }.by(0)
       # 新規登録ページへ戻されることを確認する
       expect(current_path).to eq user_registration_path
+      # エラーメッセージが表示されていることを確認する
+      expect(page).to have_content('エラーが発生したため ユーザー は保存されませんでした。')
     end
   end
 end
@@ -94,6 +96,8 @@ RSpec.describe 'ログイン', type: :system do
       find('input[name="commit"]').click
       # ログインページへ戻されることを確認する
       expect(current_path).to eq new_user_session_path
+      # エラーメッセージが表示されていることを確認する
+      expect(page).to have_content('Eメールまたはパスワードが違います。')
     end
   end
 end

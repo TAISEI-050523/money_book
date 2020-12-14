@@ -77,6 +77,8 @@ RSpec.describe '購入予定リスト追加', type: :system do
       end.to change { PurchasePlan.count }.by(0)
       # 入力後、購入予定リストページに留まることを確認する
       expect(current_path).to eq purchase_plans_path
+      # エラーメッセージが表示されていることを確認する
+      expect(page).to have_content('入力ミス')
     end
   end
 end
