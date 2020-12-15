@@ -15,8 +15,8 @@ https://------------------------------
 
 # ER図
 
-<image_tag 'noimage.png'>
 
+<img width="200" alt="qiita-square" src="https://github.com/TAISEI-050523/money_book/blob/master/app/assets/images/noimage.png?raw=true">
 
 
 
