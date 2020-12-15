@@ -1,7 +1,7 @@
 class Budget < ApplicationRecord
   belongs_to :user
 
-  with_options presence: true, numericality: { only_integer: true, message: 'を半角数字で入力してください' } do
+  with_options presence: true, numericality: { only_integer: true, greater_than: 0, less_than: 10_000_001, message: 'は半角数字で 1円 以上  1,000,000 円 以内で入力してください' } do
     validates :house
     validates :communications
     validates :electricity
