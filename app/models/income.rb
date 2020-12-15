@@ -4,7 +4,7 @@ class Income < ApplicationRecord
   belongs_to :income_category
 
   with_options presence: true do
-    validates :price, numericality: { only_integer: true, message: 'は半角数字で入力してください' }
+    validates :price, numericality: { only_integer: true, greater_than: 0, less_than: 10_000_001, message: 'は半角数字で 1円 以上  1,000,000 円 以内で入力してください' }
     validates :income_date
   end
   # 収入区分の選択が「--」の時は保存できないようにする

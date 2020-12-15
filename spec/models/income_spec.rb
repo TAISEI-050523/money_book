@@ -26,7 +26,7 @@ RSpec.describe Income, type: :model do
     it 'price(金額)が空では登録できないこと' do
       @income.price = nil
       @income.valid?
-      expect(@income.errors.full_messages).to include("Price can't be blank", 'Price は半角数字で入力してください')
+      expect(@income.errors.full_messages).to include("Price can't be blank", "Price は半角数字で 1円 以上  1,000,000 円 以内で入力してください")
     end
     it 'income_date(入金日)が空では登録できないこと' do
       @income.income_date = nil
@@ -37,17 +37,22 @@ RSpec.describe Income, type: :model do
     it 'price(金額)が半角英字では登録できないこと' do
       @income.price = 'abcdef'
       @income.valid?
-      expect(@income.errors.full_messages).to include('Price は半角数字で入力してください')
+      expect(@income.errors.full_messages).to include("Price は半角数字で 1円 以上  1,000,000 円 以内で入力してください")
     end
     it 'price(金額)が全角数字では登録できないこと' do
       @income.price = '１２３４５６'
       @income.valid?
-      expect(@income.errors.full_messages).to include('Price は半角数字で入力してください')
+      expect(@income.errors.full_messages).to include("Price は半角数字で 1円 以上  1,000,000 円 以内で入力してください")
     end
-    it 'price(金額)にコンマ(,)が含まれていると登録できないこと' do
-      @income.price = '10,000'
+    it 'price(金額)に1円より小さいと登録できないこと' do
+      @income.price = '0'
       @income.valid?
-      expect(@income.errors.full_messages).to include('Price は半角数字で入力してください')
+      expect(@income.errors.full_messages).to include('Price は半角数字で 1円 以上  1,000,000 円 以内で入力してください')
+    end
+    it 'price(金額)に10,000,000円より大きいと登録できないこと' do
+      @income.price = '10,000,001'
+      @income.valid?
+      expect(@income.errors.full_messages).to include('Price は半角数字で 1円 以上  1,000,000 円 以内で入力してください')
     end
     #### user_id ####
     it 'userが紐付いていないと保存できないこと' do
