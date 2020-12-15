@@ -27,16 +27,3 @@ class CreateBudgets < ActiveRecord::Migration[6.0]
     end
   end
 end
-
-
-
-hobby
-clothes
-health
-culture
-book
-cafe
-social
-special
-variable_etcetera
-user_id
