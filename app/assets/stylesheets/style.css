@@ -755,7 +755,7 @@ img {
 
 .prompt-purchase-plans {
   width: 100%;
-  height: 100px;
+  height: 200px;
   text-align: center;
 }
 
@@ -836,6 +836,7 @@ img {
   display: flex;
   justify-content: center;
 }
+
 .input-forms {
   width: 50%;
   height: 350px;
