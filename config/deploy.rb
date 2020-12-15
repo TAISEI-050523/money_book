@@ -2,7 +2,7 @@
 lock '3.14.1'
 
 # Capistranoのログの表示に利用する
-set :application, 'oney_book'
+set :application, 'money_book'
 
 # どのリポジトリからアプリをpullするかを指定する
 set :repo_url,  'git@github.com:TAISEI-050523/money_book.git'
