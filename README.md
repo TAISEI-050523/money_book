@@ -82,7 +82,7 @@ https://------------------------------
 | remarks            | text       |                                |
 | price              | integer    | null: false                    |
 | income_date        | date       | null: false                    |
-| user               | references | null: false, foreign_key: true |
+| user_id            | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -96,7 +96,7 @@ https://------------------------------
 | remarks                | text       |                                |
 | price                  | integer    | null: false                    |
 | expense_date           | date       | null: false                    |
-| user                   | references | null: false, foreign_key: true |
+| user_id                | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -110,7 +110,7 @@ https://------------------------------
 | remarks                    | text       |                                |
 | price                      | integer    | null: false                    |
 | expense_date               | date       | null: false                    |
-| user                       | references | null: false, foreign_key: true |
+| user_id                    | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -125,6 +125,37 @@ https://------------------------------
 | price          | integer    | null: false                    |
 | purchase_date  | date       | null: false                    |
 | user           | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+
+## budgets テーブル
+
+| Column            | Type       | Options                        |
+| ----------------- | ---------- | ------------------------------ |
+| house             | integer    | null: false                    |
+| communications    | integer    | null: false                    |
+| electricity       | integer    | null: false                    |
+| gas               | integer    | null: false                    |
+| water             | integer    | null: false                    |
+| education         | integer    | null: false                    |
+| premium           | integer    | null: false                    |
+| lawn              | integer    | null: false                    |
+| fixed_etcetera    | integer    | null: false                    |
+| food              | integer    | null: false                    |
+| commodity         | integer    | null: false                    |
+| transportation    | integer    | null: false                    |
+| hobby             | integer    | null: false                    |
+| clothes           | integer    | null: false                    |
+| health            | integer    | null: false                    |
+| culture           | integer    | null: false                    |
+| book              | integer    | null: false                    |
+| cafe              | integer    | null: false                    |
+| social            | integer    | null: false                    |
+| special           | integer    | null: false                    |
+| variable_etcetera | integer    | null: false                    |
+| user_id           | references | null: false, foreign_key: true |
 
 ### Association
 
