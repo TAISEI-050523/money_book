@@ -1,4 +1,4 @@
-# 💰 ACCOUNT BOOK 
+# 💰 ACCOUNT BOOK 💰
 ## 🌐 App URL
 https://portfolio.taisei-account-book.com/
 
