@@ -2,7 +2,7 @@ FactoryBot.define do
   factory :purchase_plan do
     name             { Faker::Number.between(from: 2, to: 10) }    # id=1は"--"
     remarks          { Faker::Lorem.sentence }
-    price            { Faker::Number.between(from: 0, to: 9_999_999) }
+    price            { Faker::Number.between(from: 1, to: 10_000_000) }
     purchase_date    { Faker::Date.between(from: Date.today, to: Date.today.since(1.years)) }
     association :user
 
