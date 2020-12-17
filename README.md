@@ -46,7 +46,7 @@ https://portfolio.taisei-account-book.com/
 - （開発環境）MySQL : 5.6.47
 - （本番環境）MariaDB : 5.5.64 
 ### インフラ
-- AWS (EC2, S3, VPC, Route53, ALB, ACM) 
+- AWS (S3, VPC, EC2, Route53, Certificate Manager) 
 - Git, GitHub
 - Capistrano : 3.14.1
 ### 解析ツール
