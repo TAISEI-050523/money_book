@@ -32,37 +32,37 @@
   <div class="detail-box">
     <div class="details", id="details">
       <div class="detail">
-        <div class="category-detail detail-color">
+        <div class="category-detail gray-color">
           分 類
         </div>
-        <div class="price-detail detail-color">
+        <div class="price-detail gray-color">
           金 額
         </div>
-        <div class="date-detail detail-color">
+        <div class="date-detail gray-color">
           出金日
         </div>
-        <div class="remarks-detail detail-color">
+        <div class="remarks-detail gray-color">
           備 考
         </div>
-        <div class="delete-detail detail-color">
+        <div class="delete-detail gray-color">
           削 除
         </div>
       </div>
       <% @fixed_costs.each do |fixed_cost| %>
         <div class="detail">
-          <div class="category-detail">
+          <div class="category-detail white-color">
             <%= fixed_cost.fixed_cost_category.name %> 
           </div>
-          <div class="price-detail fixed_cost-color">
+          <div class="price-detail fixed_cost-color white-color">
             <%= fixed_cost.price.to_s(:delimited) %>円
           </div>
-          <div class="date-detail">
+          <div class="date-detail white-color">
             <%= fixed_cost.expense_date.strftime("%Y年%m月%d日") %>
           </div>
-          <div class="remarks-detail">      
+          <div class="remarks-detail white-color">
             <%= fixed_cost.remarks %>
           </div>
-          <div class="delete-detail">
+          <div class="delete-detail white-color">
             <%= link_to '削除', fixed_cost_path(fixed_cost.id), method: :delete, class: "delete-btn"%>
           </div>
         </div>

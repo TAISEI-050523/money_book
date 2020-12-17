@@ -437,6 +437,218 @@ RSpec.describe Budget, type: :model do
       @budget.valid?
       expect(@budget).not_to be_valid
     end
+       ##### コンマ(,)が含まれる ####
+    it 'house(住居費)にコンマ(,)が含まれていると登録できないこと' do
+      @budget.house = '10,000'
+      @budget.valid?
+      expect(@budget).not_to be_valid
+    end
+    it 'communications(通信費)にコンマ(,)が含まれていると登録できないこと' do
+      @budget.communications = '10,000'
+      @budget.valid?
+      expect(@budget).not_to be_valid
+    end
+    it 'electricity(電気代)にコンマ(,)が含まれていると登録できないこと' do
+      @budget.electricity = '10,000'
+      @budget.valid?
+      expect(@budget).not_to be_valid
+    end
+    it 'gas(ガス代)にコンマ(,)が含まれていると登録できないこと' do
+      @budget.gas = '10,000'
+      @budget.valid?
+      expect(@budget).not_to be_valid
+    end
+    it 'water(水道代)にコンマ(,)が含まれていると登録できないこと' do
+      @budget.water = '10,000'
+      @budget.valid?
+      expect(@budget).not_to be_valid
+    end
+    it 'education(教育費)にコンマ(,)が含まれていると登録できないこと' do
+      @budget.education = '10,000'
+      @budget.valid?
+      expect(@budget).not_to be_valid
+    end
+    it 'premium(保険代)にコンマ(,)が含まれていると登録できないこと' do
+      @budget.premium = '10,000'
+      @budget.valid?
+      expect(@budget).not_to be_valid
+    end
+    it 'lawn(ローン)にコンマ(,)が含まれていると登録できないこと' do
+      @budget.lawn = '10,000'
+      @budget.valid?
+      expect(@budget).not_to be_valid
+    end
+    it 'fixed_etcetera(固定費その他)にコンマ(,)が含まれていると登録できないこと' do
+      @budget.fixed_etcetera = '10,000'
+      @budget.valid?
+      expect(@budget).not_to be_valid
+    end
+    it 'food(食費)にコンマ(,)が含まれていると登録できないこと' do
+      @budget.food = '10,000'
+      @budget.valid?
+      expect(@budget).not_to be_valid
+    end
+    it 'commodity(日用品)にコンマ(,)が含まれていると登録できないこと' do
+      @budget.commodity = '10,000'
+      @budget.valid?
+      expect(@budget).not_to be_valid
+    end
+    it 'transportation(交通費)にコンマ(,)が含まれていると登録できないこと' do
+      @budget.transportation = '10,000'
+      @budget.valid?
+      expect(@budget).not_to be_valid
+    end
+    it 'hobby(趣味・娯楽)にコンマ(,)が含まれていると登録できないこと' do
+      @budget.hobby = '10,000'
+      @budget.valid?
+      expect(@budget).not_to be_valid
+    end
+    it 'clothes(衣服・美容)にコンマ(,)が含まれていると登録できないこと' do
+      @budget.clothes = '10,000'
+      @budget.valid?
+      expect(@budget).not_to be_valid
+    end
+    it 'health(健康・医療)にコンマ(,)が含まれていると登録できないこと' do
+      @budget.health = '10,000'
+      @budget.valid?
+      expect(@budget).not_to be_valid
+    end
+    it 'culture(教養・教育)にコンマ(,)が含まれていると登録できないこと' do
+      @budget.culture = '10,000'
+      @budget.valid?
+      expect(@budget).not_to be_valid
+    end
+    it 'book(書籍)にコンマ(,)が含まれていると登録できないこと' do
+      @budget.book = '10,000'
+      @budget.valid?
+      expect(@budget).not_to be_valid
+    end
+    it 'cafe(カフェ)にコンマ(,)が含まれていると登録できないこと' do
+      @budget.cafe = '10,000'
+      @budget.valid?
+      expect(@budget).not_to be_valid
+    end
+    it 'social(交際費)にコンマ(,)が含まれていると登録できないこと' do
+      @budget.social = '10,000'
+      @budget.valid?
+      expect(@budget).not_to be_valid
+    end
+    it 'special(特別費)にコンマ(,)が含まれていると登録できないこと' do
+      @budget.special = '10,000'
+      @budget.valid?
+      expect(@budget).not_to be_valid
+    end
+    it 'variable_etcetera(変動費その他)にコンマ(,)が含まれていると登録できないこと' do
+      @budget.variable_etcetera = '10,000'
+      @budget.valid?
+      expect(@budget).not_to be_valid
+    end
+    ##### 金額が10,000,000より大きい ####
+    it 'house(住居費)の金額が10,000,000より大きいと登録できないこと' do
+      @budget.house = '10000001'
+      @budget.valid?
+      expect(@budget).not_to be_valid
+    end
+    it 'communications(通信費)の金額が10,000,000より大きいと登録できないこと' do
+      @budget.communications = '10000001'
+      @budget.valid?
+      expect(@budget).not_to be_valid
+    end
+    it 'electricity(電気代)の金額が10,000,000より大きいと登録できないこと' do
+      @budget.electricity = '10000001'
+      @budget.valid?
+      expect(@budget).not_to be_valid
+    end
+    it 'gas(ガス代)の金額が10,000,000より大きいと登録できないこと' do
+      @budget.gas = '10000001'
+      @budget.valid?
+      expect(@budget).not_to be_valid
+    end
+    it 'water(水道代)の金額が10,000,000より大きいと登録できないこと' do
+      @budget.water = '10000001'
+      @budget.valid?
+      expect(@budget).not_to be_valid
+    end
+    it 'education(教育費)の金額が10,000,000より大きいと登録できないこと' do
+      @budget.education = '10000001'
+      @budget.valid?
+      expect(@budget).not_to be_valid
+    end
+    it 'premium(保険代)の金額が10,000,000より大きいと登録できないこと' do
+      @budget.premium = '10000001'
+      @budget.valid?
+      expect(@budget).not_to be_valid
+    end
+    it 'lawn(ローン)の金額が10,000,000より大きいと登録できないこと' do
+      @budget.lawn = '10000001'
+      @budget.valid?
+      expect(@budget).not_to be_valid
+    end
+    it 'fixed_etcetera(固定費その他)の金額が10,000,000より大きいと登録できないこと' do
+      @budget.fixed_etcetera = '10000001'
+      @budget.valid?
+      expect(@budget).not_to be_valid
+    end
+    it 'food(食費)の金額が10,000,000より大きいと登録できないこと' do
+      @budget.food = '10000001'
+      @budget.valid?
+      expect(@budget).not_to be_valid
+    end
+    it 'commodity(日用品)の金額が10,000,000より大きいと登録できないこと' do
+      @budget.commodity = '10000001'
+      @budget.valid?
+      expect(@budget).not_to be_valid
+    end
+    it 'transportation(交通費)の金額が10,000,000より大きいと登録できないこと' do
+      @budget.transportation = '10000001'
+      @budget.valid?
+      expect(@budget).not_to be_valid
+    end
+    it 'hobby(趣味・娯楽)の金額が10,000,000より大きいと登録できないこと' do
+      @budget.hobby = '10000001'
+      @budget.valid?
+      expect(@budget).not_to be_valid
+    end
+    it 'clothes(衣服・美容)の金額が10,000,000より大きいと登録できないこと' do
+      @budget.clothes = '10000001'
+      @budget.valid?
+      expect(@budget).not_to be_valid
+    end
+    it 'health(健康・医療)の金額が10,000,000より大きいと登録できないこと' do
+      @budget.health = '10000001'
+      @budget.valid?
+      expect(@budget).not_to be_valid
+    end
+    it 'culture(教養・教育)の金額が10,000,000より大きいと登録できないこと' do
+      @budget.culture = '10000001'
+      @budget.valid?
+      expect(@budget).not_to be_valid
+    end
+    it 'book(書籍)の金額が10,000,000より大きいと登録できないこと' do
+      @budget.book = '10000001'
+      @budget.valid?
+      expect(@budget).not_to be_valid
+    end
+    it 'cafe(カフェ)の金額が10,000,000より大きいと登録できないこと' do
+      @budget.cafe = '10000001'
+      @budget.valid?
+      expect(@budget).not_to be_valid
+    end
+    it 'social(交際費)の金額が10,000,000より大きいと登録できないこと' do
+      @budget.social = '10000001'
+      @budget.valid?
+      expect(@budget).not_to be_valid
+    end
+    it 'special(特別費)の金額が10,000,000より大きいと登録できないこと' do
+      @budget.special = '10000001'
+      @budget.valid?
+      expect(@budget).not_to be_valid
+    end
+    it 'variable_etcetera(変動費その他)の金額が10,000,000より大きいと登録できないこと' do
+      @budget.variable_etcetera = '10000001'
+      @budget.valid?
+      expect(@budget).not_to be_valid
+    end
     #### user_id ####
     it 'userが紐付いていないと保存できないこと' do
       @budget.user = nil

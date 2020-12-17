@@ -930,8 +930,12 @@ img {
   justify-content: center;
 }
 
-.detail-color {
+.gray-color {
   background-color: rgb(189, 187, 187);
+}
+
+.white-color {
+  background-color: #FFF;
 }
 
 .category-detail {

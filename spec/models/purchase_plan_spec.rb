@@ -52,6 +52,11 @@ RSpec.describe PurchasePlan, type: :model do
       @purchase_plan.valid?
       expect(@purchase_plan.errors.full_messages).to include('Price は半角数字で 1円 以上  1,000,000 円 以内で入力してください')
     end
+    it 'price(値段)が10,000,000より大きいと登録できないこと' do
+      @purchase_plan.price = '10000001'
+      @purchase_plan.valid?
+      expect(@purchase_plan.errors.full_messages).to include('Price は半角数字で 1円 以上  1,000,000 円 以内で入力してください')
+    end
     #### user_id ####
     it 'userが紐付いていないと保存できないこと' do
       @purchase_plan.user = nil
