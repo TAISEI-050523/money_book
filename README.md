@@ -18,9 +18,8 @@ https://portfolio.taisei-account-book.com/
 <img width="500" alt="qiita-square" src="https://github.com/TAISEI-050523/money_book/blob/master/app/assets/images/ER.png">
 
 # 本番環境(デプロイ先 テストアカウント＆ID)
-## Basic認証のIDとパスワード
-- ID：　ktm895  
-- パスワード：89890523
+## デプロイ先
+- URL : https://portfolio.taisei-account-book.com/
 ## テストアカウントのメールアドレスとパスワード
 - メールアドレス: kkk@kkk.com  
 - パスワード　 : 123kkk
@@ -54,7 +53,7 @@ https://portfolio.taisei-account-book.com/
 
 # 工夫したポイント
 RSpecを用いたテストコードの実装を工夫しました。知人にアプリを実際に触ってもらい、考えられるユーザーの操作をできる限り抽出して、正常系と異常系を分けて実装しました。
-この時気づいたことは、integer型は９９９９９９９までの値歯科認識しない
+この時気づいたことは、integer型は４バイト（＋２１億〜ー２１億）までしか格納できないことです。また予算登録で空欄は最初から０を入れてたほうが良いという指摘を受けました。
 
 # 課題や今後実装したい機能
 ビデオの添付機能（課題解決改善のために、ビデオを添付するチャット機能を作成する
