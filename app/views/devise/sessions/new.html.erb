@@ -34,7 +34,13 @@
         <%= f.submit "ログイン" ,class:"log-in-blue-btn", id: "submit-btn" %>
       </div>
     <% end %>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <%= f.email_field :email, class:"hidden",value: "kkk@kkk.com", autofocus: true %>
+      <%= f.password_field :password, class:"hidden", value: "123kkk" %>
+      <%= f.submit "テストユーザーログイン" ,class:"test-log-in-blue-btn", id: "test-log-in" %>
+    <% end %>
   </div>
 </div>
+
 
 <%= render "shared/footer" %>

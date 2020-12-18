@@ -180,7 +180,7 @@ a {
 .sing-up-form-contents {
   width: 100%;
   min-width: 1000px;
-  height: calc(100vh - 200px);
+  height: calc(100% - 200px);
   background-color: rgb(250, 247, 241);
   text-align: center;
   padding: 50px 150px 30px;
@@ -300,6 +300,7 @@ a {
 }
 
 .log-in-blue-btn,
+.test-log-in-blue-btn,
 .sign-up-blue-btn {
   width: 200px;
   height: 30px;
@@ -316,6 +317,15 @@ a {
   justify-content: center;
   flex-wrap: wrap;
 }
+
+.test-log-in-blue-btn {
+  background-color: #f6534d;
+}
+
+.hidden {
+  display: none;
+}
+
 
 /*ログイン・新規登録  共通 */
 .login-flash-message {
@@ -1170,10 +1180,6 @@ img {
 .field_with_errors {
   display: contents;
 }
-
-
-
-
 
 
 

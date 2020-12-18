@@ -29,6 +29,16 @@ window.addEventListener('load', function(){
   })
 })
 
+window.addEventListener('load', function(){
+  const testLogIn= document.getElementById("test-log-in")
+  testLogIn.addEventListener('mouseover', function(){
+    testLogIn.setAttribute("style", "background-color:	#FFAD90;")
+  })
+  testLogIn.addEventListener('mouseout', function(){
+    testLogIn.removeAttribute("style", "background-color:	#FFAD90;")
+  })
+})
+
 /* ヘッダーリスト */
 window.addEventListener('load', function(){
   const homeButton = document.getElementById("home-btn")
