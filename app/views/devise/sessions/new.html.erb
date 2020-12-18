@@ -5,8 +5,8 @@
   <div class="log-in-title-box">
     <h1 class="log-in-title">Log  in</h1>
   </div>
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class='form-wrap-log-in'>
+  <div class='form-wrap-log-in'>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class='form-header'>
         <h1 class='form-header-text'>
           会員情報入力
@@ -33,8 +33,8 @@
       <div class='log-in-btn'>
         <%= f.submit "ログイン" ,class:"log-in-blue-btn", id: "submit-btn" %>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
 
 <%= render "shared/footer" %>

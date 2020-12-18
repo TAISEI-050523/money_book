@@ -147,6 +147,32 @@ a {
   text-decoration: none;
 }
 
+.question-box{
+  text-align: right;
+}
+.question-btn {
+  color: #FFF;
+  background-color: black;
+  border: none;
+  border-radius: 50%;
+  margin-left:20px;
+}
+
+.dialog-box {
+  width: 600px;
+  height: 150px;
+  background-color: rgb(247, 227, 183);
+  padding: 10px 20px 40px 20px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+}
+
+.close-box {
+  text-align: right;
+}
+
 /**********   common end  ***************************************************************************************/
 /**********   log-in&&sign-up start   ***************************************************************************/
 
@@ -156,9 +182,8 @@ a {
   min-width: 1000px;
   height: calc(100vh - 200px);
   background-color: rgb(250, 247, 241);
+  text-align: center;
   padding: 50px 150px 30px;
-  display: flex;
-  justify-content: center;
 }
 
 .sing-up-form-contents {
@@ -167,9 +192,8 @@ a {
 
 .log-in-title-box,
 .sign-up-title-box {
-  width: 300px;
   text-align: center;
-  margin-right: 30px;
+  margin:5px 300px 30px;
 }
 
 .log-in-title,
@@ -189,9 +213,9 @@ a {
 
 .form-wrap-log-in,
 .form-wrap-sign-up {
-  width: 80%;
   background-color: #FFF;
   padding-bottom: 70px;
+  margin: 0 200px;
 }
 
 .form-wrap-log-in {
