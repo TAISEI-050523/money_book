@@ -77,9 +77,24 @@
             <% end %>
               <%= @balance_this_month.to_s(:delimited) %>円</div>
           </div>
+          <dialog class="dialog-box" id="dialog1">
+            <div class="month-data-title">
+              <%= Date.today.mon%>月の収支について
+            </div>
+            <ul>
+              <li>収支は当月の収入を示しています。</li>
+              <li>当月の支出は固定費と変動費の２つに分けて示しています。</li>
+              <li>収支は収入から固定費と変動費を引いた差分です。</li>
+            </ul>
+            <div class="close-box">
+              <button class="close-btn" id="close1">close</button>
+            </div>
+          </dialog>
+          <div class="question-box">
+            <button class="question-btn" id="question-btn1">?</button>
+          </div>
         </div>
       </div>
-
       <div class="total-data">
         <div class="total-data-title">
           総額（過去データの合計値）
@@ -111,9 +126,6 @@
             <% end %>
               <%= @balance_total.to_s(:delimited)%>円</div>
           </div>
-        </div>
-        <div class="question fas fa-question-circle">
-            収 支 ＝ 収 入 - (固定費 + 変動費)
         </div>
       </div>
     </div>
