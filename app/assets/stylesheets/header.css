@@ -331,10 +331,10 @@
   .purchase_btn {
     width: 100%;
     height: 20px;
-    font-size: 10%;
+    font-size: 8px;
     text-align: center;
     text-decoration: none;
-    padding: 3px 5PX 0 5PX;
+    padding: 3px 0 0;
   }
   
   .input-list-color {
@@ -342,7 +342,20 @@
   }
 }
 
-@media (max-width: 400px) {
+/* @media (max-width: 400px) {
+  .user-nickname-btn {
+    width: 100%;
+    font-size: 6px;
+  }
+
+  .user-nickname {
+    height: 25px;
+    font-size: 6px;
+    font-weight:bold;
+    padding: 1px 1px;
+    margin: 0 auto;
+  }
+
   .home_btn,
   .income_btn,
   .fixed_btn,
@@ -353,5 +366,6 @@
     height: 15px;
     font-size: 5px;
     text-decoration: none;
+    padding: 3px 0 0;
   }
-}
+} */
