@@ -9,7 +9,7 @@ footer {
 }
 
 /* PC表示時 */
-@media (min-width: 1100px) {
+@media screen and  (min-width: 1100px) {
   .footer-title {
     font-size: 16px;
     font-family: 'Corben', cursive;
@@ -17,7 +17,7 @@ footer {
 }
 
  /* タブレット表示時 */
-@media (max-width: 1100px) {
+@media screen and  (max-width: 1100px) {
   .footer-title {
     font-size: 14px;
     font-family: 'Corben', cursive;
@@ -25,7 +25,7 @@ footer {
 }
 
  /* スマホ表示時 */
-@media (max-width: 600px) {
+@media screen and  (max-width: 600px) {
   .footer-title {
     font-size: 12px;
     font-family: 'Corben', cursive;

@@ -1,5 +1,5 @@
 /* PC表示時 */
-@media (min-width: 1000px) {
+@media screen and  (min-width: 1000px) {
   .top-page-header {
     width: 100%;
     height: 120px;
@@ -111,7 +111,7 @@
  }
 
  /* タブレット表示時 */
-@media (max-width: 1000px) {
+@media screen and  (max-width: 1000px) {
   .top-page-header {
     width: 100%;
     height: 120px;
@@ -223,7 +223,7 @@
 }
 
 /* スマホ表示時 */
-@media (max-width: 600px) {
+@media screen and  (max-width: 600px) {
   .top-page-header {
     width: 100%;
     height: 90px;
@@ -342,7 +342,7 @@
   }
 }
 
-/* @media (max-width: 400px) {
+/* @media screen and  (max-width: 400px) {
   .user-nickname-btn {
     width: 100%;
     font-size: 6px;
