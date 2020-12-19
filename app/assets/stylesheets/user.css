@@ -36,6 +36,7 @@
 
   .new_user {
     width: 100%;
+
   }
 
   .form-wrap-log-in,
@@ -148,6 +149,7 @@
   .login-flash-message {
     font-size: 14px;
   }
+
 }
 
 /* タブレット表示時 */
