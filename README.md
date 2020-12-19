@@ -21,9 +21,7 @@ https://portfolio.taisei-account-book.com/
 ## デプロイ先
 - URL : https://portfolio.taisei-account-book.com/
 ## テストアカウントのメールアドレスとパスワード
-- メールアドレス: kkk@kkk.com  
-- パスワード　 : 123kkk
-
+　テストユーザーボタンからログインできます。
 # DEMO
 　(gifで動画や写真を貼って、ビューのイメージを掴んでもらいます)
 　⇒特に、デプロイがまだできていない場合は
