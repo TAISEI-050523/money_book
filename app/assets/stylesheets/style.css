@@ -1533,7 +1533,7 @@ footer {
   .question-btn,
   .dialog-box,
   .close-box {
-    display: hidden;
+    display: none;
   }
 
 /* 中段 */
@@ -1920,7 +1920,7 @@ footer {
   }
   
   .input-forms {
-    width: 50%;
+    width: 80%;
     margin-top: 50px;
     display: flex;
     justify-content: center;
@@ -1967,9 +1967,9 @@ footer {
   .detail-box,
   .search-result-content {
     width: 100%;
-    padding: 0 30px;
-    margin-top: 50px;
-    margin-bottom: 100px;
+    padding: 0 10px;
+    margin-top: 30px;
+    margin-bottom: 80px;
     text-align: center;
     overflow: scroll;
   }
@@ -2106,6 +2106,7 @@ footer {
   .input-date {
     width: 60%;
     height: 20px;
+    font-size: 10px;
     border: 1px solid gray;
     border-radius: 5px;
     padding-left: 5px;
@@ -2115,6 +2116,7 @@ footer {
   .input-btn {
     width: 30%;
     height: 20px;
+    font-size: 12px;
     font-weight: bold;
     text-align: center;
     color: #FFF;
@@ -2159,6 +2161,8 @@ footer {
 
   .search-box {
     height: 50px;
+    font-size: 10px;
+    margin-bottom: 20px;
   }
 
   .search-price {
@@ -2172,7 +2176,6 @@ footer {
   }
 
   .detail {
-    font-size: 10px;
     text-align: center;
     display: flex;
     justify-content: center;
