@@ -31,6 +31,7 @@
   </div>
   <div class="set-content">
     <%= form_with(model: @budget, local: true) do |form| %>
+      <%= render 'shared/budget_error_messages', model: form.object %>
       <div class="middle-set-content">
         <div class="left-set-content">
           <div class="set-title">
@@ -72,7 +73,6 @@
             <label class="budget-category fas fa-question-circle"> その他</label>
             <%= form.text_field :fixed_etcetera, value: 0, placeholder: "", class: "budget-price" %><b>円</b>
           </div>
-          <%= render 'shared/budget_error_messages', model: form.object %>
         </div>
         <div class="set-right-content">
           <div class="set-title">
