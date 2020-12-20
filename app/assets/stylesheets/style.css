@@ -236,72 +236,53 @@ a {
   }
 }
 
-/* スマホ表示時 */
+/* スマホ表示時 400-600px */
 @media screen and  (max-width: 600px) {
   .top-page-header {
     width: 100%;
     height: 90px;
-    padding: 0 5px;
-    background-color:rgb(255, 255, 255);
-    border-bottom: 3px solid gray;
-    position: relative;
+    padding: 0 1px;
   }
-  
-  .top-header {
-    display: flex;
-  }
-  
+
   .left-header {
-    width: 100%;
-    display: flex;
-    align-items: center;
+    width: 60%;
   }
+
   .top-title-box {
     width: 100%;
   }
   .top-title {
     width: 100%;
-    font-size: 16px;
-    font-family: 'Corben', cursive;
-    padding: 10px 0;
+    font-size: 14px;
   }
   
   .fa-book {
-    font-size: 16px;
+    font-size: 14px;
   }
   
   h1 {
-    font-size: 16px;
+    font-size: 14px;
   }
   
   .right-header {
-    width: 50%;
+    width: 40%;
   }
   
   .lists-right {
     width: 100%;
     height: 40px;
-    margin: 0 0 0 auto;
-    text-align: center;
   }
 
   .user-nickname-btn {
-    width: 100%;
+    width: 105%;
     font-size: 8px;
   }
   .user-nickname {
     height: 25px;
     font-size: 8px;
     font-weight:bold;
-    padding: 2px 2px;
+    padding: 1px 1px;
     margin: 0 auto;
-  }
-  
-  .log-out-btn,
-  .log-in-btn,
-  .sign-up-btn {
-    display: flex;
-    justify-content: center;
   }
   
   .log-in,
@@ -310,27 +291,16 @@ a {
     width: 60%;
     height: 20px;
     font-size: 8px;
-    font-weight: bold;
-    text-align: center;
-    color: #FFF;
-    background-color:orange;
-    margin: 5px auto;
-    border: none;
-    border-radius: 10px;
-    box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
   }
   
   .input-contents {
-    width: 100%;
     height: 20px;
-    position: absolute;
-    bottom: 0;
   }
   
   .inputs-lists {
-    display: flex;
-    justify-content: space-around;
     padding: 0 2px;
+    display: flex;
+    justify-content: none;
   }
   
   .input-list {
@@ -343,11 +313,9 @@ a {
   .variable_btn,
   .budget_btn,
   .purchase_btn {
-    width: 100%;
+    width: 105%;
     height: 20px;
     font-size: 8px;
-    text-align: center;
-    text-decoration: none;
     padding: 3px 0 0;
   }
   
@@ -356,6 +324,24 @@ a {
   }
 }
 
+/* スマホ表示時 -400px*/
+@media screen and  (max-width: 400px) {  
+  .home_btn,
+  .income_btn,
+  .fixed_btn,
+  .variable_btn,
+  .budget_btn,
+  .purchase_btn {
+    width: 105%;
+    height: 20px;
+    font-size: 8px;
+    padding: 0;
+  }
+  
+  .input-list-color {
+    border-bottom: 3px solid orange;
+  }
+}
 
 footer {
   width: 100%;
@@ -698,131 +684,30 @@ footer {
   .sing-up-form-contents {
     width: 100%;
     height: 700px;
-    background-color: rgb(250, 247, 241);
-    text-align: center;
     padding: 30px 0px 30px;
     margin-bottom: 20px;
   }
-  
-  .log-in-title-box,
-  .sign-up-title-box {
-    text-align: center;
-    margin:5px 0px 30px;
-  }
-  
-  .log-in-title,
-  .sign-up-title {
-    font-size: 30px;
-    font-weight: bold;
-    font-family: 'Merriweather', serif;
-    font-family: 'Oswald', sans-serif;
-    font-family: 'Work Sans', sans-serif;
-    margin: 0 10px;
-    border-bottom: 2px solid orange;
-  }
-  
-  .new_user {
-    width: 100%;
-  }
-  
+
   .form-wrap-log-in,
   .form-wrap-sign-up {
-    background-color: #FFF;
-    padding-bottom: 10px;
     margin: 0 10px;
-  }
-  
-  .form-wrap-log-in {
-    margin-top: 20px;
   }
   
   .form-wrap-sign-up {
     margin-top: 0px;
   }
-  
-  .form-header {
-    width: 100%;
-    height: 90px;
-    text-align: center;
-    font-size: 22px;
-  }
-  
-  .form-header-text {
-    line-height: 100px;
-    border-bottom: 1px solid #FFF;
-    font-weight: bold;
-  }
-  
+
   .form-group {
     width: 80%;
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
   }
-  
-  .form-text-wrap {
-    width: 100%;
-    height: 20%;
-  }
-  
-  /* 収入・固定費・変動費・購入予定リスト  共通 */
-  .indispensable {
-    background: #ea352d;
-    margin-left: 3px;
-    padding: 3px;
-    border-radius: 2px;
-    color: #fff;
-    font-size: 8px;
-    font-weight: bold;
-  }
-  
-  /* 収入・固定費・変動費・購入予定リスト  共通  フォームの両端を面一にするため */
-  .indispensable-none {
-    margin-left: 3px;
-    padding: 1px;
-    border-radius: 2px;
-    font-size: 8px;
-    font-weight: bold;
-    text-indent:100%;
-    white-space:nowrap;
-    overflow:hidden;
-  }
-  
-  .form-text {
-    font-size: 8px;
-    font-weight: bold;
-    text-align: left;
-  }
-  
-  .input-default {
-    width: 100%;
-    margin-top: 5px;
-    height: 48px;
-    padding: 5px 8px 8px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    background: #fff;
-    font-size: 10px;
-    resize: none;
-  }
-  
-  .log-in-btn,
-  .sign-up-btn {
-    display: flex;
-    justify-content: center;
-  }
-  
+
   .log-in-blue-btn,
   .test-log-in-blue-btn,
   .sign-up-blue-btn {
     width: 60%;
     height: 30px;
     color: #FFF;
-    background-color: #0cc8f7;
-    margin: 20px auto;
-    border: none;
-    border-radius: 10px;
-    box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+    background-color: skyblue;
   }
   
   .input-name-wrap {
@@ -834,16 +719,7 @@ footer {
   .test-log-in-blue-btn {
     background-color: #f6534d;
   }
-  
-  .hidden {
-    display: none;
-  }
 
-  .info-text,
-  .login-flash-message {
-    font-size: 8px;
-  }
-}
 /**********   log-in&&sign-up end   ***************************************************************************/
 /**********   top start ***************************************************************************************/
 /* 収入詳細・固定費詳細・変動費詳細ページ 共通 */
@@ -1868,171 +1744,7 @@ footer {
 /**********   top end  ***************************************************************************************/
 /**********   purchase start  ***************************************************************************************/
 
-.input-purchase-plan {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
 
-.purchase-plan-forms {
-  margin-top: 50px;
-  
-}
-
-.purchase-plan-form {
-  width: 100%;
-  text-align: center;
-  margin-bottom: 50px;
-}
-
-.purchase-plan-title {
-  font-size: 18px;
-  font-weight: bold;
-  margin: 0 50px 20px;
-  border-bottom: 2px solid orange;
-}
-
-.img-upload {
-  width: 400px;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  text-align: center;
-}
-
-img {
-  height: 100px;
-  width: 100px;
-  object-fit: contain;
-}
-
-.hidden {
-  display: none;
-}
-
-.weight-bold-text {
-  text-align: left;
-  min-width: 170px;
-  margin-bottom: 10px;
-  display: flex;
-  justify-content: center;
-}
-
-.click-up-load {
-  margin: 15px 0;
-  min-width: 250px;
-}
-
-.image-file {
-  font-size: 14px;
-  font-weight: bold;
-  padding: 0 20px;
-}
-
-.item-image {
-  text-align: center;
-}
-
-.purchase-text,
-.purchase-date {
-  width: 300px;
-  height: 30px;
-  border: 1px solid gray;
-  border-radius: 10px;
-  margin-top: 10px;
-  padding-left: 5px;
-  box-sizing: border-box;
-}
-
-.submit-btn {
-  width: 200px;
-  height: 40px;
-  color: #ffffff;
-  background-color: #51a351;
-  border: none;
-  border-radius: 10px;
-  margin: 10px auto;
-}
-
-.bottom-purchase-contents {
-  width: 100%;
-  margin-top: 50px;
-}
-
-.prompt-purchase-plans {
-  width: 100%;
-  height: 200px;
-  text-align: center;
-}
-
-.prompt-purchase-plan {
-  font-size: 20px;
-  margin-top: 50px;
-}
-
-.purchase-plans-lists {
-  margin: 20px 10px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-
-}
-.purchases-items {
-  width: calc((100% - 250px) / 3);;
-  height: 450px;
-  background-color: rgb(248, 237, 211);
-  border-radius: 10px;
-  box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
-  padding: 10px;
-  margin: 5px;
-  text-align: center;
-}
-
-.item-title {
-  width: 100%;
-  height: 30px;
-  font-size: 20px;
-  border-bottom: 1px solid orange;
-  margin-bottom: 10px;
-}
-
-.item-image-box {
-  height: 250px;
-  background-color: #FFF;
-  padding: 10px;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.plan_image {
-  width: 220px;
-  height: 220px;
-}
-
-.no-image {
-  width: 100px;
-  height: 100px;
-}
-
-.item-remarks,
-.item-price,
-.item-date {
-  font-size: 16px;
-  margin-bottom: 3px;
-}
-
-.delete-btn {
-  width: 80px;
-  height: 20px;
-  color: #ffffff;
-  background-color: #CA3F34;
-  border: none;
-  border-radius: 5px;
-  padding: 2px 20px;
-}
 
 /**********   purchase end  ***************************************************************************************/
 /**********   input・fixed-cost・variable-cost start  **************************************************************/

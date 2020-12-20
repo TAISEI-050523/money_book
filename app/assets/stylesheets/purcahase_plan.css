@@ -1,0 +1,297 @@
+@media screen and  (min-width: 1100px) {
+  .input-purchase-plan {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .purchase-plan-forms {
+    margin-top: 50px;
+    
+  }
+  
+  .purchase-plan-form {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  
+  .purchase-plan-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 50px 20px;
+    border-bottom: 2px solid orange;
+  }
+  
+  .img-upload {
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+  
+  img {
+    height: 100px;
+    width: 100px;
+    object-fit: contain;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .weight-bold-text {
+    text-align: left;
+    min-width: 170px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .click-up-load {
+    margin: 15px 0;
+    min-width: 250px;
+  }
+  
+  .image-file {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 0 20px;
+  }
+  
+  .item-image {
+    text-align: center;
+  }
+  
+  .purchase-text,
+  .purchase-date {
+    width: 300px;
+    height: 30px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    margin-top: 10px;
+    padding-left: 5px;
+    box-sizing: border-box;
+  }
+  
+  .submit-btn {
+    width: 200px;
+    height: 40px;
+    color: #ffffff;
+    background-color: #51a351;
+    border: none;
+    border-radius: 10px;
+    margin: 10px auto;
+  }
+  
+  .bottom-purchase-contents {
+    width: 100%;
+    margin-top: 50px;
+  }
+  
+  .prompt-purchase-plans {
+    width: 100%;
+    height: 200px;
+    text-align: center;
+  }
+  
+  .prompt-purchase-plan {
+    font-size: 20px;
+    margin-top: 50px;
+  }
+  
+  .purchase-plans-lists {
+    margin: 20px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+  
+  }
+  .purchases-items {
+    width: calc((100% - 250px) / 3);;
+    height: 450px;
+    background-color: rgb(248, 237, 211);
+    border-radius: 10px;
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+    padding: 10px;
+    margin: 5px;
+    text-align: center;
+  }
+  
+  .item-title {
+    width: 100%;
+    height: 30px;
+    font-size: 20px;
+    border-bottom: 1px solid orange;
+    margin-bottom: 10px;
+  }
+  
+  .item-image-box {
+    height: 250px;
+    background-color: #FFF;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .plan_image {
+    width: 220px;
+    height: 220px;
+  }
+  
+  .no-image {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .item-remarks,
+  .item-price,
+  .item-date {
+    font-size: 16px;
+    margin-bottom: 3px;
+  }
+  
+  .delete-btn {
+    width: 80px;
+    height: 20px;
+    color: #ffffff;
+    background-color: #CA3F34;
+    border: none;
+    border-radius: 5px;
+    padding: 2px 20px;
+  }
+}
+
+ /* タブレット表示時 */
+@media screen and  (max-width: 1100px) {
+  .purchases-items {
+    width: calc((100% - 100px) / 2);;
+    height: 450px;
+    background-color: rgb(248, 237, 211);
+    border-radius: 10px;
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+    padding: 10px;
+    margin: 5px;
+    text-align: center;
+  }
+
+}
+
+ /* スマホ表示時 */
+@media screen and  (max-width: 600px) {
+  .input-purchase-plan {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .purchase-plan-forms {
+    margin-top: 50px;
+  }
+  
+  .purchase-plan-form {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 25px;
+  }
+  
+  .purchase-plan-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 50px 20px;
+    border-bottom: 2px solid orange;
+  }
+  
+  .img-upload {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+  
+  img {
+    height: 100px;
+    width: 100px;
+    object-fit: contain;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .weight-bold-text {
+    text-align: left;
+    min-width: 170px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .click-up-load {
+    margin: 15px 0;
+    min-width: 250px;
+  }
+  
+  .image-file {
+    font-size: 12px;
+    font-weight: bold;
+    padding: 0 5px;
+  }
+
+  .item-image {
+    width: 70%;
+    font-size: 12px;
+  }
+
+  .purchase-text,
+  .purchase-date {
+    width: 60%;
+    height: 30px;
+    font-size: 14px;
+  }
+  
+  .submit-btn {
+    width: 100px;
+    height: 40px;
+    color: #ffffff;
+    background-color: green;
+    border: none;
+    border-radius: 10px;
+    margin: 10px auto;
+  }
+  
+
+  .purchases-items {
+    width: 100%;
+    background-color: rgb(248, 237, 211);
+    border-radius: 10px;
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+    padding: 5px;
+    margin: 5px;
+    text-align: center;
+  }
+  
+  .item-title {
+    width: 100%;
+    height: 30px;
+    font-size: 16px;
+    border-bottom: 1px solid orange;
+    margin-bottom: 10px;
+  }
+  
+  .item-image-box {
+    height: 250px;
+    background-color: #FFF;
+    padding: 5px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+}
