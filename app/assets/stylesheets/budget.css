@@ -1,0 +1,326 @@
+/* PC表示時 */
+@media screen and  (min-width: 600px) {
+  .budget-contents {
+    height: 800px;
+  }
+  .top-budget-content {
+    width: 100%;
+    height: 80px;
+  }
+  
+  .budget-btn-box {
+    width: 600px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .budget-btn {
+    width: 150px;
+    height: 25px;
+    font-weight: bold;
+    text-align: center;
+    color: #FFF;
+    background-color:#51a351;
+    margin: 10px auto;
+    border: none;
+    border-radius: 10px;
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+  }
+  
+  .bottom-budget-content {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .budget-title {
+    width: 800px;
+    background-color: rgb(250, 204, 118);
+    border: 1px solid gray;
+  }
+  
+  .budget-bar {
+    width: 800px;
+    height: 3px;
+    background-color: white;
+  }
+  
+  .budget {
+    width: 800px;
+    display: flex;
+  }
+  
+  .category-budget {
+    width: 200px;
+    height: 25px;
+    padding: 3px 0 3px 20px;
+    border-top: 1px solid gray;
+  }
+  .month-budget,
+  .month-expense,
+  .month-balance {
+    width: 200px;
+    height: 25px;
+    font-weight: 500;
+    text-align: right;
+    padding-right: 50px;
+    border-top: 1px solid gray;
+  }
+  
+  .top-font {
+    font-weight: bold;
+  }
+  
+  .gray-color {
+    font-weight: bold;
+    background-color: #cacaca;
+    border-top: 1px solid rgb(216, 212, 212);
+  }
+  
+  .orange-color{
+    background-color: rgb(250, 204, 118);
+    border: 1px solid rgb(216, 212, 212);
+  }
+  
+  .odd-color {
+    background-color: rgb(230, 227, 224);
+  }
+  .even-color {
+    background-color: white;
+  }
+  
+  /* budget new edit */
+  .set-contents {
+    width: 100%;
+    height: 700px;
+    padding: 0 20%;
+    text-align: center;
+  }
+  
+  .set-budget-title {
+    width: 40%;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 20px auto 10px;
+    border-bottom: 2px solid orange;
+  }
+  
+  .set-content {
+    background-color: rgb(248, 237, 211);
+    padding: 0px 10px;
+    margin-top: 30px;
+    border-radius: 10px;
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+  }
+  
+  .middle-set-content {
+    display: flex;
+  }
+  
+  .right-set-content,
+  .left-set-content {
+    width: 50%;
+    padding:0 50px;
+  }
+  .set-title {
+    width: 40%;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0 10px 30px;
+    border-bottom: 2px solid orange;
+  }
+  
+  .budget-form {
+    text-align: right;
+    margin-bottom: 5px;
+  }
+  
+  .budget-price {
+    width: 200px;
+    text-align: right;
+    padding-right: 15px;
+    margin: 0 5px;
+    border: 1px solid gray;
+    border-radius: 5px;
+  }
+  
+  .error-message {
+    color: red;
+  }
+  
+  .error-message-box {
+    width: 350px;
+    height: 110px;
+    background-color: silver;
+    margin: 10px 30px 10px;
+    border: 1px solid red;
+    overflow: scroll;
+  }
+}
+
+ /* スマホ表示時 */
+@media screen and  (max-width: 600px) {
+  .budget-contents {
+    height: 800px;
+  }
+  .top-budget-content {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .budget-btn-box {
+    width: 300px;
+    height: 50px;
+  }
+  
+  .budget-btn {
+    width: 150px;
+    height: 25px;
+    font-weight: bold;
+    text-align: center;
+    color: #FFF;
+    background-color:#51a351;
+    margin: 10px auto;
+    border: none;
+    border-radius: 10px;
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+  }
+  
+  .bottom-budget-content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .budget-content {
+    width: 100%;
+    padding: 0 5px;
+  }
+  
+  .budget-bar {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+  }
+  
+  .budget {
+    width: 100%;
+    display: flex;
+  }
+  
+  .category-budget {
+    width: 35%;
+    height: 20px;
+    font-size: 10px;
+    padding: 2px;
+    border-top: 1px solid gray;
+  }
+
+  .month-budget,
+  .month-expense,
+  .month-balance {
+    width: 30%;
+    height: 20px;
+    font-size: 10px;
+    font-weight: 500;
+    text-align: right;
+    padding-right: 5px;
+    border-top: 1px solid gray;
+  }
+  
+  .top-font {
+    font-weight: bold;
+  }
+  
+  .gray-color {
+    font-weight: bold;
+    background-color: #cacaca;
+    border-top: 1px solid rgb(216, 212, 212);
+  }
+  
+  .orange-color{
+    background-color: rgb(250, 204, 118);
+    border: 1px solid rgb(216, 212, 212);
+  }
+  
+  .odd-color {
+    background-color: rgb(230, 227, 224);
+  }
+  .even-color {
+    background-color: white;
+  }
+  
+  /* budget new edit */
+  .set-contents {
+    width: 100%;
+    height: 1000px;
+    padding: 0 5px;
+    text-align: center;
+  }
+  
+  .set-budget-title {
+    width: 80%;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 10px auto 5px;
+    border-bottom: 2px solid orange;
+  }
+  
+  .set-content {
+    background-color: rgb(248, 237, 211);
+    padding: 0px 5px;
+    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+  }
+  
+  .middle-set-content {
+    display: block;
+  }
+  
+  .right-set-content,
+  .left-set-content {
+    width: 100%;
+    padding:0 5px;
+  }
+
+  .set-title {
+    width: 50%;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 20px 0 10px 10px;
+    border-bottom: 2px solid orange;
+  }
+  
+  .budget-form {
+    text-align: right;
+    margin-bottom: 5px;
+  }
+  
+  .budget-price {
+    width: 50%;
+    text-align: right;
+    padding-right: 10px;
+    margin: 0 5px;
+    border: 1px solid gray;
+    border-radius: 5px;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 8px;
+  }
+  
+  .error-message-box {
+    width: 80%;
+    height: 100px;
+    background-color: silver;
+    margin: 10px 30px 10px;
+    border: 1px solid red;
+    overflow: scroll;
+  }
+}
