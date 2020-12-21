@@ -130,7 +130,7 @@ https://portfolio.taisei-account-book.com/  <br>【テストユーザーログ�
 | remarks        | text       |                                |
 | price          | integer    | null: false                    |
 | purchase_date  | date       | null: false                    |
-| user           | references | null: false, foreign_key: true |
+| user_id        | references | null: false, foreign_key: true |
 
 ### Association
 
