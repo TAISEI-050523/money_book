@@ -1,4 +1,6 @@
 # 💰 ACCOUNT BOOK 💰
+<img width="500" alt="qiita-square" src="https://github.com/TAISEI-050523/money_book/blob/master/top_page.png">
+
 ## 🌐 App URL
 https://portfolio.taisei-account-book.com/
 
@@ -14,10 +16,10 @@ https://portfolio.taisei-account-book.com/
 # 🌇 制作背景(意図)
 　お金が全てではないけど、何かを実現するためには最低限のお金が必要です。そのためにも、普段から自身のお金を管理する習慣を身に付ける必要があると考えました。 このアプリはお金を簡単に管理できるように「個人向けの家計簿」として開発しました。その日、得たお金や使ったお金を記録することで、簡単に自身のお金を管理できるように作っています。また「欲しい物を買う」という身近な目標に役立つ購入予定リスト機能もつけました。
 
-# ER図
+# 📄 ER図
 <img width="500" alt="qiita-square" src="https://github.com/TAISEI-050523/money_book/blob/master/app/assets/images/ER.png">
 
-# 本番環境(デプロイ先 テストアカウント＆ID)
+# 💻 環境(デプロイ先 テストアカウント＆ID)
 ## デプロイ先
 - URL : https://portfolio.taisei-account-book.com/
 ## テストアカウントのメールアドレスとパスワード
@@ -27,7 +29,7 @@ https://portfolio.taisei-account-book.com/
 　⇒特に、デプロイがまだできていない場合は
 　DEMOをつけることで見た目や昨日の操作方法を企業側に伝えることができます。
 
-# 使用技術(開発環境)
+# ⚙️ 使用技術(開発環境)
 ### フロントエンド
 - HTML/CSS
 - JavaScript
@@ -49,7 +51,7 @@ https://portfolio.taisei-account-book.com/
 ### 解析ツール
 - 静的コード解析（RuboCop）
 
-# 工夫したポイント
+# 🛠 工夫したポイント
 RSpecを用いたテストコードの実装を工夫しました。知人にアプリを実際に触ってもらい、考えられるユーザーの操作をできる限り抽出して、正常系と異常系を分けて実装しました。
 この時気づいたことは、integer型は４バイト（＋２１億〜ー２１億）までしか格納できないことです。また予算登録で空欄は最初から０を入れてたほうが良いという指摘を受けました。
 
@@ -60,7 +62,7 @@ RSpecを用いたテストコードの実装を工夫しました。知人にア
 - 基本的な動作は全て非同期化する
 
 
-# テーブル設計
+# 💽 テーブル設計
 ## users テーブル
 
 | Column   | Type   | Options     |
