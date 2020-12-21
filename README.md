@@ -33,10 +33,12 @@ https://portfolio.taisei-account-book.com/  <br>【テストユーザーログ�
 - （本番環境）MariaDB : 5.5.64 
 ### インフラ
 - AWS (S3, VPC, EC2, Route53, Certificate Manager) 
-- Git, GitHub
 - Capistrano : 3.14.1
 ### 解析ツール
 - 静的コード解析（RuboCop）
+### その他
+- Git, GitHub
+- Rspec(単体・結合テストコード)
 
 # 📄 ER図
 <img width="500" alt="qiita-square" src="https://github.com/TAISEI-050523/money_book/blob/master/app/assets/images/ER.png">
