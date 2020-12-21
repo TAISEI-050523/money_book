@@ -47,9 +47,9 @@ https://portfolio.taisei-account-book.com/  <br>【テストユーザーログ�
 ## 収入・固定費・変動費入力機能
  <br><img width="500" alt="qiita-square" src="https://i.gyazo.com/c69037b0d6d63dab657314e5653c8048.gif">
 ### 予算管理機能
-　<br><img width="500" alt="qiita-square" src="https://i.gyazo.com/c69037b0d6d63dab657314e5653c8048.gif">
+　<br><img width="500" alt="qiita-square" src="https://i.gyazo.com/01e94b853fa6932961a75a654e79d097.gif">
 ### 購入予定リスト機能
-　<br><img width="500" alt="qiita-square" src="https://i.gyazo.com/c69037b0d6d63dab657314e5653c8048.gif">
+　<br><img width="500" alt="qiita-square" src="https://i.gyazo.com/c9f485fb0f9b601220607f31fa61e20d.gif">
 
 # 🛠 工夫したポイント
 RSpecを用いたテストコードの実装を工夫しました。知人にアプリを実際に触ってもらい、考えられるユーザーの操作をできる限り抽出して、正常系と異常系を分けて実装しました。
