@@ -102,6 +102,7 @@
   }
   
   .purchase-plans-lists {
+    padding-bottom: 30px;
     margin: 20px 10px 0;
     display: flex;
     flex-wrap: wrap;
@@ -235,7 +236,6 @@
   .bottom-purchase-contents {
     width: 100%;
     padding: 0 5%;
-    margin-bottom: 50px;
   }
 
   .purchases-items {

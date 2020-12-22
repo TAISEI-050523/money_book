@@ -445,22 +445,26 @@
 
   .category-detail {
     width: 20%;
+    font-size: 8px;
     border: 1px solid gray;
   }
 
   .price-detail,
   .date-detail {
-    width: 30%;
+    width: 35%;
+    font-size: 8px;
     border: 1px solid gray;
   }
 
   .remarks-detail {
-    width: 40%;
+    width: 35%;
+    font-size: 8px;
     border: 1px solid gray;
   }
 
   .delete-detail {
     width: 10%;
+    font-size: 8px;
     border: 1px solid gray;
   }
 
