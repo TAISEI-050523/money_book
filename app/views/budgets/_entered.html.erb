@@ -84,7 +84,7 @@
   <div class="month-expense"><%= @variable_cost.where(variable_cost_category_id: 4).sum(:price).to_s(:delimited) %><b> 円</b></div>
   <div class="month-balance"><%= (@budget.transportation - @variable_cost.where(variable_cost_category_id: 4).sum(:price)).to_s(:delimited) %><b> 円</b></div>
 </div>
-<div class="budget">
+<div class="budget even-color">
   <div class="category-budget fas fa-futbol"> 趣味・娯楽</div>
   <div class="month-budget", id="hobby-category"><%= @budget.hobby.to_s(:delimited) %><b> 円</b></div>
   <div class="month-expense"><%= @variable_cost.where(variable_cost_category_id: 5).sum(:price).to_s(:delimited) %><b> 円</b></div>
