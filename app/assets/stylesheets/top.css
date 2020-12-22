@@ -1,0 +1,1037 @@
+/* 収入詳細・固定費詳細・変動費詳細ページ 共通 */
+.income-color {
+  color: rgb(0, 101, 251);
+}
+.expense-color {
+  color: rgb(255, 0, 43);
+}
+
+.zero-color {
+  color: rgb(39, 38, 38);
+}
+
+/* PC表示時 */
+@media screen and  (min-width: 1100px){
+  .contents {
+    width: 100%;
+    height: calc(100% - 200px);
+    padding: 50px 100px 30px;
+    background-color: rgb(250, 247, 241);
+  }
+  /* 上段 */
+  .question-mark {
+    width: 100%;
+    text-align: right;
+    padding-right: 10px;
+  }
+
+  .top-contents {
+    width: 100%;
+    height: 500px;
+    background-color: rgb(250, 247, 241);
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-self: start;
+  }
+  .top-left-content {
+    width: 50%;
+    height: 500px;
+    background-color: rgb(250, 247, 241);
+  }
+  
+  .chart-title-box {
+    width: 100%;
+    height: 30px;
+    background-color: rgb(250, 247, 241);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  
+  }
+  .chart-title {
+    width: 80%;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 30px;
+    border-bottom: 2px solid orange;
+  }
+  
+  .chart-box {
+    width: 100%x;
+    height: 380px;
+    background-color: rgb(253, 253, 250);
+    margin: 10px;
+    padding: 40px 30px 20px;
+    border: 1px solid gray;
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+  }
+  
+  .chart {
+    overflow: scroll;
+  }
+  
+  .top-right-content {
+    width: 50%;
+    height: 500px;
+    margin-left: 50px;
+    background-color: rgb(250, 247, 241);
+    text-align: center;
+  }
+  
+  .month-data,
+  .total-data {
+    width: 80%;
+    margin-bottom: 10px;
+  }
+  
+  .month-data-title,
+  .total-data-title,
+  .purchase-plans-data-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 30px;
+    border-bottom: 2px solid orange;
+  }
+  
+  .category-prices{
+    width: 100%;
+    height: 200px;
+    background-color: rgb(248, 237, 211);
+    padding: 10px 20px 40px 20px;
+    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+  }
+  
+  .category-price {
+    width: 100%;
+    height: 25px;
+    font-size: 16px;
+    text-align: left;
+    padding: 0 5%;
+    margin-top: 15px;
+    border-bottom: 1px dotted gray;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .category {
+    width: 45%;
+    padding-left: 3%;
+    margin-top: 5px;
+  }
+  .price {
+    width: 55%;
+    text-align: right;
+    padding-right: 10%;
+  }
+
+  .question-box{
+    text-align: right;
+    padding-right: 5px;
+  }
+  .question-btn {
+    color: #FFF;
+    background-color: black;
+    border: none;
+    border-radius: 50%;
+    margin-left:20px;
+  }
+  
+  .dialog-box {
+    width: 50%;
+    background-color: rgb(247, 227, 183);
+    padding: 10px 20px 20px 20px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+  }
+
+  .dialog-title {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0 30px;
+    border-bottom: 2px solid orange;
+  }
+
+  .explanation-function {
+    font-weight: bold;
+    text-align: left;
+    margin: 10px 0 0px 20px;
+  }
+
+  .close-box {
+    text-align: right;
+  }
+
+  /* 中段 */
+  .middle-contents {
+    width: 100%;
+    height: 600px;
+    background-color: rgb(250, 247, 241);
+    margin-bottom: 50px;
+    display: flex;
+  }
+
+  .middle-left-content {
+    width: 65%;
+    height: 500px;
+    background-color: rgb(250, 247, 241);
+    padding: 10px 5px 0;
+    text-align: center;
+  }
+
+  .breakdowns {
+    width: 100%;
+    height: 420px;
+    background-color: rgb(250, 247, 241);
+    margin-top: 10px;
+    display: flex;
+  }
+
+  .left-breakdown,
+  .right-breakdown  {
+    width: 50%;
+    height: 450px;
+    background-color: rgb(248, 237, 211);
+    border-radius: 10px;
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+    padding: 0 10px;
+    margin: 5px;
+    text-align: center;
+  }
+
+  .left-breakdown-title,
+  .right-breakdown-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 30px;
+    border-bottom: 1px solid orange;
+  }
+  .fixed-cost-lists,
+  .variable-cost-lists {
+    width: 90%;
+    margin: 10px ;
+  }
+
+  .category-name-number {
+    text-align: center;
+    display: flex;
+    margin-bottom: 5px;
+  }
+
+  .category-name {
+    width: 50%;
+    font-weight: bolder;
+    text-align: left;
+    padding-left: 5px;
+    border-bottom: 1px dotted gray;
+  }
+
+  .category-number {
+    width: 50%;
+    text-align: right;
+    padding-right: 15px;
+    border-bottom: 1px dotted gray;
+  }
+
+  .new-category-btn,
+  .show-budget-btn {
+    display: flex;
+    justify-content: center;
+  }
+
+  .new_category_btn,
+  .show_budget_btn {
+    width: 40%;
+    height: 25px;
+    font-weight: bold;
+    color: #FFF;
+    background-color:#51a351;
+    margin: 5px auto;
+    border: none;
+    border-radius: 10px;
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+  }
+
+  .middle-right-content {
+    width: 35%;
+    height: 600px;
+    background-color: rgb(250, 247, 241);
+    padding: 10px 5px 0;
+    text-align: center;
+  }
+
+  .budget-data-titles {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 30px;
+    border-bottom: 2px solid orange;
+  }
+
+  .budget-data-box {
+    width: 100%;
+    height: 530px;
+    margin-top: 15px;
+    background-color: rgb(248, 237, 211);
+    border-radius: 10px;
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+  }
+
+  .budget-data-title {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+    
+    margin: 10px 30px 0;
+    border-bottom: 1px solid orange;
+  }
+
+  .budget-data {
+    margin: 10px 10px 0 30px;
+    border-bottom: 1px dotted gray;
+    display: flex;
+  }
+
+  .budget-data-text {
+    width: 55%;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: left;
+    padding-left: 3%;
+  }
+
+  .budget-data-price {
+    width: 45%;
+    padding-right: 10%;
+    text-align: right;
+  }
+
+  .remaining-days {
+    font-size: 15px;
+    text-align: left;
+    margin: 5px 30px 0px;
+  }
+
+  .show-budget-btn {
+    margin-top: 20px;
+  }
+
+  .bottom-contents{
+    width: 100%x;
+    margin: 10px;
+    padding: 5px;
+  }
+
+  .purchase-title-box {
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .purchase-title {
+    width: 80%;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 30px;
+    border-bottom: 2px solid orange;
+  }
+
+  .purchase-plans-content {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .purchases-box {
+    width: calc((100% - 250px) / 3);;
+    height: 260px;
+    text-align: center;
+    background-color: rgb(248, 237, 211);
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+  }
+
+  .plan-title {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .plan-image-box {
+    height: 140px;
+    background-color: #FFF;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+ /* タブレット表示時 */
+@media screen and  (max-width: 1100px) {
+  .contents {
+    width: 100%;
+    padding: 20px 100px 20px;
+    background-color: rgb(250, 247, 241);
+  }
+  /* 上段 */
+  .question-mark {
+    width: 100%;
+    text-align: right;
+    padding-right: 5px;
+  }
+
+  .top-contents {
+    width: 100%;
+    background-color: rgb(250, 247, 241);
+    margin-bottom: 50px;
+  }
+  .top-left-content {
+    width: 100%;
+    background-color: rgb(250, 247, 241);
+    padding: 0 5%;
+  }
+  
+  .chart-title-box {
+    width: 100%;
+    background-color: rgb(250, 247, 241);
+    text-align: center;
+  }
+  .chart-title {
+    width: 100%;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+    border-bottom: 2px solid orange;
+  }
+  
+  .chart-box {
+    width: 100%x;
+    background-color: rgb(253, 253, 250);
+    padding: 5px;
+    border: 1px solid gray;
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+  }
+  
+  .chart {
+    overflow: scroll;
+  }
+  
+  .top-right-content {
+    width: 100%;
+    margin: 10px 0;
+    background-color: rgb(250, 247, 241);
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .month-data,
+  .total-data {
+    width: 100%;
+    margin-left: 10px;
+  }
+  
+  .month-data-title,
+  .total-data-title,
+  .purchase-plans-data-title {
+    font-size: 14px;
+    font-weight: bold;
+    border-bottom: 2px solid orange;
+  }
+  
+  .category-prices{
+    width: 100%;
+    height: 200px;
+    background-color: rgb(248, 237, 211);
+    padding: 10px 15px 40px 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+  }
+  
+  .category-price {
+    width: 100%;
+    height: 25px;
+    font-size: 14px;
+    text-align: left;
+    margin-top: 15px;
+    border-bottom: 1px dotted gray;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .category {
+    width: 55%;
+    padding-left: 10px;
+    margin-top: 5px;
+  }
+  .price {
+    width: 45%;
+    text-align: right;
+    padding-right: 10px;
+  }
+  
+  .question-box{
+    text-align: right;
+  }
+  .question-btn {
+    color: #FFF;
+    background-color: black;
+    border: none;
+    border-radius: 50%;
+    margin-left:20px;
+  }
+  
+  .dialog-box {
+    width: 80%;
+    background-color: rgb(247, 227, 183);
+    margin-top: 10px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+  }
+  
+  .close-box {
+    text-align: right;
+  }
+
+  /* 中段 */
+  .middle-contents {
+    width: 100%;
+    background-color: rgb(250, 247, 241);
+    margin-bottom: 20px;
+  }
+
+  .middle-left-content {
+    width: 100%;
+    background-color: rgb(250, 247, 241);
+    padding: 10px 5px 0;
+    text-align: center;
+  }
+
+  .breakdowns {
+    width: 100%;
+    background-color: rgb(250, 247, 241);
+    margin-top: 10px;
+    display: flex;
+  }
+
+  .left-breakdown,
+  .right-breakdown  {
+    width: 100%;
+    background-color: rgb(248, 237, 211);
+    border-radius: 10px;
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+    padding: 0 5px;
+    margin: 5px;
+    text-align: center;
+  }
+
+  .left-breakdown-title,
+  .right-breakdown-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 30px;
+    border-bottom: 1px solid orange;
+  }
+  .fixed-cost-lists,
+  .variable-cost-lists {
+    width: 90%;
+    margin: 5px ;
+  }
+
+  .category-name-number {
+    text-align: center;
+    display: flex;
+    margin-bottom: 5px;
+  }
+
+  .category-name {
+    width: 50%;
+    font-size: 14px;
+    font-weight: bolder;
+    text-align: left;
+    padding-left: 5px;
+    border-bottom: 1px dotted gray;
+  }
+  .category-number {
+    width: 50%;
+    font-size: 14px;
+    text-align: right;
+    padding-right: 10px;
+    border-bottom: 1px dotted gray;
+  }
+
+  .new-category-btn,
+  .show-budget-btn {
+    display: flex;
+    justify-content: center;
+  }
+
+  .new_category_btn,
+  .show_budget_btn {
+    width: 40%;
+    height: 25px;
+    font-weight: bold;
+    color: #FFF;
+    background-color:#51a351;
+    margin: 5px auto;
+    border: none;
+    border-radius: 10px;
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+  }
+
+  .middle-right-content {
+    width: 100%;
+    height: 600px;
+    background-color: rgb(250, 247, 241);
+    padding: 10px 100px 0;
+    text-align: center;
+  }
+
+  .budget-data-titles {
+    width: 100%;
+    font-size: 18px;
+    font-weight: bold;
+
+    border-bottom: 2px solid orange;
+  }
+
+  .budget-data-box {
+    width: 100%;
+    height: 520px;
+    margin-top: 15px;
+    background-color: rgb(248, 237, 211);
+    border-radius: 10px;
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+  }
+
+  .budget-data-title {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+    
+    margin: 10px 10px 0;
+    border-bottom: 1px solid orange;
+  }
+
+  .budget-data {
+    margin: 10px 20px 0 20px;
+    border-bottom: 1px dotted gray;
+    display: flex;
+  }
+
+  .budget-data-text {
+    width: 50%;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: left;
+    padding-left: 10px;
+  }
+
+  .budget-data-price {
+    width: 50%;
+    padding-right: 20px;
+    text-align: right;
+  }
+
+  .remaining-days {
+    font-size: 15px;
+    text-align: left;
+    margin: 5px 30px 0px;
+  }
+  .one-day-purchase {
+
+  }
+
+  /* 下段 */
+  .bottom-contents{
+    width: 100%x;
+    margin: 5px;
+    padding: 3px;
+  }
+
+  .purchase-title-box {
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .purchase-title {
+    width: 80%;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 10px;
+    border-bottom: 2px solid orange;
+  }
+
+  .purchase-plans-content {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .purchases-box {
+    width: calc((100% - 250px)/2);;
+    text-align: center;
+    background-color: rgb(248, 237, 211);
+    padding: 5px;
+    margin: 5px;
+    border-radius: 10px;
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+  }
+
+  .plan-title {
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .plan-image-box {
+    height: 140px;
+    background-color: #FFF;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/* スマホ表示時 */
+@media screen and  (max-width: 600px) {
+  .contents {
+    width: 100%;
+    padding: 20px 10px 20px;
+    background-color: rgb(250, 247, 241);
+  }
+
+  /* 上段 */
+  .top-contents {
+    width: 100%;
+    background-color: rgb(250, 247, 241);
+    margin-bottom: 50px;
+  }
+
+  .top-left-content {
+    width: 100%;
+    background-color: rgb(250, 247, 241);
+  }
+  
+  .chart-title-box {
+    width: 100%;
+    background-color: rgb(250, 247, 241);
+    text-align: center;
+  }
+
+  .chart-title {
+    width: 100%;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+    border-bottom: 2px solid orange;
+  }
+  
+  .chart-box {
+    width: 100%x;
+    background-color: rgb(253, 253, 250);
+    padding: 5px;
+    border: 1px solid gray;
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+  }
+  
+  .chart {
+    overflow: scroll;
+  }
+  
+  .top-right-content {
+    width: 100%;
+    height: 500px;
+    margin: 10px 0;
+    background-color: rgb(250, 247, 241);
+    text-align: center;
+    display: block;
+  }
+  
+  .month-data,
+  .total-data {
+    width: 100%;
+    margin: 5px 0 10px 0;
+  }
+  
+  .month-data-title,
+  .total-data-title,
+  .purchase-plans-data-title {
+    font-size: 14px;
+    font-weight: bold;
+    border-bottom: 2px solid orange;
+  }
+  
+  .category-prices{
+    width: 100%;
+    height: 200px;
+    background-color: rgb(248, 237, 211);
+    padding: 10px 20px 40px 20px;
+    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+  }
+  
+  .category-price {
+    width: 100%;
+    height: 25px;
+    font-size: 14px;
+    text-align: left;
+    margin-top: 15px;
+    border-bottom: 1px dotted gray;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .category {
+    width: 40%;
+    padding-left: 20px;
+    margin-top: 5px;
+  }
+  .price {
+    width: 60%;
+    text-align: right;
+    padding-right: 50px;
+  }
+  
+  .question-mark,
+  .question-box,
+  .question-btn,
+  .dialog-box,
+  .close-box {
+    display: none;
+  }
+
+/* 中段 */
+  .middle-contents {
+    width: 100%;
+    background-color: rgb(250, 247, 241);
+    margin-bottom: 20px;
+  }
+
+  .middle-left-content {
+    width: 100%;
+    background-color: rgb(250, 247, 241);
+    padding: 10px 5px 0;
+    text-align: center;
+  }
+
+  .breakdowns {
+    width: 100%;
+    background-color: rgb(250, 247, 241);
+    margin-top: 10px;
+    display: block;
+  }
+
+  .left-breakdown,
+  .right-breakdown  {
+    width: 100%;
+    background-color: rgb(248, 237, 211);
+    border-radius: 10px;
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+    padding: 0 5px;
+    margin: 5px;
+    text-align: center;
+  }
+
+  .left-breakdown-title,
+  .right-breakdown-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 30px;
+    border-bottom: 1px solid orange;
+  }
+
+  .fixed-cost-lists,
+  .variable-cost-lists {
+    width: 90%;
+    margin: 5px ;
+  }
+
+  .category-name-number {
+    text-align: center;
+    display: flex;
+    margin-bottom: 5px;
+  }
+
+  .category-name {
+    width: 50%;
+    font-weight: bolder;
+    text-align: left;
+    padding-left: 5px;
+    border-bottom: 1px dotted gray;
+  }
+  .category-number {
+    width: 50%;
+    text-align: right;
+    padding-right: 15px;
+    border-bottom: 1px dotted gray;
+  }
+
+  .new-category-btn,
+  .show-budget-btn {
+    display: flex;
+    justify-content: center;
+  }
+
+  .new_category_btn,
+  .show_budget_btn {
+    width: 40%;
+    height: 25px;
+    font-weight: bold;
+    color: #FFF;
+    background-color:#51a351;
+    margin: 5px auto;
+    border: none;
+    border-radius: 10px;
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+  }
+
+  .middle-right-content {
+    width: 100%;
+    height: 600px;
+    background-color: rgb(250, 247, 241);
+    padding: 10px 5px 0;
+    text-align: center;
+  }
+
+  .budget-data-titles {
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom: 2px solid orange;
+  }
+
+  .budget-data-box {
+    width: 100%;
+    height: 520px;
+    margin-top: 15px;
+    background-color: rgb(248, 237, 211);
+    border-radius: 10px;
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+  }
+
+  .budget-data-title {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+    margin: 10px 10px 0;
+    border-bottom: 1px solid orange;
+  }
+
+  .budget-data {
+    margin: 10px 20px 0 20px;
+    border-bottom: 1px dotted gray;
+    display: flex;
+  }
+
+  .budget-data-text {
+    width: 50%;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: left;
+    padding-left: 10px;
+  }
+
+  .budget-data-price {
+    width: 50%;
+    padding-right: 20px;
+    text-align: right;
+  }
+
+  .remaining-days {
+    font-size: 15px;
+    text-align: left;
+    margin: 5px 30px 0px;
+  }
+
+  .show-budget-btn {
+    margin-top: 20px;
+  }
+
+  /* 下段 */
+  .bottom-contents{
+    width: 100%x;
+    margin: 5px;
+    padding: 3px;
+  }
+
+  .purchase-title-box {
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .purchase-title {
+    width: 80%;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 10px;
+    border-bottom: 2px solid orange;
+  }
+
+  .purchase-plans-content {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .purchases-box {
+    width: 100%;
+    text-align: center;
+    background-color: rgb(248, 237, 211);
+    padding: 5px;
+    margin: 5px 50px;
+    border-radius: 10px;
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+  }
+
+  .plan-title {
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .plan-image-box {
+    height: 140px;
+    background-color: #FFF;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
