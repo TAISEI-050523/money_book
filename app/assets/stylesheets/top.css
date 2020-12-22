@@ -132,12 +132,24 @@
     text-align: right;
     padding-right: 5px;
   }
+
+  .purchase-plan-question-box {
+    width: 90%;
+    text-align: right;
+
+  }
+
   .question-btn {
     color: #FFF;
     background-color: black;
+    font-weight: bold;
     border: none;
     border-radius: 50%;
     margin-left:20px;
+  }
+
+  .question-btn:hover {
+    background-color: rgb(92, 88, 88);
   }
   
   .dialog-box {
@@ -331,7 +343,7 @@
     width: 100%;
     height: 30px;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     display: flex;
     justify-content: center;
   }
@@ -489,24 +501,52 @@
   
   .question-box{
     text-align: right;
+    padding-right: 5px;
   }
+
+  .purchase-plan-question-box {
+    width: 90%;
+    text-align: right;
+
+  }
+
   .question-btn {
     color: #FFF;
     background-color: black;
+    font-weight: bold;
     border: none;
     border-radius: 50%;
     margin-left:20px;
   }
+
+  .question-btn:hover {
+    background-color: rgb(92, 88, 88);
+  }
   
   .dialog-box {
-    width: 80%;
+    width: 50%;
     background-color: rgb(247, 227, 183);
+    padding: 10px 20px 20px 20px;
     margin-top: 10px;
     border: none;
     border-radius: 10px;
     box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
   }
-  
+
+  .dialog-title {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0 30px;
+    border-bottom: 2px solid orange;
+  }
+
+  .explanation-function {
+    font-weight: bold;
+    text-align: left;
+    margin: 10px 0 0px 20px;
+  }
+
   .close-box {
     text-align: right;
   }
