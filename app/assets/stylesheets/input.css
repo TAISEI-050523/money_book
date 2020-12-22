@@ -279,28 +279,28 @@
   }
   
   .category-detail {
-    width: 150px;
+    width: 20%;
     border: 1px solid gray;
   }
   
   .price-detail,
   .date-detail {
-    width: 200px;
+    width: 35%;
     border: 1px solid gray;
   }
   
   .remarks-detail {
-    width: 400px;
+    width: 35%;
     border: 1px solid gray;
   }
   
   .delete-detail {
-    width: 15%;
+    width: 10%;
     border: 1px solid gray;
   }
 
   .delete-input-btn {
-    width: 15%;
+    width: 80px;
     height: 20px;
     color: #ffffff;
     background-color: #CA3F34;
