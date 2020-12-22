@@ -24,9 +24,9 @@ class TopsController < ApplicationController
   private
 
   def set_monthly
-    @income_monthly = @incomes.income_monthly
-    @fixed_cost_monthly = @fixed_costs.fixed_cost_monthly
-    @variable_cost_monthly = @variable_costs.variable_cost_monthly
+    @income_monthly = @incomes.income_monthly                          
+    @fixed_cost_monthly = @fixed_costs.fixed_cost_monthly              
+    @variable_cost_monthly = @variable_costs.variable_cost_monthly     
   end
 
   def set_this_month
@@ -44,13 +44,13 @@ class TopsController < ApplicationController
   end
 
   def set_each_category
-    this_month = Date.today.beginning_of_month..Date.today.end_of_month
-    @fixed_cost_category = @fixed_costs.where(expense_date: this_month)
-    @variable_cost_category = @variable_costs.where(expense_date: this_month)
+    this_month = Date.today.beginning_of_month..Date.today.end_of_month           # 当月の始めから終わりまでの期間
+    @fixed_cost_category = @fixed_costs.where(expense_date: this_month)           # 当月の固定費データを取得
+    @variable_cost_category = @variable_costs.where(expense_date: this_month)     # 当月の変動費データを取得
   end
 
-  def set_purchase_plans_saving
-    @saving_sum = 0
+  def set_purchase_plans_saving                                                   # 貯金額目安を算出
+    @saving_sum = 0                                                               # 例:「貯金額目安」＝（「商品Aの値段」/「登録日から購入日までの日数」）+（「商品Bの値段」/「登録日から購入日までの日数」）+ ・・・・
     @purchase_plans.each do |plan|
       @saving_sum += plan.price / (plan.purchase_date - plan.created_at.to_date).numerator if plan.purchase_date > Date.today
     end
