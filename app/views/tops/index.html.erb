@@ -25,6 +25,7 @@
     </div>
   <% end %>
 </header>
+<div class="question-mark fas fa-question-circle">をクリックすると機能説明が表示されます。</div>
 <div class="contents">
   <div class="top-contents">
     <div class="top-left-content">
@@ -44,6 +45,20 @@
             xmin: 1, xmax: 12,
             xtitle: "年, 月", ytitle: "金額（円）" ,
             thousands: "," %>
+        </div>
+        <dialog class="dialog-box" id="dialog1">
+          <div class="dialog-title">
+            収支変動(過去１年間)について
+          </div>
+          <ul class="explanation-function">
+            <li>過去１年間の月ごとの「収入」「固定費」「変動費」を表示します。</li>
+          </ul>
+          <div class="close-box">
+            <button class="close-btn" id="close1">close</button>
+          </div>
+        </dialog>
+        <div class="question-box">
+          <button class="question-btn" id="question-btn1">?</button>
         </div>
       </div>
     </div>
@@ -77,25 +92,38 @@
             <% end %>
               <%= @balance_this_month.to_s(:delimited) %>円</div>
           </div>
-          <dialog class="dialog-box" id="dialog1">
-            <div class="month-data-title">
+          <dialog class="dialog-box" id="dialog2">
+            <div class="dialog-title">
               <%= Date.today.mon%>月の収支について
             </div>
-            <ul>
-              <li>収支は当月の収入を示しています。</li>
-              <li>当月の支出は固定費と変動費の２つに分けて示しています。</li>
-              <li>収支は収入から固定費と変動費を引いた差分です。</li>
+            <ul class="explanation-function">
+              <li>①「収入」は当月の収入の総額を示しています。</li>
+              <li>② 当月の支出は「固定費」と「変動費」の２つに分けて示しています。</li>
+              <li>③ 収支は「収入」から「固定費」と「変動費」を引いた差分です。</li>
             </ul>
             <div class="close-box">
-              <button class="close-btn" id="close1">close</button>
+              <button class="close-btn" id="close2">close</button>
             </div>
           </dialog>
           <div class="question-box">
-            <button class="question-btn" id="question-btn1">?</button>
+            <button class="question-btn" id="question-btn2">?</button>
           </div>
         </div>
       </div>
       <div class="total-data">
+        <dialog class="dialog-box" id="dialog3">
+          <div class="dialog-title">
+            総額（過去データの合計値）について
+          </div>
+          <ul class="explanation-function">
+            <li>①「収入総額」は過去の収入の総額を示しています。</li>
+            <li>② 過去の支出は「固定費総額」と「変動費総額」の２つに分けて示しています。</li>
+            <li>③ 収支総額は「収入総額」から「固定費総額」と「変動費総額」を引いた差分です。</li>
+          </ul>
+          <div class="close-box">
+            <button class="close-btn" id="close3">close</button>
+          </div>
+        </dialog>
         <div class="total-data-title">
           総額（過去データの合計値）
         </div>
@@ -125,6 +153,9 @@
               <div class="price expense-color">
             <% end %>
               <%= @balance_total.to_s(:delimited)%>円</div>
+          </div>
+          <div class="question-box">
+            <button class="question-btn" id="question-btn3">?</button>
           </div>
         </div>
       </div>
@@ -312,15 +343,44 @@
         <% else %>
           <%= render "budget_blank" %>
         <% end %>
+        <div class="question-box">
+          <button class="question-btn" id="question-btn4">?</button>
+        </div>
       </div>
-      <div class="question fas fa-question-circle">
-          １日に使えるお金 ＝ 変動費予算残り金額➗今月の残日数
-      </div>
+      <dialog class="dialog-box" id="dialog4">
+        <div class="dialog-title">
+          予算について
+        </div>
+        <ul class="explanation-function">
+          <li>①「残り使える金額」＝<br>「固定費予算」ー「当月の固定費」or「変動費予算」ー「当月の変動費」</li><br>
+          <li>②「１日に使える金額」＝（「変動費予算」ー「当月の変動費」）/ 当月の残日数<br>１日に使える金額を把握することで余計な出費を防止します！</li><br>
+          <li>③「貯金額目安」は「購入予定リスト」の商品を計画的に購入できるよう１日の貯金額（節約）目安を表示します！<br>「貯金額目安」<br>＝（「商品Aの値段」/「登録日から購入日までの日数」）<br>+ （「商品Bの値段」/「登録日から購入日までの日数」）<br>+ ・・・</li>
+        </ul>
+        <div class="close-box">
+          <button class="close-btn" id="close4">close</button>
+        </div>
+      </dialog>
     </div>
   </div>
   <div class="bottom-contents">
+    <dialog class="dialog-box" id="dialog5">
+      <div class="dialog-title">
+        予算について
+      </div>
+      <ul class="explanation-function">
+        <li>①計画的に購入したい商品があれば「購入予定リスト」に登録しましょう！</li>
+        <li>②「購入日」を決めることで、登録日からの日数を計算して１日いくら貯金（節約）すればいいのか計算します。</li>
+        <li>③購入日までの残り日数を表示します。また購入日になったら「購入できます！」が表示されます。</li>
+      </ul>
+      <div class="close-box">
+        <button class="close-btn" id="close5">close</button>
+      </div>
+    </dialog>
     <div class="purchase-title-box">
       <h2 class="purchase-title"><%= link_to '購入予定リスト', purchase_plans_path %></h2>
+    </div>
+    <div class="question-box">
+      <button class="question-btn" id="question-btn5">?</button>
     </div>
     <% unless @purchase_plans.present? %>
       <div class="prompt-purchase-plans">
