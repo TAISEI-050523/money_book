@@ -1,3 +1,7 @@
+.submit-btn:hover {
+  background-color:#66CDAA;
+}
+
 /* PC表示時 */
   .input-purchase-plan {
     width: 100%;
