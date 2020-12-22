@@ -1,0 +1,342 @@
+/* PC表示時 */
+@media screen and  (min-width: 1100px) {
+  .log-in-form-contents,
+  .sing-up-form-contents {
+    background-color: rgb(250, 247, 241);
+    text-align: center;
+    padding: 40px 150px 30px;
+  }
+
+  .sing-up-form-contents {
+    height: calc(100% - 200px);
+  }
+
+  .log-in-title-box,
+  .sign-up-title-box {
+    text-align: center;
+    margin:5px 300px 30px;
+  }
+
+  .log-in-title,
+  .sign-up-title {
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'Merriweather', serif;
+    font-family: 'Oswald', sans-serif;
+    font-family: 'Work Sans', sans-serif;
+    border-bottom: 2px solid orange;
+  }
+
+  .new_user {
+    width: 100%;
+  }
+
+  .form-wrap-log-in,
+  .form-wrap-sign-up {
+    background-color: #FFF;
+    padding-bottom: 50px;
+    margin: 0 200px;
+  }
+
+  .form-header {
+    width: 100%;
+    height: 90px;
+    text-align: center;
+    font-size: 22px;
+  }
+
+  .form-header-text {
+    line-height: 100px;
+    border-bottom: 1px solid #FFF;
+    font-weight: bold;
+  }
+
+  .form-group {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+
+  .form-text-wrap {
+    width: 100%;
+    height: 20%;
+  }
+
+  /* 収入・固定費・変動費・購入予定リスト  共通 */
+  .indispensable {
+    background: #ea352d;
+    margin-left: 8px;
+    padding: 3px;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  /* 収入・固定費・変動費・購入予定リスト  共通  フォームの両端を面一にするため */
+  .indispensable-none {
+    margin-left: 8px;
+    padding: 3px;
+    border-radius: 2px;
+    font-size: 12px;
+    font-weight: bold;
+    text-indent:100%;
+    white-space:nowrap;
+    overflow:hidden;
+  }
+
+  .form-text {
+    font-size: 14px;
+    font-weight: bold;
+    text-align: left;
+  }
+
+  .input-default {
+    width: 100%;
+    margin-top: 5px;
+    height: 48px;
+    padding: 10px 16px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: #fff;
+    font-size: 16px;
+    resize: none;
+  }
+
+  .log-in-btn,
+  .sign-up-btn {
+    display: flex;
+    justify-content: center;
+  }
+
+  .log-in-blue-btn,
+  .test-log-in-blue-btn,
+  .sign-up-blue-btn {
+    width: 200px;
+    height: 30px;
+    color: #FFF;
+    background-color: #0cc8f7;
+    margin: 20px auto;
+    border: none;
+    border-radius: 10px;
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+  }
+
+  .input-name-wrap {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .test-log-in-blue-btn {
+    background-color: #f6534d;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  /*ログイン・新規登録  共通 */
+  .login-flash-message {
+    font-size: 14px;
+  }
+}
+
+/* タブレット表示時 */
+@media screen and  (max-width: 1100px) {
+  .log-in-form-contents,
+  .sing-up-form-contents {
+    width: 100%;
+    height: calc(100vh - 200px);
+    background-color: rgb(250, 247, 241);
+    text-align: center;
+    padding: 30px 100px 30px;
+  }
+  
+  .log-in-title-box,
+  .sign-up-title-box {
+    text-align: center;
+    margin:5px 0px 30px;
+  }
+  
+  .log-in-title,
+  .sign-up-title {
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Merriweather', serif;
+    font-family: 'Oswald', sans-serif;
+    font-family: 'Work Sans', sans-serif;
+    margin: 0 10px;
+    border-bottom: 2px solid orange;
+  }
+  
+  .new_user {
+    width: 100%;
+  }
+  
+  .form-wrap-log-in,
+  .form-wrap-sign-up {
+    background-color: #FFF;
+    padding-bottom: 10px;
+    margin: 0 20px;
+  }
+  
+  .form-wrap-log-in {
+    margin-top: 20px;
+  }
+  
+  .form-wrap-sign-up {
+    height: 600px;
+    margin-top: 0px;
+  }
+  
+  .form-header {
+    width: 100%;
+    height: 90px;
+    text-align: center;
+    font-size: 22px;
+  }
+  
+  .form-header-text {
+    line-height: 100px;
+    border-bottom: 1px solid #FFF;
+    font-weight: bold;
+  }
+  
+  .form-group {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+  
+  .form-text-wrap {
+    width: 100%;
+    height: 20%;
+  }
+  
+  /* 収入・固定費・変動費・購入予定リスト  共通 */
+  .indispensable {
+    background: #ea352d;
+    margin-left: 3px;
+    padding: 3px;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 8px;
+    font-weight: bold;
+  }
+  
+  /* 収入・固定費・変動費・購入予定リスト  共通  フォームの両端を面一にするため */
+  .indispensable-none {
+    margin-left: 3px;
+    padding: 1px;
+    border-radius: 2px;
+    font-size: 8px;
+    font-weight: bold;
+    text-indent:100%;
+    white-space:nowrap;
+    overflow:hidden;
+  }
+  
+  .form-text {
+    font-size: 8px;
+    font-weight: bold;
+    text-align: left;
+  }
+  
+  .input-default {
+    width: 100%;
+    margin-top: 5px;
+    height: 48px;
+    padding: 5px 8px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: #fff;
+    font-size: 10px;
+    resize: none;
+  }
+  
+  .log-in-btn,
+  .sign-up-btn {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .log-in-blue-btn,
+  .test-log-in-blue-btn,
+  .sign-up-blue-btn {
+    width: 40%;
+    height: 30px;
+    color: #FFF;
+    background-color: #0cc8f7;
+    margin: 20px auto;
+    border: none;
+    border-radius: 10px;
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+  }
+  
+  .input-name-wrap {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .test-log-in-blue-btn {
+    font-size: 14px;
+    background-color: #f6534d;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  
+  .info-text,
+  .login-flash-message {
+    font-size: 12px;
+  }
+}
+
+ /* スマホ表示時 */
+@media screen and  (max-width: 600px) {
+  .log-in-form-contents,
+  .sing-up-form-contents {
+    width: 100%;
+    height: 700px;
+    padding: 30px 0px 30px;
+    margin-bottom: 20px;
+  }
+
+  .form-wrap-log-in,
+  .form-wrap-sign-up {
+    margin: 0 10px;
+  }
+  
+  .form-wrap-sign-up {
+    margin-top: 0px;
+  }
+
+  .form-group {
+    width: 80%;
+  }
+
+  .log-in-blue-btn,
+  .test-log-in-blue-btn,
+  .sign-up-blue-btn {
+    width: 60%;
+    height: 30px;
+    color: #FFF;
+    background-color: skyblue;
+  }
+  
+  .input-name-wrap {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .test-log-in-blue-btn {
+    background-color: #f6534d;
+  }
+}
