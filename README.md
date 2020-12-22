@@ -74,9 +74,9 @@ https://portfolio.taisei-account-book.com/  <br>【テストユーザーログ�
 
 ### Association
 
-- has_many :income
-- has_many :fixed_cost
-- has_many :variable_cost
+- has_many :incomes
+- has_many :fixed_costs
+- has_many :variable_costs
 - has_many :purchase_plans
 - has_one  :budgets
 
