@@ -1,3 +1,7 @@
+.budget-btn:hover {
+  background-color:#66CDAA;
+}
+
 /* PC表示時 */  
   .budget-contents {
     height: 800px;

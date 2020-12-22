@@ -1,3 +1,8 @@
+.input-btn:hover,
+.back-btn:hover {
+  background-color:#66CDAA;
+}
+
 /* PC表示時 */
 @media screen and  (min-width: 1100px) {
   .input-box {
