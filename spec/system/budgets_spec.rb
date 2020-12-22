@@ -11,7 +11,7 @@ RSpec.describe '予算登録', type: :system do
       visit new_user_session_path
       fill_in 'email', with: @user.email
       fill_in 'password', with: @user.password
-      find('input[name="commit"]').click
+      find('input[id="submit-btn"]').click
       expect(current_path).to eq root_path
       # 予算ページへのリンクがあることを確認する
       expect(page).to have_link('予 算', href: budgets_path)
@@ -99,7 +99,7 @@ RSpec.describe '予算登録', type: :system do
       visit new_user_session_path
       fill_in 'email', with: @user.email
       fill_in 'password', with: @user.password
-      find('input[name="commit"]').click
+      find('input[id="submit-btn"]').click
       expect(current_path).to eq root_path
       # 予算ページへのリンクがあることを確認する
       expect(page).to have_link('予 算', href: budgets_path)
@@ -154,7 +154,7 @@ RSpec.describe '予算編集', type: :system do
       visit new_user_session_path
       fill_in 'email', with: @budget1.user.email
       fill_in 'password', with: @budget1.user.password
-      find('input[name="commit"]').click
+      find('input[id="submit-btn"]').click
       expect(current_path).to eq root_path
       # 予算ページへのリンクがあることを確認する
       expect(page).to have_link('予 算', href: budgets_path)
@@ -242,7 +242,7 @@ RSpec.describe '予算編集', type: :system do
       visit new_user_session_path
       fill_in 'email', with: @budget1.user.email
       fill_in 'password', with: @budget1.user.password
-      find('input[name="commit"]').click
+      find('input[id="submit-btn"]').click
       expect(current_path).to eq root_path
       # 予算ページへのリンクがあることを確認する
       expect(page).to have_link('予 算', href: budgets_path)
@@ -288,7 +288,7 @@ RSpec.describe '予算編集', type: :system do
       visit new_user_session_path
       fill_in 'email', with: @budget1.user.email
       fill_in 'password', with: @budget1.user.password
-      find('input[name="commit"]').click
+      find('input[id="submit-btn"]').click
       expect(current_path).to eq root_path
       # 予算ページへのリンクがあることを確認する
       expect(page).to have_link('予 算', href: budgets_path)

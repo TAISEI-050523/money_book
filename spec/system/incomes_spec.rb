@@ -16,7 +16,7 @@ RSpec.describe '収入入力', type: :system do
       visit new_user_session_path
       fill_in 'email', with: @user.email
       fill_in 'password', with: @user.password
-      find('input[name="commit"]').click
+      find('input[id="submit-btn"]').click
       expect(current_path).to eq root_path
       # 収入入力ページへのリンクがあることを確認する
       expect(page).to have_link('収 入', href: new_income_path)
@@ -49,7 +49,7 @@ RSpec.describe '収入入力', type: :system do
       visit new_user_session_path
       fill_in 'email', with: @user.email
       fill_in 'password', with: @user.password
-      find('input[name="commit"]').click
+      find('input[id="submit-btn"]').click
       expect(current_path).to eq root_path
       # 収入入力ページへのリンクがあることを確認する
       expect(page).to have_link('収 入', href: new_income_path)
@@ -83,7 +83,7 @@ RSpec.describe '収入削除', type: :system do
       visit new_user_session_path
       fill_in 'email', with: @income1.user.email
       fill_in 'password', with: @income1.user.password
-      find('input[name="commit"]').click
+      find('input[id="submit-btn"]').click
       expect(current_path).to eq root_path
       # 収入入力ページへのリンクがあることを確認する
       expect(page).to have_link('収 入', href: new_income_path)
@@ -113,7 +113,7 @@ RSpec.describe '収入削除', type: :system do
       visit new_user_session_path
       fill_in 'email', with: @income1.user.email
       fill_in 'password', with: @income1.user.password
-      find('input[name="commit"]').click
+      find('input[id="submit-btn"]').click
       expect(current_path).to eq root_path
       # 収入入力ページへのリンクがあることを確認する
       expect(page).to have_link('収 入', href: new_income_path)
@@ -141,7 +141,7 @@ RSpec.describe '収入検索', type: :system do
       visit new_user_session_path
       fill_in 'email', with: @income.user.email
       fill_in 'password', with: @income.user.password
-      find('input[name="commit"]').click
+      find('input[id="submit-btn"]').click
       expect(current_path).to eq root_path
       expect(current_path).to eq root_path
       # 収入入力ページへのリンクがあることを確認する

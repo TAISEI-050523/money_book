@@ -18,7 +18,7 @@ RSpec.describe '購入予定リスト追加', type: :system do
       visit new_user_session_path
       fill_in 'email', with: @user.email
       fill_in 'password', with: @user.password
-      find('input[name="commit"]').click
+      find('input[id="submit-btn"]').click
       expect(current_path).to eq root_path
       # 購入予定リストページへのリンクがあることを確認する
       expect(page).to have_link('購入予定リスト', href: purchase_plans_path)
@@ -60,7 +60,7 @@ RSpec.describe '購入予定リスト追加', type: :system do
       visit new_user_session_path
       fill_in 'email', with: @user.email
       fill_in 'password', with: @user.password
-      find('input[name="commit"]').click
+      find('input[id="submit-btn"]').click
       expect(current_path).to eq root_path
       # 購入予定リストページへのリンクがあることを確認する
       expect(page).to have_link('購入予定リスト', href: purchase_plans_path)
@@ -94,7 +94,7 @@ RSpec.describe '購入予定リスト削除', type: :system do
       visit new_user_session_path
       fill_in 'email', with: @purchase_plan1.user.email
       fill_in 'password', with: @purchase_plan1.user.password
-      find('input[name="commit"]').click
+      find('input[id="submit-btn"]').click
       expect(current_path).to eq root_path
       # 購入予定リストページへのリンクがあることを確認する
       expect(page).to have_link('購入予定リスト', href: purchase_plans_path)
@@ -126,7 +126,7 @@ RSpec.describe '購入予定リスト削除', type: :system do
       visit new_user_session_path
       fill_in 'email', with: @purchase_plan1.user.email
       fill_in 'password', with: @purchase_plan1.user.password
-      find('input[name="commit"]').click
+      find('input[id="submit-btn"]').click
       expect(current_path).to eq root_path
       # 購入予定リストページへのリンクがあることを確認する
       expect(page).to have_link('購入予定リスト', href: purchase_plans_path)

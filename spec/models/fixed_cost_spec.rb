@@ -26,7 +26,7 @@ RSpec.describe FixedCost, type: :model do
     it 'price(金額)が空では登録できないこと' do
       @fixed_cost.price = nil
       @fixed_cost.valid?
-      expect(@fixed_cost.errors.full_messages).to include("Price can't be blank", 'Price は半角数字で入力してください')
+      expect(@fixed_cost.errors.full_messages).to include("Price can't be blank", 'Price は半角数字で 1円 以上  1,000,000 円 以内で入力してください')
     end
     it 'expense_date(出金日)が空では登録できないこと' do
       @fixed_cost.expense_date = nil
@@ -37,17 +37,17 @@ RSpec.describe FixedCost, type: :model do
     it 'price(金額)が半角英字では登録できないこと' do
       @fixed_cost.price = 'abcdef'
       @fixed_cost.valid?
-      expect(@fixed_cost.errors.full_messages).to include('Price は半角数字で入力してください')
+      expect(@fixed_cost.errors.full_messages).to include('Price は半角数字で 1円 以上  1,000,000 円 以内で入力してください')
     end
     it 'price(金額)が全角数字では登録できないこと' do
       @fixed_cost.price = '１２３４５６'
       @fixed_cost.valid?
-      expect(@fixed_cost.errors.full_messages).to include('Price は半角数字で入力してください')
+      expect(@fixed_cost.errors.full_messages).to include('Price は半角数字で 1円 以上  1,000,000 円 以内で入力してください')
     end
     it 'price(金額)にコンマ(,)が含まれていると登録できないこと' do
       @fixed_cost.price = '10,000'
       @fixed_cost.valid?
-      expect(@fixed_cost.errors.full_messages).to include('Price は半角数字で入力してください')
+      expect(@fixed_cost.errors.full_messages).to include('Price は半角数字で 1円 以上  1,000,000 円 以内で入力してください')
     end
     #### user_id ####
     it 'userが紐付いていないと保存できないこと' do

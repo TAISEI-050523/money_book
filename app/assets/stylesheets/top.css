@@ -402,12 +402,13 @@
 @media screen and  (max-width: 1100px) {
   .contents {
     width: 100%;
-    padding: 20px 100px 20px;
+    padding: 20px 10% 20px;
     background-color: rgb(250, 247, 241);
   }
   /* 上段 */
   .question-mark {
     width: 100%;
+    font-size: 14px;
     text-align: right;
     padding-right: 5px;
   }
@@ -430,7 +431,7 @@
   }
   .chart-title {
     width: 100%;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     margin: 10px 0;
     border-bottom: 2px solid orange;
@@ -485,7 +486,7 @@
   .category-price {
     width: 100%;
     height: 25px;
-    font-size: 14px;
+    font-size: 12px;
     text-align: left;
     margin-top: 15px;
     border-bottom: 1px dotted gray;
@@ -495,7 +496,7 @@
   
   .category {
     width: 55%;
-    padding-left: 10px;
+    padding-left: 5%;
     margin-top: 5px;
   }
   .price {
@@ -531,7 +532,7 @@
   .dialog-box {
     width: 50%;
     background-color: rgb(247, 227, 183);
-    padding: 10px 20px 20px 20px;
+    padding: 10px 5% 20px;
     margin-top: 10px;
     border: none;
     border-radius: 10px;
@@ -549,7 +550,7 @@
   .explanation-function {
     font-weight: bold;
     text-align: left;
-    margin: 10px 0 0px 20px;
+    margin: 10px 0 20px;
   }
 
   .close-box {
@@ -560,7 +561,7 @@
   .middle-contents {
     width: 100%;
     background-color: rgb(250, 247, 241);
-    margin-bottom: 20px;
+    margin-bottom: 50px;
   }
 
   .middle-left-content {
@@ -590,7 +591,7 @@
 
   .left-breakdown-title,
   .right-breakdown-title {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
     margin: 0 30px;
     border-bottom: 1px solid orange;
@@ -609,7 +610,7 @@
 
   .category-name {
     width: 50%;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: bolder;
     text-align: left;
     padding-left: 5px;
@@ -617,7 +618,7 @@
   }
   .category-number {
     width: 50%;
-    font-size: 14px;
+    font-size: 12px;
     text-align: right;
     padding-right: 10px;
     border-bottom: 1px dotted gray;
@@ -646,13 +647,13 @@
     width: 100%;
     height: 600px;
     background-color: rgb(250, 247, 241);
-    padding: 10px 100px 0;
+    padding: 10px 20% 0;
     text-align: center;
   }
 
   .budget-data-titles {
     width: 100%;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
 
     border-bottom: 2px solid orange;
@@ -660,7 +661,7 @@
 
   .budget-data-box {
     width: 100%;
-    height: 520px;
+    padding: 0 8%;
     margin-top: 15px;
     background-color: rgb(248, 237, 211);
     border-radius: 10px;
@@ -668,16 +669,15 @@
   }
 
   .budget-data-title {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
     text-align: left;
-    
     margin: 10px 10px 0;
     border-bottom: 1px solid orange;
   }
 
   .budget-data {
-    margin: 10px 20px 0 20px;
+    margin: 10px 5% 20px;
     border-bottom: 1px dotted gray;
     display: flex;
   }
@@ -687,12 +687,12 @@
     font-size: 14px;
     font-weight: bold;
     text-align: left;
-    padding-left: 10px;
+    padding-left: 5px;
   }
 
   .budget-data-price {
     width: 50%;
-    padding-right: 20px;
+    padding-right: 10px;
     text-align: right;
   }
 
@@ -769,19 +769,25 @@
 @media screen and  (max-width: 600px) {
   .contents {
     width: 100%;
-    padding: 20px 10px 20px;
+    padding: 20px 5px 20px;
     background-color: rgb(250, 247, 241);
   }
 
   /* 上段 */
+  .question-mark {
+    color: rgb(250, 247, 241);
+  }
+
   .top-contents {
     width: 100%;
     background-color: rgb(250, 247, 241);
-    margin-bottom: 50px;
+    margin-bottom: 10px;
   }
 
   .top-left-content {
     width: 100%;
+    margin: 0;
+    padding: 0 2px;
     background-color: rgb(250, 247, 241);
   }
   
@@ -793,16 +799,15 @@
 
   .chart-title {
     width: 100%;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: bold;
     margin: 10px 0;
     border-bottom: 2px solid orange;
   }
   
   .chart-box {
-    width: 100%x;
+    width: 100%;
     background-color: rgb(253, 253, 250);
-    padding: 5px;
     border: 1px solid gray;
     box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
     border-radius: 10px;
@@ -839,7 +844,7 @@
     width: 100%;
     height: 200px;
     background-color: rgb(248, 237, 211);
-    padding: 10px 20px 40px 20px;
+    padding: 10px 10% 20px;
     margin-top: 10px;
     border-radius: 10px;
     box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
@@ -848,7 +853,7 @@
   .category-price {
     width: 100%;
     height: 25px;
-    font-size: 14px;
+    font-size: 12px;
     text-align: left;
     margin-top: 15px;
     border-bottom: 1px dotted gray;
@@ -866,8 +871,7 @@
     text-align: right;
     padding-right: 50px;
   }
-  
-  .question-mark,
+
   .question-box,
   .question-btn,
   .dialog-box,
@@ -879,7 +883,7 @@
   .middle-contents {
     width: 100%;
     background-color: rgb(250, 247, 241);
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 
   .middle-left-content {
@@ -902,14 +906,14 @@
     background-color: rgb(248, 237, 211);
     border-radius: 10px;
     box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
-    padding: 0 5px;
+    padding: 0 5%;
     margin: 5px;
     text-align: center;
   }
 
   .left-breakdown-title,
   .right-breakdown-title {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
     margin: 0 30px;
     border-bottom: 1px solid orange;
@@ -918,26 +922,27 @@
   .fixed-cost-lists,
   .variable-cost-lists {
     width: 90%;
-    margin: 5px ;
+    margin: 3px ;
   }
 
   .category-name-number {
     text-align: center;
     display: flex;
+    padding: 0 7%;
     margin-bottom: 5px;
   }
 
   .category-name {
     width: 50%;
+    font-size: 12px;
     font-weight: bolder;
     text-align: left;
-    padding-left: 5px;
     border-bottom: 1px dotted gray;
   }
   .category-number {
     width: 50%;
+    font-size: 12px;
     text-align: right;
-    padding-right: 15px;
     border-bottom: 1px dotted gray;
   }
 
@@ -950,7 +955,8 @@
   .new_category_btn,
   .show_budget_btn {
     width: 40%;
-    height: 25px;
+    height: 18px;
+    font-size: 12px;
     font-weight: bold;
     color: #FFF;
     background-color:#51a351;
@@ -962,21 +968,21 @@
 
   .middle-right-content {
     width: 100%;
-    height: 600px;
     background-color: rgb(250, 247, 241);
-    padding: 10px 5px 0;
+    padding: 5px 5% 0;
+    margin-top: 15px;
     text-align: center;
   }
 
   .budget-data-titles {
-    font-size: 18px;
+    font-size: 14px;
     font-weight: bold;
     border-bottom: 2px solid orange;
   }
 
   .budget-data-box {
     width: 100%;
-    height: 520px;
+    padding: 0 5%;
     margin-top: 15px;
     background-color: rgb(248, 237, 211);
     border-radius: 10px;
@@ -984,7 +990,7 @@
   }
 
   .budget-data-title {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
     text-align: left;
     margin: 10px 10px 0;
@@ -999,20 +1005,21 @@
 
   .budget-data-text {
     width: 50%;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: bold;
     text-align: left;
-    padding-left: 10px;
+    padding-left: 5%;
   }
 
   .budget-data-price {
     width: 50%;
-    padding-right: 20px;
+    font-size: 12px;
+    padding-right: 5%;
     text-align: right;
   }
 
   .remaining-days {
-    font-size: 15px;
+    font-size: 14px;
     text-align: left;
     margin: 5px 30px 0px;
   }
@@ -1039,7 +1046,7 @@
 
   .purchase-title {
     width: 80%;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
     margin: 0 10px;
     border-bottom: 2px solid orange;
@@ -1064,7 +1071,7 @@
   }
 
   .plan-title {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: bold;
     text-align: center;
     margin-bottom: 10px;
