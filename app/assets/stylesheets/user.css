@@ -44,7 +44,7 @@
   .form-wrap-log-in,
   .form-wrap-sign-up {
     background-color: #FFF;
-    padding-bottom: 50px;
+    padding-bottom: 20px;
     margin: 0 200px;
   }
 
@@ -214,8 +214,10 @@
   
   .form-header-text {
     line-height: 80px;
-    border-bottom: 1px solid #FFF;
+    font-size: 18px;
     font-weight: bold;
+    border-bottom: 1px solid #FFF;
+
   }
   
   .form-group {
@@ -280,10 +282,11 @@
   .log-in-blue-btn,
   .test-log-in-blue-btn,
   .sign-up-blue-btn {
-    width: 40%;
+    width: 45%;
     height: 30px;
     color: #FFF;
     background-color: rgb(7, 179, 247);
+    font-size: 14px;
     margin: 20px auto;
     border: none;
     border-radius: 10px;
