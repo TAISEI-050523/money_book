@@ -403,7 +403,7 @@
             <% end %>
           </div>
           <div class="plan-prie">
-            <%= plan.price.to_s(:delimited) %>円
+            値段：<%= plan.price.to_s(:delimited) %>円
           </div>
           <div class="plan-date">
             <% if plan.purchase_date <= Date.today %>
