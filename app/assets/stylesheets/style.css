@@ -1,3 +1,4 @@
+/*** 各CSSファイル共通 ***/
 html, body {
   font-family: "HG正楷書体-PRO";
 }
@@ -11,7 +12,7 @@ a {
   text-decoration: none;
 }
 
-/*** フォーム入力errorによるレイアウト崩れの防止 ***/
+/* フォーム入力errorによるレイアウト崩れの防止 */
 .field_with_errors {
   display: contents;
 }
