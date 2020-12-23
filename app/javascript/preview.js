@@ -1,5 +1,5 @@
 // 購入予定リスト追加フォーム商品画像プレビュー機能
-if (document.URL.match( /purchase_plans/ )) {
+if (location.pathname === "/purchase_plans" ) {
   document.addEventListener('DOMContentLoaded', function(){
     const ImageList = document.getElementById('image-list');
     const createImageHTML = (blob) => {
