@@ -1,4 +1,4 @@
-if (document.URL.match( )) {
+if (location.pathname === "/" ){
   window.addEventListener('load', function() {
     var dialog = document.getElementById('dialog1');
     var questionBox = document.getElementById('question-btn1');
