@@ -67,6 +67,19 @@
         <div class="month-data-title">
           <%= Date.today.mon%>月の収支
         </div>
+        <dialog class="dialog-box" id="dialog2">
+          <div class="dialog-title">
+            <%= Date.today.mon%>月の収支について
+          </div>
+          <ul class="explanation-function">
+            <li>①「収入」は当月の収入の総額を示しています。</li>
+            <li>② 当月の支出は「固定費」と「変動費」の２つに分けて示しています。</li>
+            <li>③「収支」は「収入」から「固定費」と「変動費」を引いた差分です。</li>
+          </ul>
+          <div class="close-box">
+            <button class="close-btn" id="close2">close</button>
+          </div>
+        </dialog>
         <div class="category-prices">
           <div class="category-price">
             <div class="category fas fa-money-bill"> 収　入</div>
@@ -92,19 +105,6 @@
             <% end %>
               <%= @balance_this_month.to_s(:delimited) %>円</div>
           </div>
-          <dialog class="dialog-box" id="dialog2">
-            <div class="dialog-title">
-              <%= Date.today.mon%>月の収支について
-            </div>
-            <ul class="explanation-function">
-              <li>①「収入」は当月の収入の総額を示しています。</li>
-              <li>② 当月の支出は「固定費」と「変動費」の２つに分けて示しています。</li>
-              <li>③「収支」は「収入」から「固定費」と「変動費」を引いた差分です。</li>
-            </ul>
-            <div class="close-box">
-              <button class="close-btn" id="close2">close</button>
-            </div>
-          </dialog>
           <div class="question-box">
             <button class="question-btn" id="question-btn2">?</button>
           </div>
@@ -334,19 +334,6 @@
       </div>
     </div>
     <div class="middle-right-content">
-      <div class="budget-data-titles">
-        予 算
-      </div>
-      <div class="budget-data-box">
-        <% if current_user.budget.present? %>
-          <%= render "budget_entered" %>
-        <% else %>
-          <%= render "budget_blank" %>
-        <% end %>
-        <div class="question-box">
-          <button class="question-btn" id="question-btn4">?</button>
-        </div>
-      </div>
       <dialog class="dialog-box" id="dialog4">
         <div class="dialog-title">
           予算について
@@ -361,12 +348,25 @@
           <button class="close-btn" id="close4">close</button>
         </div>
       </dialog>
+      <div class="budget-data-titles">
+        予 算
+      </div>
+      <div class="budget-data-box">
+        <% if current_user.budget.present? %>
+          <%= render "budget_entered" %>
+        <% else %>
+          <%= render "budget_blank" %>
+        <% end %>
+        <div class="question-box">
+          <button class="question-btn" id="question-btn4">?</button>
+        </div>
+      </div>
     </div>
   </div>
   <div class="bottom-contents">
     <dialog class="dialog-box" id="dialog5">
       <div class="dialog-title">
-        予算について
+        購入予定リストについて
       </div>
       <ul class="explanation-function">
         <li>① 計画的に購入したい商品があれば「購入予定リスト」に登録しましょう！</li>

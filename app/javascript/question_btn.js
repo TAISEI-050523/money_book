@@ -1,3 +1,4 @@
+// [?]マークによる各機能説明ダイアログ機能
 if (location.pathname === "/" ){
   window.addEventListener('load', function() {
     var dialog = document.getElementById('dialog1');
@@ -9,7 +10,7 @@ if (location.pathname === "/" ){
     btn_close.addEventListener('click', function() {
       dialog.close();
     }, false);
-  })
+  });
 
   window.addEventListener('load', function() {
     var dialog = document.getElementById('dialog2');
@@ -21,7 +22,7 @@ if (location.pathname === "/" ){
     btn_close.addEventListener('click', function() {
       dialog.close();
     }, false);
-  })
+  });
 
   window.addEventListener('load', function() {
     var dialog = document.getElementById('dialog3');
@@ -33,7 +34,7 @@ if (location.pathname === "/" ){
     btn_close.addEventListener('click', function() {
       dialog.close();
     }, false);
-  })
+  });
 
   window.addEventListener('load', function() {
     var dialog = document.getElementById('dialog4');
@@ -45,7 +46,7 @@ if (location.pathname === "/" ){
     btn_close.addEventListener('click', function() {
       dialog.close();
     }, false);
-  })
+  });
 
   window.addEventListener('load', function() {
     var dialog = document.getElementById('dialog5');
@@ -57,5 +58,5 @@ if (location.pathname === "/" ){
     btn_close.addEventListener('click', function() {
       dialog.close();
     }, false);
-  })
+  });
 }
