@@ -93,13 +93,6 @@
         削 除
       </div>
     </div>
-    <% unless @fixed_costs.present? %>
-      <div class="prompt-purchase-plans">
-        <div class="prompt-purchase-plan">
-          固定費リスト未登録です。
-        </div>
-      </div>
-    <% end %>
     <% @fixed_costs.each do |fixed_cost| %>
     <div class="detail">
       <div class="category-detail white-color">

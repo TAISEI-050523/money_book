@@ -3,6 +3,11 @@
   background-color:#66CDAA;
 }
 
+.new-color {
+  color: red;
+  font-weight: bold;
+}
+
 /* PC表示時 */
 @media screen and  (min-width: 1100px) {
   .input-box {

@@ -6,12 +6,13 @@ class IncomesController < ApplicationController
   end
 
   def create
-    @income = Income.new(income_params)
-    if @income.save
-      redirect_to '/incomes/new'
-    else
-      render 'new'
-    end
+    income = Income.create(income_category_id: params[:income_category_id], remarks: params[:remarks], price: params[:price], income_date: params[:income_date], user_id: current_user.id)
+    # ActiveHashのidをnameに変換
+    category = IncomeCategory.find(params[:income_category_id])
+    # 日付を年月日表記に変換
+    date = income.income_date.strftime("%Y年%m月%d日")
+    # income, category, dateをjson形式で送信
+    render json:{ income: income, category: category, date: date }
   end
 
   def destroy

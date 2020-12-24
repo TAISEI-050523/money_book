@@ -27,29 +27,28 @@
 </header>
 <div class="input-box">
   <div class="input-forms">
-    <%= form_with(model: @income, local: true) do |form| %>
+    <%= form_with url: "/incomes", method: :post, id: "form" do |form| %>
     <div class="input-form">
       <h2 class="input-title">収入入力</h2>
-      <%= render 'shared/error_messages', model: form.object %>
       <div>
         <label class="form-text">分　類</label>
-        <%= form.collection_select(:income_category_id, IncomeCategory.all, :id, :name, {}, {class: "input-select-btn"}) %>
+        <%= form.collection_select(:income_category_id, IncomeCategory.all, :id, :name, {}, {class: "input-select-btn", id: "category-id"}) %>
         <span class="indispensable">必須</span>
       </div>
       <div>
         <label class="form-text">備　考</label>
-        <%= form.text_field :remarks, placeholder: "例：残業代含む", class: "input-remarks" %>
+        <%= form.text_field :remarks, placeholder: "例：残業代含む", class: "input-remarks", id: "remarks" %>
         <span class="indispensable-none">　　</span>
       </div>
       <div>
         <label class="form-text">金　額</label>
-        <%= form.text_field :price, placeholder: "例：10000", class: "input-price" %>
+        <%= form.text_field :price, placeholder: "例：10000", class: "input-price", id: "price" %>
         <label class="form-text"></label>
         <span class="indispensable">必須</span>
       </div>
       <div>
         <label class="form-text">入金日</label>
-        <%= form.date_field :income_date, placeholder: "入金日", class: "input-date" %>
+        <%= form.date_field :income_date, placeholder: "入金日", class: "input-date", id: "date" %>
         <span class="indispensable">必須</span>
       </div>
       <div>
@@ -93,13 +92,7 @@
         削 除
       </div>
     </div>
-    <% unless @incomes.present? %>
-      <div class="prompt-purchase-plans">
-        <div class="prompt-purchase-plan">
-          収入リスト未登録です。
-        </div>
-      </div>
-    <% end %>
+    <div id="new-detail"></div>
     <% @incomes.each do |income| %>
     <div class="detail">
       <div class="category-detail white-color">
