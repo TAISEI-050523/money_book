@@ -1,4 +1,4 @@
-//収入入力の非同期通信
+//固定費入力の非同期通信
 if (location.pathname === "/fixed_costs/new" ) {
   window.addEventListener('load', function() {
     const submitBtn = document.getElementById("submit-btn");

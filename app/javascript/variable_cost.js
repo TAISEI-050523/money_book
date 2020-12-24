@@ -1,4 +1,4 @@
-//収入入力の非同期通信
+//変動費入力の非同期通信
 if (location.pathname === "/variable_costs/new" ) {
   window.addEventListener('load', function() {
     const submitBtn = document.getElementById("submit-btn");
