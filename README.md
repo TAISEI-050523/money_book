@@ -37,6 +37,7 @@ https://portfolio.taisei-account-book.com/  <br>【テストユーザーログ�
 ### 解析ツール
 - 静的コード解析（RuboCop）
 ### その他
+- 非同期通信（Ajax）（収入・固定費・変動費入力機能）
 - Git, GitHub
 - Rspec(単体・結合テストコード)
 - レスポンシブデザイン
