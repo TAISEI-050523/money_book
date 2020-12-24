@@ -9,10 +9,12 @@ class IncomesController < ApplicationController
     income = Income.create(income_category_id: params[:income_category_id], remarks: params[:remarks], price: params[:price], income_date: params[:income_date], user_id: current_user.id)
     # ActiveHashのidをnameに変換
     category = IncomeCategory.find(params[:income_category_id])
+    # 金額を3桁区切りに変換
+    price = income.price.to_s(:delimited)
     # 日付を年月日表記に変換
     date = income.income_date.strftime("%Y年%m月%d日")
     # income, category, dateをjson形式で送信
-    render json:{ income: income, category: category, date: date }
+    render json:{ income: income, category: category, price: price, date: date }
   end
 
   def destroy

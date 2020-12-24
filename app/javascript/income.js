@@ -45,6 +45,7 @@ if (location.pathname === "/incomes/new" ) {
 
         const detail = XHR.response.income;
         const categoryName = XHR.response.category;
+        const incomePrice = XHR.response.price;
         const incomeDate = XHR.response.date;
         
         const newDetail= document.getElementById("new-detail");
@@ -54,7 +55,7 @@ if (location.pathname === "/incomes/new" ) {
               ${categoryName.attributes.name}
             </div>
             <div class="price-detail income-color white-color">
-              ${detail.price}円
+              ${incomePrice}円
             </div>
             <div class="date-detail white-color">
               ${incomeDate}
