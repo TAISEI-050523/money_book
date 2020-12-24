@@ -20,7 +20,7 @@ if (location.pathname === "/incomes/new" ) {
       }
 
       if(!price.value.match(/[1-9]|[1-9][0-9]{1,6}|10000000\d/)){ // 「金額」の半角数字、範囲の入力をチェック
-        errorMessage = errorMessage + "・金額は半角数字で 1円以上 10,000,000円以内で入力してください\n";
+        errorMessage = errorMessage + "・金額は半角数字で 1円以上 10,000,000円以内で入力して下さい\n";
       }
 
       if(date.value == ""){ // 「入金日」の空入力をチェック
