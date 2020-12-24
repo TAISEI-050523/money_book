@@ -1,5 +1,5 @@
 # 💰 ACCOUNT BOOK 💰
-<img width="500" alt="qiita-square" src="https://github.com/TAISEI-050523/money_book/blob/master/top_page.png">
+<img width="600" alt="qiita-square" src="https://github.com/TAISEI-050523/money_book/blob/master/top.png">
 
 ## 🌐 App URL
 https://portfolio.taisei-account-book.com/  <br>【テストユーザーログイン】ボタンからテストユーザーとしてログインできます。 
