@@ -27,29 +27,28 @@
 </header>
 <div class="input-box">
   <div class="input-forms">
-    <%= form_with(model: @fixed_cost, local: true) do |form| %>
+    <%= form_with url: "/fixed_costs", method: :post, id: "form" do |form| %>
     <div class="input-form">
       <h2 class="input-title">固定費入力</h2>
-      <%= render 'shared/error_messages', model: form.object %>
       <div>
         <label class="form-text">分　類</label>
-        <%= form.collection_select(:fixed_cost_category_id, FixedCostCategory.all, :id, :name, {}, {class: "input-select-btn"}) %>
+        <%= form.collection_select(:fixed_cost_category_id, FixedCostCategory.all, :id, :name, {}, {class: "input-select-btn", id: "category-id"}) %>
         <span class="indispensable">必須</span>
       </div>
       <div>
         <label class="form-text">備　考</label>
-        <%= form.text_field :remarks, placeholder: "例：自動車ローン", class: "input-remarks" %>
+        <%= form.text_field :remarks, placeholder: "例：自動車ローン", class: "input-remarks", id: "remarks" %>
         <span class="indispensable-none">　　</span>
       </div>
       <div>
         <label class="form-text">金　額</label>
-        <%= form.text_field :price, placeholder: "半角数字 例：10000", class: "input-price" %>
+        <%= form.text_field :price, placeholder: "半角数字 例：10000", class: "input-price", id: "price" %>
         <label class="form-text"></label>
         <span class="indispensable">必須</span>
       </div>
       <div>
         <label class="form-text">出金日</label>
-        <%= form.date_field :expense_date, placeholder: "入金日", class: "input-date" %>
+        <%= form.date_field :expense_date, placeholder: "入金日", class: "input-date", id: "date" %>
         <span class="indispensable">必須</span>
       </div>
       <div>
@@ -93,6 +92,7 @@
         削 除
       </div>
     </div>
+    <div id="new-detail"></div>
     <% @fixed_costs.each do |fixed_cost| %>
     <div class="detail">
       <div class="category-detail white-color">

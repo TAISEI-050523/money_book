@@ -1,5 +1,5 @@
 //収入入力の非同期通信
-if (location.pathname === "/incomes/new" ) {
+if (location.pathname === "/fixed_costs/new" ) {
   window.addEventListener('load', function() {
     const submitBtn = document.getElementById("submit-btn");
     submitBtn.addEventListener("click", (e) => {
@@ -24,7 +24,7 @@ if (location.pathname === "/incomes/new" ) {
       }
 
       if(date.value == ""){ // 「入金日」の空入力をチェック
-        errorMessage = errorMessage + "・入金日を入力して下さい\n";
+        errorMessage = errorMessage + "・出金日を入力して下さい\n";
       }
       
       if(errorMessage) {
@@ -33,7 +33,7 @@ if (location.pathname === "/incomes/new" ) {
       }
 
       const XHR = new XMLHttpRequest();
-      XHR.open("POST", "/incomes", true);
+      XHR.open("POST", "/fixed_costs", true);
       XHR.responseType = "json";
       XHR.send(formData);
       XHR.onload = () => {
@@ -43,10 +43,10 @@ if (location.pathname === "/incomes/new" ) {
           return null;
         };
         
-        const detail = XHR.response.income;
+        const detail = XHR.response.fixed_cost;
         const categoryName = XHR.response.category;
-        const incomePrice = XHR.response.price;
-        const incomeDate = XHR.response.date;
+        const fixedCostPrice = XHR.response.price;
+        const fixedCostDate = XHR.response.date;
         
         const newDetail= document.getElementById("new-detail");
         const HTML = `
@@ -54,11 +54,11 @@ if (location.pathname === "/incomes/new" ) {
             <div class="category-detail white-color">
               ${categoryName.attributes.name}
             </div>
-            <div class="price-detail income-color white-color">
-              ${incomePrice}円
+            <div class="price-detail expense-color white-color">
+              ${fixedCostPrice}円
             </div>
             <div class="date-detail white-color">
-              ${incomeDate}
+              ${fixedCostDate}
             </div>
             <div class="remarks-detail white-color">
               ${detail.remarks }
