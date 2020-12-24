@@ -48,7 +48,7 @@ https://portfolio.taisei-account-book.com/  <br>【テストユーザーログ�
 # 🖥　DEMO
 ## 収入・固定費・変動費入力機能
 　収入・固定費・変動費を入力すると、トップページの過去１年間の推移に反映されます。
- <br><img width="400" alt="qiita-square" src="https://i.gyazo.com/c69037b0d6d63dab657314e5653c8048.gif">
+ <br><img width="400" alt="qiita-square" src="https://i.gyazo.com/32fa96ccca04e1390f14df8ecfb1f97c.gif">
 ### 予算管理機能
 　予算を登録すると、固定費・変動費入力機能で入力したデータから当月あといくら使えるか計算します。
 　<br><img width="400" alt="qiita-square" src="https://i.gyazo.com/01e94b853fa6932961a75a654e79d097.gif">
