@@ -62,7 +62,7 @@ class TopsController < ApplicationController
       @fixed_budget_sum = (@budget.house + @budget.communications + @budget.electricity + @budget.gas + @budget.water + @budget.education + @budget.premium + @budget.lawn + @budget.fixed_etcetera)
       @variable_budget_sum = (@budget.food + @budget.commodity + @budget.transportation + @budget.hobby + @budget.clothes + @budget.health + @budget.culture + @budget.book + @budget.cafe + @budget.social + @budget.special + @budget.variable_etcetera)
       @budget_sum = (@fixed_budget_sum + @variable_budget_sum)
-      @budget_remains = @budget_sum - (@fixed_cost_this_month + @fixed_cost_this_month)
+      @budget_remains = @budget_sum - (@fixed_cost_this_month + @variable_cost_this_month)
     end
   end
   
