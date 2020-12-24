@@ -23,7 +23,7 @@ if (location.pathname === "/incomes/new" ) {
         errorMessage = errorMessage + "・金額は半角数字で 1円以上 10,000,000円以内で入力してください\n";
       }
 
-      if(date.value == ""){ // 「入金日」の入力をチェック
+      if(date.value == ""){ // 「入金日」の空入力をチェック
         errorMessage = errorMessage + "・入金日を入力して下さい\n";
       }
       
