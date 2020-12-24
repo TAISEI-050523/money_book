@@ -11,15 +11,15 @@ if (location.pathname === "/incomes/new" ) {
       var errorMessage = "";
       
       // 必須項目(空かどうか)
-      if(categoryID.value == 1){ // 「分類」の入力チェック
-        errorMessage = "・分類を選択して下さい\n";
+      if(categoryID.value == 1){ // 「分類」の入力チェック（id=1以外）
+        errorMessage = errorMessage　+ "・分類を選択して下さい\n";
       }
 
-      if(price.value == ""){ // 「金額」の入力をチェック
+      if(price.value == ""){ // 「金額」の空入力をチェック
         errorMessage = errorMessage + "・金額を入力して下さい\n";
       }
 
-      if(!price.value.match(/[1-10000000]\d/)){ // 「金額」の入力をチェック
+      if(!price.value.match(/[1-9]|[1-9][0-9]{1,6}|10000000\d/)){ // 「金額」の半角数字、範囲の入力をチェック
         errorMessage = errorMessage + "・金額は半角数字で 1円以上 10,000,000円以内で入力してください\n";
       }
 

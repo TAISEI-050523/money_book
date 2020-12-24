@@ -23,14 +23,11 @@ RSpec.describe '収入入力', type: :system do
       # 収入入力ページに移動する
       visit new_income_path
       # 入力フォームに情報を入力する
-      find('#income_income_category_id').find("option[value='#{@income_income_category_id}']").select_option
-      fill_in 'income_remarks', with: @income_remarks
-      fill_in 'income_price', with: @income_price
-      fill_in 'income_income_date', with: @income_date
-      # 送信するとIncomeモデルのカウントが1上がることを確認する
-      expect  do
-        click_on('入 力')
-      end.to change { Income.count }.by(1)
+      find('#category-id').find("option[value='#{@income_income_category_id}']").select_option
+      fill_in 'remarks', with: @income_remarks
+      fill_in 'price', with: @income_price
+      fill_in 'date', with: @income_date
+      click_on('入 力')
       # 入力後、収入入力ページに留まることを確認する
       expect(current_path).to eq new_income_path
       # 収入入力ページには先ほど入力した内容が収入詳細欄に存在することを確認する（収入分類）
@@ -56,18 +53,15 @@ RSpec.describe '収入入力', type: :system do
       # 収入入力ページに移動する
       visit new_income_path
       # 入力フォームに誤った情報を入力する
-      find('#income_income_category_id').find("option[value='1']").select_option # value='1' ➜ income_income_category_id=1
-      fill_in 'income_remarks', with: ' '
-      fill_in 'income_price', with: ' '
-      fill_in 'income_income_date', with: ' '
-      # 送信してもIncomeモデルのカウントは上がらないことを確認する
-      expect  do
-        click_on('入 力')
-      end.to change { Income.count }.by(0)
+      find('#category-id').find("option[value='1']").select_option # value='1' ➜ income_income_category_id=1
+      fill_in 'remarks', with: ' '
+      fill_in 'price', with: ' '
+      fill_in 'income_date', with: ' '
+      click_on('入 力')
+      # アラートが表示されて、アラートを消去できることを確認する
+      page.accept_alert
       # 入力後、収入入力ページに留まることを確認する
-      expect(current_path).to eq '/incomes'
-      # エラーメッセージが表示されていることを確認する
-      expect(page).to have_content('入力ミス')
+      expect(current_path).to eq new_income_path
     end
   end
 end

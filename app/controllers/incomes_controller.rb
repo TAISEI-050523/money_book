@@ -7,6 +7,7 @@ class IncomesController < ApplicationController
 
   def create
     income = Income.create(income_category_id: params[:income_category_id], remarks: params[:remarks], price: params[:price], income_date: params[:income_date], user_id: current_user.id)
+    if income.valid?
     # ActiveHashのidをnameに変換
     category = IncomeCategory.find(params[:income_category_id])
     # 金額を3桁区切りに変換
@@ -15,6 +16,7 @@ class IncomesController < ApplicationController
     date = income.income_date.strftime("%Y年%m月%d日")
     # income, category, dateをjson形式で送信
     render json:{ income: income, category: category, price: price, date: date }
+    end
   end
 
   def destroy
