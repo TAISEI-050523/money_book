@@ -42,7 +42,7 @@ if (location.pathname === "/incomes/new" ) {
           alert(`Error ${XHR.status}: ${XHR.statusText}`);
           return null;
         };
-
+        
         const detail = XHR.response.income;
         const categoryName = XHR.response.category;
         const incomePrice = XHR.response.price;
@@ -68,6 +68,7 @@ if (location.pathname === "/incomes/new" ) {
             </div>
           </div>`;
         newDetail.insertAdjacentHTML("afterend", HTML);
+        // 入力後、各フォームを空欄にする。
         categoryID.value = 1;
         remarks.value = "";
         price.value = "";
