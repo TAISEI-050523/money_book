@@ -15,11 +15,7 @@ RSpec.describe '購入予定リスト追加', type: :system do
   context '購入予定リストの追加ができるとき' do
     it 'ログインしたユーザーは購入予定リストページで購入予定リストの追加ができる' do
       # ログインする
-      visit new_user_session_path
-      fill_in 'email', with: @user.email
-      fill_in 'password', with: @user.password
-      find('input[id="submit-btn"]').click
-      expect(current_path).to eq root_path
+      sign_in(@user)
       # 購入予定リストページへのリンクがあることを確認する
       expect(page).to have_link('購入予定リスト', href: purchase_plans_path)
       # 購入予定リストページに移動する
@@ -57,11 +53,7 @@ RSpec.describe '購入予定リスト追加', type: :system do
     end
     it '誤った情報では購入予定リストの追加ができずに購入予定リストページへ戻ってくる' do
       # ログインする
-      visit new_user_session_path
-      fill_in 'email', with: @user.email
-      fill_in 'password', with: @user.password
-      find('input[id="submit-btn"]').click
-      expect(current_path).to eq root_path
+      sign_in(@user)
       # 購入予定リストページへのリンクがあることを確認する
       expect(page).to have_link('購入予定リスト', href: purchase_plans_path)
       # 購入予定リストページに移動する
@@ -91,11 +83,7 @@ RSpec.describe '購入予定リスト削除', type: :system do
   context '購入予定リストを削除ができるとき' do
     it 'ログインしたユーザーは自らが保存した購入予定リストを削除ができる' do
       # 購入予定リスト1を保存したユーザーでログインする
-      visit new_user_session_path
-      fill_in 'email', with: @purchase_plan1.user.email
-      fill_in 'password', with: @purchase_plan1.user.password
-      find('input[id="submit-btn"]').click
-      expect(current_path).to eq root_path
+      sign_in(@purchase_plan1.user)
       # 購入予定リストページへのリンクがあることを確認する
       expect(page).to have_link('購入予定リスト', href: purchase_plans_path)
       # 購入予定リストページに移動する
@@ -123,11 +111,7 @@ RSpec.describe '購入予定リスト削除', type: :system do
   context '購入予定リスト削除ができないとき' do
     it 'ログインしたユーザーは自分以外が保存した購入予定リストの削除ができない' do
       # 購入予定リスト1を保存したユーザーでログインする
-      visit new_user_session_path
-      fill_in 'email', with: @purchase_plan1.user.email
-      fill_in 'password', with: @purchase_plan1.user.password
-      find('input[id="submit-btn"]').click
-      expect(current_path).to eq root_path
+      sign_in(@purchase_plan1.user)
       # 購入予定リストページへのリンクがあることを確認する
       expect(page).to have_link('購入予定リスト', href: purchase_plans_path)
       # 購入予定リストページに移動する

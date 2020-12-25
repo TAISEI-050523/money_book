@@ -66,11 +66,7 @@ RSpec.describe '固定費削除', type: :system do
   context '固定費を削除ができるとき' do
     it 'ログインしたユーザーは自らが入力した固定費詳細の削除ができる' do
       # 固定費1を入力したユーザーでログインする
-      visit new_user_session_path
-      fill_in 'email', with: @fixed_cost1.user.email
-      fill_in 'password', with: @fixed_cost1.user.password
-      find('input[id="submit-btn"]').click
-      expect(current_path).to eq root_path
+      sign_in(@fixed_cost1.user)
       # 固定費入力ページへのリンクがあることを確認する
       expect(page).to have_link('固定費', href: new_fixed_cost_path)
       # 固定費入力ページに移動する
@@ -96,11 +92,7 @@ RSpec.describe '固定費削除', type: :system do
   context '固定費削除ができないとき' do
     it 'ログインしたユーザーは自分以外が入力した固定費の削除ができない' do
       # 固定費1を入力したユーザーでログインする
-      visit new_user_session_path
-      fill_in 'email', with: @fixed_cost1.user.email
-      fill_in 'password', with: @fixed_cost1.user.password
-      find('input[id="submit-btn"]').click
-      expect(current_path).to eq root_path
+      sign_in(@fixed_cost1.user)
       # 固定費入力ページへのリンクがあることを確認する
       expect(page).to have_link('固定費', href: new_fixed_cost_path)
       # 固定費入力ページに移動する
@@ -124,12 +116,7 @@ RSpec.describe '固定費検索', type: :system do
   context '固定費検索ができるとき' do
     it 'ログインしたユーザーは固定費入力ページで固定費の検索ができる' do
       # ログインする
-      visit new_user_session_path
-      fill_in 'email', with: @fixed_cost.user.email
-      fill_in 'password', with: @fixed_cost.user.password
-      find('input[id="submit-btn"]').click
-      expect(current_path).to eq root_path
-      expect(current_path).to eq root_path
+      sign_in(@fixed_cost.user)
       # 固定費入力ページへのリンクがあることを確認する
       expect(page).to have_link('固定費', href: new_fixed_cost_path)
       # 固定費入力ページに移動する

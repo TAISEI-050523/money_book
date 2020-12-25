@@ -66,11 +66,7 @@ RSpec.describe '変動費削除', type: :system do
   context '変動費を削除ができるとき' do
     it 'ログインしたユーザーは自らが入力した変動費詳細の削除ができる' do
       # 変動費1を入力したユーザーでログインする
-      visit new_user_session_path
-      fill_in 'email', with: @variable_cost1.user.email
-      fill_in 'password', with: @variable_cost1.user.password
-      find('input[id="submit-btn"]').click
-      expect(current_path).to eq root_path
+      sign_in(@variable_cost1.user)
       # 変動費入力ページへのリンクがあることを確認する
       expect(page).to have_link('変動費', href: new_variable_cost_path)
       # 変動費入力ページに移動する
@@ -96,11 +92,7 @@ RSpec.describe '変動費削除', type: :system do
   context '変動費削除ができないとき' do
     it 'ログインしたユーザーは自分以外が入力した変動費の削除ができない' do
       # 変動費1を入力したユーザーでログインする
-      visit new_user_session_path
-      fill_in 'email', with: @variable_cost1.user.email
-      fill_in 'password', with: @variable_cost1.user.password
-      find('input[id="submit-btn"]').click
-      expect(current_path).to eq root_path
+      sign_in(@variable_cost1.user)
       # 変動費入力ページへのリンクがあることを確認する
       expect(page).to have_link('変動費', href: new_variable_cost_path)
       # 変動費入力ページに移動する
@@ -124,12 +116,7 @@ RSpec.describe '変動費検索', type: :system do
   context '変動費検索ができるとき' do
     it 'ログインしたユーザーは変動費入力ページで変動費の検索ができる' do
       # ログインする
-      visit new_user_session_path
-      fill_in 'email', with: @variable_cost.user.email
-      fill_in 'password', with: @variable_cost.user.password
-      find('input[id="submit-btn"]').click
-      expect(current_path).to eq root_path
-      expect(current_path).to eq root_path
+      sign_in(@variable_cost.user)
       # 変動費入力ページへのリンクがあることを確認する
       expect(page).to have_link('変動費', href: new_variable_cost_path)
       # 変動費入力ページに移動する
