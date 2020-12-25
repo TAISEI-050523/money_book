@@ -8,11 +8,7 @@ RSpec.describe '予算登録', type: :system do
   context '予算の登録ができるとき' do
     it 'ログインしたユーザーは予算ページで予算の追加ができる' do
       # ログインする
-      visit new_user_session_path
-      fill_in 'email', with: @user.email
-      fill_in 'password', with: @user.password
-      find('input[id="submit-btn"]').click
-      expect(current_path).to eq root_path
+      sign_in(@user)
       # 予算ページへのリンクがあることを確認する
       expect(page).to have_link('予 算', href: budgets_path)
       # 予算ページに移動する
@@ -96,11 +92,7 @@ RSpec.describe '予算登録', type: :system do
   context '予算の登録ができないとき' do
     it '誤った情報では予算の登録ができずに予算登録ページへ戻ってくる' do
       # ログインする
-      visit new_user_session_path
-      fill_in 'email', with: @user.email
-      fill_in 'password', with: @user.password
-      find('input[id="submit-btn"]').click
-      expect(current_path).to eq root_path
+      sign_in(@user)
       # 予算ページへのリンクがあることを確認する
       expect(page).to have_link('予 算', href: budgets_path)
       # 予算ページに移動する
@@ -151,11 +143,7 @@ RSpec.describe '予算編集', type: :system do
   context '予算の編集ができるとき' do
     it 'ログインしたユーザーは予算ページで予算の追加ができる' do
       # 予算1を登録したユーザーでログインする
-      visit new_user_session_path
-      fill_in 'email', with: @budget1.user.email
-      fill_in 'password', with: @budget1.user.password
-      find('input[id="submit-btn"]').click
-      expect(current_path).to eq root_path
+      sign_in(@budget1.user)
       # 予算ページへのリンクがあることを確認する
       expect(page).to have_link('予 算', href: budgets_path)
       # 予算ページに移動する
@@ -239,11 +227,7 @@ RSpec.describe '予算編集', type: :system do
   context '予算の編集ができないとき' do
     it '誤った情報では予算の編集ができずに予算編集ページへ戻ってくる' do
       # 予算1を登録したユーザーでログインする
-      visit new_user_session_path
-      fill_in 'email', with: @budget1.user.email
-      fill_in 'password', with: @budget1.user.password
-      find('input[id="submit-btn"]').click
-      expect(current_path).to eq root_path
+      sign_in(@budget1.user)
       # 予算ページへのリンクがあることを確認する
       expect(page).to have_link('予 算', href: budgets_path)
       # 予算ページに移動する
@@ -285,11 +269,7 @@ RSpec.describe '予算編集', type: :system do
     end
     it 'ログインした予算１のユーザーは自分以外が登録した予算の編集ができない' do
       # 予算1を保存したユーザーでログインする
-      visit new_user_session_path
-      fill_in 'email', with: @budget1.user.email
-      fill_in 'password', with: @budget1.user.password
-      find('input[id="submit-btn"]').click
-      expect(current_path).to eq root_path
+      sign_in(@budget1.user)
       # 予算ページへのリンクがあることを確認する
       expect(page).to have_link('予 算', href: budgets_path)
       # 予算ページに移動する

@@ -437,7 +437,7 @@ RSpec.describe Budget, type: :model do
       @budget.valid?
       expect(@budget).not_to be_valid
     end
-       ##### コンマ(,)が含まれる ####
+    ##### コンマ(,)が含まれる ####
     it 'house(住居費)にコンマ(,)が含まれていると登録できないこと' do
       @budget.house = '10,000'
       @budget.valid?

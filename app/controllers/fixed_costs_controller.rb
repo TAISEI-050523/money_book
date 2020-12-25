@@ -13,9 +13,9 @@ class FixedCostsController < ApplicationController
       # 金額を3桁区切りに変換
       price = fixed_cost.price.to_s(:delimited)
       # 日付を年月日表記に変換
-      date = fixed_cost.expense_date.strftime("%Y年%m月%d日")
+      date = fixed_cost.expense_date.strftime('%Y年%m月%d日')
       # fixed_cost, category, dateをjson形式で送信
-      render json:{ fixed_cost: fixed_cost, category: category, price: price, date: date }
+      render json: { fixed_cost: fixed_cost, category: category, price: price, date: date }
     end
   end
 

@@ -12,12 +12,12 @@ class Income < ApplicationRecord
 
   def self.income_monthly
     one_year_period = (1.years.ago.beginning_of_month)..(Date.today.end_of_month)
-    Income.where(income_date: one_year_period).group('YEAR(income_date)').group('MONTH(income_date)').sum(:price)  
+    Income.where(income_date: one_year_period).group('YEAR(income_date)').group('MONTH(income_date)').sum(:price)
   end
-  
+
   def self.income_this_month
-    this_month = Date.today.beginning_of_month..Date.today.end_of_month 
-    Income.where(income_date: this_month).sum(:price)   
+    this_month = Date.today.beginning_of_month..Date.today.end_of_month
+    Income.where(income_date: this_month).sum(:price)
   end
 
   def self.search(search1, search2, search3)

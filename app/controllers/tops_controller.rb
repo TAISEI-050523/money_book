@@ -1,5 +1,4 @@
 class TopsController < ApplicationController
-
   def index
     @user = User.find(current_user.id)
     @incomes = @user.incomes                                           # ログインユーザーの収入
@@ -18,15 +17,14 @@ class TopsController < ApplicationController
     set_purchase_plans_saving      # 購入予定リストからの1日の貯金額の目安を算出
 
     set_budget_present             # 予算登録済みの場合に処理を行う
-
   end
 
   private
 
   def set_monthly
-    @income_monthly = @incomes.income_monthly                          
-    @fixed_cost_monthly = @fixed_costs.fixed_cost_monthly              
-    @variable_cost_monthly = @variable_costs.variable_cost_monthly     
+    @income_monthly = @incomes.income_monthly
+    @fixed_cost_monthly = @fixed_costs.fixed_cost_monthly
+    @variable_cost_monthly = @variable_costs.variable_cost_monthly
   end
 
   def set_this_month
@@ -65,5 +63,4 @@ class TopsController < ApplicationController
       @budget_remains = @budget_sum - (@fixed_cost_this_month + @variable_cost_this_month)
     end
   end
-  
 end

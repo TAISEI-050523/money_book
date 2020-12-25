@@ -40,5 +40,4 @@ class FixedCost < ApplicationRecord
       FixedCost.all
     end
   end
-  
 end

@@ -13,11 +13,7 @@ RSpec.describe '収入入力', type: :system do
   context '収入を入力ができるとき' do
     it 'ログインしたユーザーは収入入力ページで収入の入力ができる' do
       # ログインする
-      visit new_user_session_path
-      fill_in 'email', with: @user.email
-      fill_in 'password', with: @user.password
-      find('input[id="submit-btn"]').click
-      expect(current_path).to eq root_path
+      sign_in(@user)
       # 収入入力ページへのリンクがあることを確認する
       expect(page).to have_link('収 入', href: new_income_path)
       # 収入入力ページに移動する
@@ -43,11 +39,7 @@ RSpec.describe '収入入力', type: :system do
   context '収入を入力ができないとき' do
     it '誤った情報では収入入力ができずに収入入力ページへ戻ってくる' do
       # ログインする
-      visit new_user_session_path
-      fill_in 'email', with: @user.email
-      fill_in 'password', with: @user.password
-      find('input[id="submit-btn"]').click
-      expect(current_path).to eq root_path
+      sign_in(@user)
       # 収入入力ページへのリンクがあることを確認する
       expect(page).to have_link('収 入', href: new_income_path)
       # 収入入力ページに移動する
@@ -74,11 +66,7 @@ RSpec.describe '収入削除', type: :system do
   context '収入を削除ができるとき' do
     it 'ログインしたユーザーは自らが入力した収入詳細の削除ができる' do
       # 収入1を入力したユーザーでログインする
-      visit new_user_session_path
-      fill_in 'email', with: @income1.user.email
-      fill_in 'password', with: @income1.user.password
-      find('input[id="submit-btn"]').click
-      expect(current_path).to eq root_path
+      sign_in(@income1.user)
       # 収入入力ページへのリンクがあることを確認する
       expect(page).to have_link('収 入', href: new_income_path)
       # 収入入力ページに移動する
@@ -104,11 +92,7 @@ RSpec.describe '収入削除', type: :system do
   context '収入削除ができないとき' do
     it 'ログインしたユーザーは自分以外が入力した収入の削除ができない' do
       # 収入1を入力したユーザーでログインする
-      visit new_user_session_path
-      fill_in 'email', with: @income1.user.email
-      fill_in 'password', with: @income1.user.password
-      find('input[id="submit-btn"]').click
-      expect(current_path).to eq root_path
+      sign_in(@income1.user)
       # 収入入力ページへのリンクがあることを確認する
       expect(page).to have_link('収 入', href: new_income_path)
       # 収入入力ページに移動する
@@ -132,14 +116,7 @@ RSpec.describe '収入検索', type: :system do
   context '収入検索ができるとき' do
     it 'ログインしたユーザーは収入入力ページで収入の検索ができる' do
       # ログインする
-      visit new_user_session_path
-      fill_in 'email', with: @income.user.email
-      fill_in 'password', with: @income.user.password
-      find('input[id="submit-btn"]').click
-      expect(current_path).to eq root_path
-      expect(current_path).to eq root_path
-      # 収入入力ページへのリンクがあることを確認する
-      expect(page).to have_link('収 入', href: new_income_path)
+      sign_in(@income.user)
       # 収入入力ページに移動する
       visit new_income_path
       # 検索フォームに情報を入力して検索ボタンを押す

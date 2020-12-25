@@ -43,5 +43,4 @@ class VariableCost < ApplicationRecord
       VariableCost.all
     end
   end
-
 end
