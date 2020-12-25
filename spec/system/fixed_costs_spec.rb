@@ -108,8 +108,8 @@ end
 RSpec.describe '固定費検索', type: :system do
   before do
     @fixed_cost = FactoryBot.create(:fixed_cost)
-    @fixed_cost_fixed_cost_category_id = @fixed_cost.fixed_cost_category_id    # 固定費分類
-    @expense_date = @fixed_cost.expense_date                         # 出金日
+    @fixed_cost_fixed_cost_category_id = @fixed_cost.fixed_cost_category_id # 固定費分類
+    @expense_date = @fixed_cost.expense_date # 出金日
     @fixed_cost_year = @expense_date.year.to_s                      # 出金日の年
     @fixed_cost_month = @expense_date.mon.to_s                      # 出金日の月
   end

@@ -108,8 +108,8 @@ end
 RSpec.describe '変動費検索', type: :system do
   before do
     @variable_cost = FactoryBot.create(:variable_cost)
-    @variable_cost_variable_cost_category_id = @variable_cost.variable_cost_category_id    # 変動費分類
-    @expense_date = @variable_cost.expense_date                         # 出金日
+    @variable_cost_variable_cost_category_id = @variable_cost.variable_cost_category_id # 変動費分類
+    @expense_date = @variable_cost.expense_date # 出金日
     @variable_cost_year = @expense_date.year.to_s                      # 出金日の年
     @variable_cost_month = @expense_date.mon.to_s                      # 出金日の月
   end

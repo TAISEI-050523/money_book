@@ -44,8 +44,13 @@ RSpec.describe VariableCost, type: :model do
       @variable_cost.valid?
       expect(@variable_cost.errors.full_messages).to include('Price は半角数字で 1円 以上  1,000,000 円 以内で入力してください')
     end
-    it 'price(金額)にコンマ(,)が含まれていると登録できないこと' do
-      @variable_cost.price = '10,000'
+    it 'price(金額)に1円より小さいと登録できないこと' do
+      @variable_cost.price = '0'
+      @variable_cost.valid?
+      expect(@variable_cost.errors.full_messages).to include('Price は半角数字で 1円 以上  1,000,000 円 以内で入力してください')
+    end
+    it 'price(金額)に10,000,000円より大きいと登録できないこと' do
+      @variable_cost.price = '10,000,001'
       @variable_cost.valid?
       expect(@variable_cost.errors.full_messages).to include('Price は半角数字で 1円 以上  1,000,000 円 以内で入力してください')
     end

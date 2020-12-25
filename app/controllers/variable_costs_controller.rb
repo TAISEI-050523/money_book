@@ -13,9 +13,9 @@ class VariableCostsController < ApplicationController
       # 金額を3桁区切りに変換
       price = variable_cost.price.to_s(:delimited)
       # 日付を年月日表記に変換
-      date = variable_cost.expense_date.strftime("%Y年%m月%d日")
+      date = variable_cost.expense_date.strftime('%Y年%m月%d日')
       # variable_cost, category, dateをjson形式で送信
-      render json:{ variable_cost: variable_cost, category: category, price: price, date: date }
+      render json: { variable_cost: variable_cost, category: category, price: price, date: date }
     end
   end
 
