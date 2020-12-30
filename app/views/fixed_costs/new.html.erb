@@ -1,7 +1,7 @@
 <header class='top-page-header'>
   <%= render "shared/header" %>
   <% if user_signed_in? %>
-    <div class="input-contents">
+    <div class="input-contents pc-menu">
       <ul class="inputs-lists">
         <li class="input-list" >
           <%= link_to ' HOME', root_path, class: "home_btn fas fa-home", id: "home-btn" %>
@@ -23,6 +23,7 @@
         </li>
       </ul>
     </div>
+    <%= render "shared/sp_menu" %>
   <% end %>
 </header>
 <div class="input-box">
