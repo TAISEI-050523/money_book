@@ -13,6 +13,15 @@
   background-color: #DDDDDD;
 }
 
+
+.sp-menu {
+  display: none;
+}
+
+.overlay {
+  display: none;
+}
+
 /* PC表示時 */
 @media screen and  (min-width: 1100px) {
   .top-page-header {
@@ -326,20 +335,124 @@
 }
 
 /* スマホ表示時 -400px*/
-@media screen and  (max-width: 400px) {  
+@media screen and  (max-width: 400px) {
+  .pc-menu {
+    display: none;
+  }
+
+  .sp-menu {
+    text-align: right;
+    padding-right: 10px;
+    display: block;
+  }
+
+  .overlay {
+    display: block;
+  }
+
+  .sp-menu {
+    margin-left: auto;
+  }
+  
+  .sp-menu #open {
+    font-size: 32px;
+    line-height: 64px;
+    cursor: pointer;
+  }
+  
+  .sp-menu #open.hide {
+    display: none;
+  }
+  
+  .sp-menu #open.hide {
+    display: none;
+  }
+  
+  main {
+    padding: 0 16px;
+  }
+  
+  .overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.95);
+    text-align: center;
+    padding: 64px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .6s;
+  }
+  
+  .overlay.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  .overlay #close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 32px;
+    cursor: pointer;
+  }
+  
+  .overlay ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .overlay li {
+    margin-top: 24px;
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity .3s, transform .3s;
+  }
+  
+  .overlay.show li {
+    opacity: 1;
+    transform: none;
+  }
+  
+  .overlay.show li:nth-child(1) {
+    transition-delay: .1s;
+  }
+  
+  .overlay.show li:nth-child(2) {
+    transition-delay: .2s;
+  }
+  
+  .overlay.show li:nth-child(3) {
+    transition-delay: .3s;
+  }
+  
+  .overlay.show li:nth-child(4) {
+    transition-delay: .4s;
+  }
+  
+  .overlay.show li:nth-child(5) {
+    transition-delay: .5s;
+  }
+  
+  .overlay.show li:nth-child(6) {
+    transition-delay: .6s;
+  }
+
+  .input-list {
+    text-align: left;
+  }
+
   .home_btn,
   .income_btn,
   .fixed_btn,
   .variable_btn,
   .budget_btn,
   .purchase_btn {
-    width: 105%;
-    height: 20px;
-    font-size: 8px;
-    padding: 0;
+  font-size: 20px;
+  text-align: left;
   }
-  
-  .input-list-color {
-    border-bottom: 3px solid orange;
-  }
+
 }
