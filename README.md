@@ -168,7 +168,7 @@ https://portfolio.taisei-account-book.com/  <br>【テストユーザーログ�
 
 - belongs_to :user
 
-# 😶About me
+# 😶 About me
 自己紹介サイトに過去の制作物・学習内容を記録しています。また現在勉強していることや将来の目標を紹介しています。<br>
 お時間あれば是非御覧ください！！<br>
 URL: https://taisei-050523.github.io/self_introduction/
