@@ -1,4 +1,4 @@
-//ログイン時にのみハンバーガーメニューのアイコンを適用
+//ログイン時かつ画面横幅400px以下のときハンバーガーメニューを適用
 if (!(location.pathname === "/users/sign_in") && !(location.pathname === "/users/sign_up")) {
   window.addEventListener('load', function() {
     const open = document.getElementById('open');
